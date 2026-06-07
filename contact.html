@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — SLG Masterworks · Sarah L Glabman</title>
+  <meta name="description" content="Contact Sarah at SLG Masterworks for commissions, custom sizing, gallery inquiries, and press." />
+  <meta name="theme-color" content="#0D1B35" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    body { background: #fff; }
+
+    /* ── Hero ── */
+    .ct-hero {
+      position: relative;
+      background: var(--navy-bg, #0D1B35);
+      overflow: hidden;
+      padding: clamp(7rem, 13vw, 11rem) var(--gutter) clamp(4rem, 7vw, 6rem);
+      text-align: center;
+    }
+    .ct-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ct-hero-label {
+      display: block;
+      font-family: var(--display);
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold, #C9A84C);
+      margin-bottom: 1.2rem;
+    }
+    .ct-hero h1 {
+      font-family: var(--title);
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: -.025em;
+      line-height: 1;
+      margin: 0 0 1.4rem;
+    }
+    .ct-hero p {
+      font-size: clamp(.9rem, 1.4vw, 1.05rem);
+      font-weight: 300;
+      color: rgba(255,255,255,.42);
+      max-width: 48ch;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── Main body: two columns ── */
+    .ct-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(4rem, 8vw, 7rem) var(--gutter);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 7vw, 8rem);
+      align-items: center;
+    }
+
+    /* ── Left: info ── */
+    .ct-info {}
+    .ct-info-label {
+      display: block;
+      font-family: var(--display);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold, #C9A84C);
+      margin-bottom: 1.2rem;
+    }
+    .ct-info h2 {
+      font-family: var(--title);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      margin: 0 0 1rem;
+    }
+    .ct-info > p {
+      font-size: .95rem;
+      line-height: 1.8;
+      color: #666;
+      margin: 0 0 2.5rem;
+      max-width: none;
+    }
+
+    /* Details list */
+    .ct-details {
+      list-style: none;
+      margin: 0 0 2.5rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ct-details li {
+      display: grid;
+      grid-template-columns: 6rem 1fr;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .ct-details li:first-child { border-top: 1px solid rgba(0,0,0,.07); }
+    .ct-detail-label {
+      font-family: var(--display);
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+    .ct-detail-value {
+      font-size: .9rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .ct-detail-value a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+      transition: border-color .2s, color .2s;
+    }
+    .ct-detail-value a:hover {
+      color: var(--gold, #C9A84C);
+      border-color: var(--gold, #C9A84C);
+    }
+
+    /* Socials */
+    .ct-socials {
+      display: flex;
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+    .ct-socials a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,.12);
+      color: #999;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .ct-socials a:hover {
+      border-color: var(--gold, #C9A84C);
+      color: var(--gold, #C9A84C);
+      background: rgba(201,168,76,.04);
+    }
+    .ct-socials svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ── Right: form ── */
+    .ct-form-wrap {}
+    .ct-form-bottom {
+      margin-top: .8rem;
+    }
+    .ct-form-label {
+      display: block;
+      font-family: var(--display);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold, #C9A84C);
+      margin-bottom: 1.6rem;
+    }
+    .ct-form-title { display: none; }
+    .ct-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .ct-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .ct-field {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .ct-field label {
+      font-family: var(--display);
+      font-size: .6rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #999;
+    }
+    .ct-field input,
+    .ct-field select,
+    .ct-field textarea {
+      background: #fff;
+      border: none;
+      border-bottom: 1.5px solid rgba(0,0,0,.13);
+      padding: .6rem 0;
+      font-family: var(--sans);
+      font-size: .93rem;
+      font-weight: 300;
+      color: var(--ink);
+      width: 100%;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+      border-radius: 0;
+    }
+    .ct-field input::placeholder,
+    .ct-field textarea::placeholder { color: #ccc; }
+    .ct-field input:focus,
+    .ct-field select:focus,
+    .ct-field textarea:focus {
+      border-bottom-color: var(--gold, #C9A84C);
+    }
+    /* Custom dropdown */
+    .ct-dropdown { position: relative; width: 100%; }
+    .ct-dropdown-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid rgba(0,0,0,.13);
+      padding: .6rem 0;
+      font-family: var(--sans);
+      font-size: .93rem;
+      font-weight: 300;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .ct-dropdown.open .ct-dropdown-trigger,
+    .ct-dropdown-trigger:focus { border-bottom-color: var(--gold, #C9A84C); }
+    .ct-dropdown-arrow {
+      width: 10px; height: 6px;
+      color: #aaa;
+      flex-shrink: 0;
+      transition: transform .25s, color .2s;
+    }
+    .ct-dropdown.open .ct-dropdown-arrow {
+      transform: rotate(180deg);
+      color: var(--gold, #C9A84C);
+    }
+    .ct-dropdown-list {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0; right: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.1);
+      border-top: none;
+      list-style: none;
+      margin: 0; padding: .3rem 0;
+      z-index: 999;
+      box-shadow: 0 8px 32px rgba(0,0,0,.1);
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .ct-dropdown.open .ct-dropdown-list {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .ct-dropdown-opt {
+      padding: .7rem 1.1rem;
+      font-family: var(--sans);
+      font-size: .88rem;
+      font-weight: 300;
+      color: #555;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      letter-spacing: .01em;
+    }
+    .ct-dropdown-opt:hover { background: #F8F7F5; color: var(--ink); }
+    .ct-dropdown-opt.active {
+      color: var(--gold, #C9A84C);
+      font-weight: 400;
+    }
+    .ct-field textarea { resize: none; min-height: 60px; line-height: 1.7; }
+
+    .ct-form-bottom {
+      margin-top: .8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .ct-submit {
+      display: block;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--display);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background .22s;
+      text-align: center;
+    }
+    .ct-submit span { position: relative; }
+    .ct-submit:hover { background: var(--gold, #C9A84C); }
+
+    .ct-status {
+      font-size: .82rem;
+      color: var(--gold, #C9A84C);
+      min-height: 1.2em;
+      letter-spacing: .06em;
+    }
+
+    /* ── Divider ── */
+    .ct-divider {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      box-sizing: border-box;
+    }
+    .ct-divider::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: rgba(0,0,0,.08);
+    }
+
+    /* ── Quote strip ── */
+    .ct-quote {
+      background: #F6F5F2;
+      text-align: center;
+      padding: clamp(3.5rem, 6vw, 5rem) var(--gutter);
+    }
+    .ct-quote blockquote {
+      margin: 0;
+      font-family: var(--title);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      white-space: nowrap;
+    }
+    .ct-quote cite {
+      font-style: normal;
+      font-family: var(--display);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold, #C9A84C);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .ct-body { grid-template-columns: 1fr; gap: 3rem; }
+      .ct-info > p { max-width: none; }
+    }
+    @media (max-width: 560px) {
+      .ct-row { grid-template-columns: 1fr; gap: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="ct-hero reveal">
+    <span class="ct-hero-label">Get in Touch</span>
+    <h1>Contact the Studio</h1>
+    <p>Commissions, custom sizing, gallery exhibitions, and press — Sarah replies personally to every note.</p>
+  </section>
+
+  <!-- Body -->
+  <div class="ct-body">
+
+    <!-- Left: Info -->
+    <aside class="ct-info reveal">
+      <span class="ct-info-label">/ Studio</span>
+      <h2>Let's talk.</h2>
+      <p>Whether you're searching for a particular piece, sizing for a specific wall, or thinking about a private commission — the studio is open. Most replies come within one to two days.</p>
+
+      <ul class="ct-details">
+        <li>
+          <span class="ct-detail-label">Studio</span>
+          <span class="ct-detail-value">Scottsdale, Arizona · United States</span>
+        </li>
+        <li>
+          <span class="ct-detail-label">Email</span>
+          <span class="ct-detail-value">
+            <a href="mailto:hello@slgmasterworks.com">hello@slgmasterworks.com</a>
+          </span>
+        </li>
+        <li>
+          <span class="ct-detail-label">Hours</span>
+          <span class="ct-detail-value">Monday – Friday · By appointment</span>
+        </li>
+        <li>
+          <span class="ct-detail-label">Response</span>
+          <span class="ct-detail-value">Within 1–2 business days</span>
+        </li>
+      </ul>
+
+    </aside>
+
+    <!-- Right: Form -->
+    <div class="ct-form-wrap reveal">
+      <span class="ct-form-label">/ Send a Note</span>
+      <h3 class="ct-form-title">Send a message</h3>
+      <form class="ct-form" data-contact-form novalidate>
+
+        <div class="ct-row">
+          <div class="ct-field">
+            <label for="ct-name">Name</label>
+            <input id="ct-name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="ct-field">
+            <label for="ct-email">Email</label>
+            <input id="ct-email" name="email" type="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+
+        <div class="ct-field ct-field-select">
+          <label>Inquiry Type</label>
+          <input type="hidden" name="subject" id="ct-subject" value="General Question" />
+          <div class="ct-dropdown" id="ctDropdown">
+            <button type="button" class="ct-dropdown-trigger" id="ctDropdownBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="ctDropdownLabel">General Question</span>
+              <svg class="ct-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="1,1 5,5 9,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="ct-dropdown-list" role="listbox" id="ctDropdownList">
+              <li role="option" data-value="General Question" class="ct-dropdown-opt active">General Question</li>
+              <li role="option" data-value="Custom Commission" class="ct-dropdown-opt">Custom Commission</li>
+              <li role="option" data-value="Custom Sizing" class="ct-dropdown-opt">Custom Sizing</li>
+              <li role="option" data-value="Purchase Enquiry" class="ct-dropdown-opt">Purchase Enquiry</li>
+              <li role="option" data-value="Gallery / Exhibition" class="ct-dropdown-opt">Gallery / Exhibition</li>
+              <li role="option" data-value="Press &amp; Media" class="ct-dropdown-opt">Press &amp; Media</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ct-field">
+          <label for="ct-message">Message</label>
+          <textarea id="ct-message" name="message" rows="4" placeholder="Tell me about the piece you have in mind, the wall you're filling, or simply say hello…" required></textarea>
+        </div>
+
+        <div class="ct-form-bottom">
+          <button type="submit" class="ct-submit"><span>Send Message</span></button>
+          <p class="ct-status" data-status></p>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="ct-divider" aria-hidden="true"><span></span></div>
+
+  <!-- Quote -->
+  <section class="ct-quote reveal">
+    <blockquote>"Every print has a story. I'd love to hear yours."</blockquote>
+    <cite>— Sarah L. Glabman</cite>
+  </section>
+
+  <script>
+    (function () {
+      const dropdown = document.getElementById('ctDropdown');
+      const btn      = document.getElementById('ctDropdownBtn');
+      const list     = document.getElementById('ctDropdownList');
+      const label    = document.getElementById('ctDropdownLabel');
+      const hidden   = document.getElementById('ct-subject');
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const open = dropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+
+      list.querySelectorAll('.ct-dropdown-opt').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          const val = opt.dataset.value;
+          hidden.value = val;
+          label.textContent = val;
+          list.querySelectorAll('.ct-dropdown-opt').forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+          dropdown.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    })();
+  </script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

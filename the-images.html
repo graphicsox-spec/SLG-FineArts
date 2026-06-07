@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Images — SLG Masterworks · Sarah L Glabman</title>
+  <meta name="description" content="Wildlife, Landscape, and Cityscape fine art photography collections by Sarah L Glabman. Limited-edition signed prints." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ================================================================
+       THE IMAGES — Master Collections Page
+       3 full-height panels stacked vertically.
+       Each panel: full-bleed image + dark overlay + Oswald heading.
+       Clicking the panel goes to the filtered collection page.
+       ================================================================ */
+
+    body { background: #0D1B35; }
+
+    /* Page header */
+    .ti-page-head {
+      background: #0D1B35;
+      text-align: center;
+      padding: clamp(4rem, 8vw, 7rem) var(--gutter) 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .ti-page-head .section-label { color: rgba(255,255,255,.4); margin-bottom: .5rem; }
+    .ti-page-head h1 {
+      font-family: var(--title);
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 300;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .ti-page-head p {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.4);
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Collections wrapper */
+    .ti-collections {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Single collection panel */
+    .ti-panel {
+      position: relative;
+      height: 80vh;
+      min-height: 480px;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .ti-panel img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.4s cubic-bezier(.25,.1,.25,1), filter 0.5s ease;
+      filter: brightness(.55) saturate(0.85);
+    }
+    .ti-panel:hover img {
+      transform: scale(1.04);
+      filter: brightness(.45) saturate(0.75);
+    }
+
+    /* Overlay gradient */
+    .ti-panel::before {
+      content: "";
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right, rgba(0,0,0,.6) 0%, transparent 60%),
+        linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.5) 100%);
+      transition: opacity .5s ease;
+    }
+    .ti-panel:hover::before { opacity: 1.2; }
+
+    /* Panel content */
+    .ti-panel-content {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(2rem, 4vw, 4rem) clamp(2rem, 5vw, 5rem);
+      max-width: 700px;
+    }
+
+    .ti-panel-index {
+      font-family: var(--display);
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: .75rem;
+    }
+    .ti-panel-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 0.95;
+      margin-bottom: 1.2rem;
+      transition: color .35s ease;
+    }
+    .ti-panel:hover .ti-panel-title { color: var(--footer-heading); }
+
+    .ti-panel-desc {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      max-width: 42ch;
+      margin-bottom: 2rem;
+      transition: color .35s ease;
+    }
+    .ti-panel:hover .ti-panel-desc { color: rgba(255,255,255,.7); }
+
+    .ti-panel-cta {
+      display: inline-flex; align-items: center; gap: .75rem;
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: .7rem 1.6rem;
+      width: fit-content;
+      transition: color .35s ease, border-color .35s ease, background .35s ease;
+    }
+    .ti-panel:hover .ti-panel-cta {
+      color: #fff;
+      border-color: var(--footer-heading);
+      background: rgba(201,168,76,.12);
+    }
+    .ti-panel-cta .arr { transition: transform .35s ease; }
+    .ti-panel:hover .ti-panel-cta .arr { transform: translateX(5px); }
+
+    /* Thin separator line between panels */
+    .ti-panel + .ti-panel::after {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,.06);
+      z-index: 5;
+    }
+
+    /* Right-side collection count badge */
+    .ti-panel-badge {
+      position: absolute;
+      right: clamp(2rem, 5vw, 5rem);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      text-align: right;
+    }
+    .ti-panel-badge strong {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 400;
+      color: rgba(255,255,255,.06);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      transition: color .5s ease;
+    }
+    .ti-panel:hover .ti-panel-badge strong { color: rgba(201,168,76,.12); }
+    .ti-panel-badge span {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.18);
+    }
+
+    /* ================================================================
+       ALL WORKS — lik-style filterable gallery (light section)
+       ================================================================ */
+    .ti-gallery {
+      background: var(--bg, #fff);
+      padding: clamp(3.5rem, 7vw, 6rem) var(--gutter);
+    }
+    .ti-gallery-head {
+      max-width: var(--max);
+      margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+      text-align: center;
+    }
+    .ti-gallery-head .section-label { color: var(--gold-deep); margin-bottom: .6rem; display: block; }
+    .ti-gallery-head h2 {
+      font-family: var(--title);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--ink);
+      letter-spacing: -.02em;
+      margin: 0 0 1rem;
+    }
+    .ti-gallery-head p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--ink-muted);
+      max-width: 56ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .ti-gallery-layout {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .ti-filters { position: sticky; top: calc(var(--nav-h, 72px) + 1rem); }
+    .ti-filter-group { margin-bottom: 2rem; }
+    .ti-filter-group h3 {
+      font-family: var(--display);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin: 0 0 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .ti-filter {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: .95rem;
+      color: var(--ink-muted);
+      padding: .45rem 0;
+      transition: color .2s;
+    }
+    .ti-filter:hover { color: var(--ink); }
+    .ti-filter.active { color: var(--gold-deep); font-weight: 600; }
+
+    /* Grid */
+    .ti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    /* whole card is one gray box — image + caption inside (lik-style) */
+    .ti-work {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-2);
+      padding: 1.5rem 1.5rem 1.6rem;
+    }
+    .ti-work-figure {
+      height: clamp(280px, 24vw, 360px);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ti-work-figure img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform .6s var(--ease);
+    }
+    .ti-work:hover .ti-work-figure img { transform: scale(1.04); }
+    /* centered caption inside the box */
+    .ti-work-info { padding-top: 1.2rem; text-align: center; }
+    .ti-work-title {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--blue-deep);
+      margin: 0 0 .4rem;
+    }
+    .ti-edlabel {
+      display: block;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: .6rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: .4rem;
+    }
+    .ti-work-price {
+      display: block;
+      font-family: var(--title);
+      font-size: 1.05rem;
+      color: var(--blue-deep);
+    }
+    .ti-empty { grid-column: 1/-1; text-align: center; color: var(--ink-muted); font-family: var(--sans); padding: 2.5rem 0; display: none; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .ti-gallery-layout { grid-template-columns: 1fr; }
+      .ti-filters { position: static; display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin-bottom: 1rem; }
+      .ti-filter-group { margin-bottom: 0; }
+    }
+    @media (max-width: 640px) {
+      .ti-panel { height: 70vh; }
+      .ti-panel-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by components.js -->
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <div class="ti-page-head">
+    <span class="section-label">Collections</span>
+    <h1>The Images</h1>
+    <p>Every limited-edition print — wildlife, landscape, and cityscape. All fine art, all signed. Filter by collection or orientation to find your piece.</p>
+  </div>
+
+  <!-- ============================================================
+       ALL WORKS — filterable gallery (lik-style)
+       ============================================================ -->
+  <section class="ti-gallery">
+    <div class="ti-gallery-layout">
+      <!-- Sidebar filters -->
+      <aside class="ti-filters" aria-label="Filter works">
+        <div class="ti-filter-group">
+          <h3>Collections</h3>
+          <button class="ti-filter active" data-ftype="collection" data-value="all">View All</button>
+          <button class="ti-filter" data-ftype="collection" data-value="wildlife">Wildlife</button>
+          <button class="ti-filter" data-ftype="collection" data-value="landscape">Landscape</button>
+          <button class="ti-filter" data-ftype="collection" data-value="cityscape">Cityscape</button>
+        </div>
+        <div class="ti-filter-group">
+          <h3>Highlights</h3>
+          <button class="ti-filter active" data-ftype="tag" data-value="all">All</button>
+          <button class="ti-filter" data-ftype="tag" data-value="new">New Arrivals</button>
+          <button class="ti-filter" data-ftype="tag" data-value="best">Best Sellers</button>
+        </div>
+        <div class="ti-filter-group">
+          <h3>Orientation</h3>
+          <button class="ti-filter active" data-ftype="orientation" data-value="all">All</button>
+          <button class="ti-filter" data-ftype="orientation" data-value="horizontal">Horizontal</button>
+          <button class="ti-filter" data-ftype="orientation" data-value="vertical">Vertical</button>
+        </div>
+      </aside>
+
+      <!-- Works grid -->
+      <div class="ti-grid" id="tiGrid">
+
+        <a class="ti-work" href="collections/baby-leopard.html" data-collection="wildlife" data-orientation="vertical" data-tags="new,best">
+          <div class="ti-work-figure">
+            <img src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="First Descent — Wildlife" />
+          </div>
+          <div class="ti-work-info">
+            <span class="ti-edlabel">Limited Edition</span>
+            <h3 class="ti-work-title">First Descent</h3>
+            <span class="ti-work-price">From $2,800</span>
+          </div>
+        </a>
+
+        <a class="ti-work" href="collections/moonrise-namibia.html" data-collection="landscape" data-orientation="horizontal" data-tags="new">
+          <div class="ti-work-figure">
+            <img src="assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg" alt="Moonrise Namibia — Landscape" />
+          </div>
+          <div class="ti-work-info">
+            <span class="ti-edlabel">Limited Edition</span>
+            <h3 class="ti-work-title">Moonrise Namibia</h3>
+            <span class="ti-work-price">From $960</span>
+          </div>
+        </a>
+
+        <a class="ti-work" href="collections/beneath-the-pier.html" data-collection="cityscape" data-orientation="vertical" data-tags="new,best">
+          <div class="ti-work-figure">
+            <img src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — Cityscape" />
+          </div>
+          <div class="ti-work-info">
+            <span class="ti-edlabel">Limited Edition</span>
+            <h3 class="ti-work-title">Beneath the Pier</h3>
+            <span class="ti-work-price">From $4,600</span>
+          </div>
+        </a>
+
+        <p class="ti-empty" data-empty>No works match these filters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
+
+  <script>
+    /* All Works — collection × highlight × orientation filter */
+    (function () {
+      const grid    = document.getElementById('tiGrid');
+      if (!grid) return;
+      const works   = Array.from(grid.querySelectorAll('.ti-work'));
+      const emptyEl = grid.querySelector('[data-empty]');
+      const buttons = Array.from(document.querySelectorAll('.ti-filter'));
+      const active  = { collection: 'all', orientation: 'all', tag: 'all' };
+
+      function apply() {
+        let visible = 0;
+        works.forEach(w => {
+          const okC = active.collection === 'all' || w.dataset.collection === active.collection;
+          const okO = active.orientation === 'all' || w.dataset.orientation === active.orientation;
+          const tags = (w.dataset.tags || '').split(',');
+          const okT = active.tag === 'all' || tags.indexOf(active.tag) !== -1;
+          const show = okC && okO && okT;
+          w.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (emptyEl) emptyEl.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      function setFilter(type, value) {
+        const btns = document.querySelectorAll('.ti-filter[data-ftype="' + type + '"]');
+        let matched = false;
+        btns.forEach(b => {
+          const on = b.dataset.value === value;
+          b.classList.toggle('active', on);
+          if (on) matched = true;
+        });
+        if (matched) active[type] = value;
+      }
+
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        setFilter(btn.dataset.ftype, btn.dataset.value);
+        apply();
+      }));
+
+      /* Apply collection from URL (?collection=wildlife) — used by footer links */
+      const urlCollection = new URLSearchParams(window.location.search).get('collection');
+      if (urlCollection) setFilter('collection', urlCollection.toLowerCase());
+
+      apply();
+    })();
+  </script>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Showroom — SLG Masterworks · Sarah L Glabman</title>
+  <meta name="description" content="View limited-edition fine art prints by Sarah L Glabman in real room settings. Wildlife, coastal, and landscape — exclusively on SLGMasterworks.com." />
+  <meta name="theme-color" content="#0D1B35" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ── Page base ── */
+    body { background: #fff; }
+
+    /* ── Hero header ── */
+    .sr-hero {
+      background: var(--navy-bg, #0D1B35);
+      text-align: center;
+      padding: clamp(5.5rem, 11vw, 9rem) var(--gutter) 4rem;
+    }
+    .sr-hero .section-label {
+      display: block;
+      color: rgba(255,255,255,.38);
+      letter-spacing: .18em;
+      margin-bottom: .7rem;
+      font-size: .72rem;
+    }
+    .sr-hero h1 {
+      font-family: var(--title);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: -.02em;
+      margin-bottom: 1.1rem;
+    }
+    .sr-hero p {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.42);
+      max-width: 50ch;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── Artwork section ── */
+    .artwork-section {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      min-height: 88vh;
+    }
+    /* Alternate: odd sections image-left, even image-right */
+    .artwork-section:nth-child(even) .artwork-viewer { order: 2; }
+    .artwork-section:nth-child(even) .artwork-info   { order: 1; }
+
+    /* ── Viewer (image + thumbnails) ── */
+    .artwork-viewer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+      padding: 2.5rem var(--gutter) 2.5rem 3rem;
+    }
+    .artwork-main {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 400px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.18);
+    }
+    .artwork-main img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: opacity .25s ease;
+    }
+
+    /* Thumbnails strip — hidden, JS still uses for slideshow */
+    .artwork-thumbs { display: none; }
+
+    .art-thumb {
+      flex-shrink: 0;
+      width: 90px;
+      border: 2px solid transparent;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .25rem;
+      transition: border-color .18s;
+    }
+    .art-thumb img {
+      width: 90px;
+      height: 64px;
+      object-fit: cover;
+      display: block;
+    }
+    .art-thumb span {
+      font-size: .63rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #888;
+      white-space: nowrap;
+    }
+    .art-thumb.active { border-color: var(--gold, #C9A84C); }
+    .art-thumb:hover:not(.active) { border-color: rgba(201,168,76,.45); }
+
+    /* ── Info panel ── */
+    .artwork-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 5vw, 5rem) clamp(2.5rem, 5vw, 5rem);
+      background: #fff;
+    }
+    .artwork-category {
+      display: block;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold, #C9A84C);
+      margin-bottom: .6rem;
+    }
+    .artwork-title {
+      font-family: var(--title);
+      font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: .5rem;
+    }
+    .artwork-sub {
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: .6rem;
+    }
+    .artwork-desc {
+      font-size: .95rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 2rem;
+      max-width: 46ch;
+    }
+
+    /* Sizes */
+    .artwork-sizes {
+      margin-bottom: 2rem;
+    }
+    .artwork-sizes h4 {
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: .7rem;
+    }
+    .size-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+    .size-pill {
+      padding: .35rem .85rem;
+      border: 1px solid rgba(0,0,0,.12);
+      font-size: .74rem;
+      letter-spacing: .06em;
+      color: #666;
+      background: #F7F5F2;
+    }
+
+    /* Price + CTA */
+    .artwork-footer {
+      padding-top: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .artwork-price {
+      flex: 1;
+    }
+    .artwork-price small {
+      display: block;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: .2rem;
+    }
+    .artwork-price strong {
+      font-family: var(--title);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--ink);
+    }
+    .artwork-actions {
+      display: flex;
+      flex-direction: row;
+      gap: .8rem;
+    }
+    .artwork-actions a {
+      flex: 1;
+      text-align: center;
+    }
+    .btn-enquire {
+      display: inline-block;
+      padding: .85rem 2rem;
+      background: var(--ink);
+      color: #fff !important;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      text-align: center;
+      white-space: nowrap;
+      transition: background .2s, color .2s;
+    }
+    .btn-enquire:hover { background: var(--gold, #C9A84C); color: #fff !important; }
+    .btn-view-detail {
+      display: inline-block;
+      padding: .8rem 2rem;
+      border: 1px solid rgba(0,0,0,.15);
+      color: #777 !important;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      text-align: center;
+      white-space: nowrap;
+      transition: all .2s;
+    }
+    .btn-view-detail:hover { border-color: var(--ink); color: var(--ink) !important; }
+
+    /* ── Slide dots ── */
+    .slide-dots {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: .5rem;
+      z-index: 5;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,.8);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      transition: background .2s, transform .2s;
+    }
+    .slide-dot.active {
+      background: #fff;
+      transform: scale(1.25);
+    }
+    .slide-dot:hover { background: rgba(255,255,255,.6); }
+
+    /* ── Edition number badge ── */
+    .edition-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--gold, #C9A84C);
+      color: #fff;
+      font-size: .63rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .28rem .7rem;
+      z-index: 2;
+    }
+
+    /* ── Section divider — matches nav-inner alignment exactly ── */
+    .sr-divider {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      box-sizing: border-box;
+    }
+    .sr-divider::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: rgba(0,0,0,.1);
+    }
+    .sr-divider span { display: none; }
+
+    /* ── Commission CTA ── */
+    .sr-commission {
+      background: #F6F5F2;
+      text-align: center;
+      padding: clamp(4rem, 8vw, 7rem) var(--gutter);
+    }
+    .sr-commission .section-label { color: rgba(0,0,0,.4); display: block; margin-bottom: .5rem; }
+    .sr-commission h2 {
+      font-family: var(--title);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--ink, #0D1B35);
+      margin-bottom: 1rem;
+    }
+    .sr-commission p {
+      font-size: .95rem;
+      color: #555;
+      max-width: 48ch;
+      margin: 0 auto 2.2rem;
+      line-height: 1.75;
+    }
+    .btn-gold-outline {
+      display: inline-block;
+      padding: .9rem 2.4rem;
+      border: 1px solid var(--gold, #C9A84C);
+      color: var(--gold, #C9A84C);
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .btn-gold-outline:hover { background: var(--gold, #C9A84C); color: #fff; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .artwork-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .artwork-section:nth-child(even) .artwork-viewer,
+      .artwork-section:nth-child(even) .artwork-info { order: unset; }
+      .artwork-viewer { min-height: 65vw; }
+      .artwork-main img { padding: 1.5rem; }
+      .artwork-info { padding: 2.5rem 1.8rem 3rem; }
+      .artwork-footer { flex-direction: column; align-items: flex-start; }
+      .artwork-actions { flex-direction: row; }
+    }
+    @media (max-width: 560px) {
+      .art-thumb { width: 72px; }
+      .art-thumb img { width: 72px; height: 52px; }
+      .artwork-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="sr-hero">
+    <span class="section-label">Limited Editions · Exclusively Here</span>
+    <h1>Showroom</h1>
+    <p>Each work is available only on SLGMasterworks.com — hand-signed, museum-quality, and strictly limited. Click any thumbnail to see the print in a real room.</p>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       01 — FIRST DESCENT (Baby Leopard)
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="first-descent" style="margin-top:3rem;">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Featured · Limited</span>
+        <div class="slide-dots" id="leo-dots"></div>
+        <img id="leo-img"
+             src="assets/images/Wildlife/baby-40x60 no frame.jpg"
+             alt="First Descent — Baby Leopard" />
+      </div>
+      <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/Wildlife/baby-40x60 no frame.jpg"
+                onclick="swap('leo-img', this, 'assets/images/Wildlife/baby-40x60 no frame.jpg')">
+          <img src="assets/images/Wildlife/baby-40x60 no frame.jpg" alt="Room — No Frame" />
+          <span>40×60 Unframed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Wildlife/baby-leopard 32x48 framed.jpg"
+                onclick="swap('leo-img', this, 'assets/images/Wildlife/baby-leopard 32x48 framed.jpg')">
+          <img src="assets/images/Wildlife/baby-leopard 32x48 framed.jpg" alt="Room — Framed" />
+          <span>32×48 Framed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Wildlife/baby-leopard 32x48 no frame.jpg"
+                onclick="swap('leo-img', this, 'assets/images/Wildlife/baby-leopard 32x48 no frame.jpg')">
+          <img src="assets/images/Wildlife/baby-leopard 32x48 no frame.jpg" alt="Room — No Frame" />
+          <span>32×48 Unframed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Wildlife/baby-leopard 40x60 framed.jpg"
+                onclick="swap('leo-img', this, 'assets/images/Wildlife/baby-leopard 40x60 framed.jpg')">
+          <img src="assets/images/Wildlife/baby-leopard 40x60 framed.jpg" alt="Room — 40x60 Framed" />
+          <span>40×60 Framed</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Wildlife · Mala Mala, South Africa</span>
+      <h2 class="artwork-title">First Descent</h2>
+      <p class="artwork-sub">Baby Leopard · Limited Edition</p>
+      <p class="artwork-desc">A rare and fleeting moment — a leopard cub's very first descent from a tree, captured in extraordinary detail deep in the African bush. Hand-signed by Sarah L Glabman. Not available anywhere else.</p>
+      <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="collections/baby-leopard.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+
+  </article>
+
+
+  <div class="sr-divider"><span>02</span></div>
+
+
+  <!-- ══════════════════════════════════════════
+       02 — BENEATH THE PIER
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="beneath-the-pier">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Limited Edition</span>
+        <div class="slide-dots" id="pier-dots"></div>
+        <img id="pier-img"
+             src="assets/images/Beneath the Pier/Pier Unframed 32x48.jpg"
+             alt="Beneath the Pier — Capitola" />
+      </div>
+      <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/Beneath the Pier/Pier Unframed 32x48.jpg"
+                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier Unframed 32x48.jpg')">
+          <img src="assets/images/Beneath the Pier/Pier Unframed 32x48.jpg" alt="32x48 Unframed" />
+          <span>32×48 Unframed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Beneath the Pier/Pier frmaed 40x60.jpg"
+                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier frmaed 40x60.jpg')">
+          <img src="assets/images/Beneath the Pier/Pier frmaed 40x60.jpg" alt="40x60 Framed" />
+          <span>40×60 Framed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Beneath the Pier/Pier unframed 40x60.jpg"
+                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier unframed 40x60.jpg')">
+          <img src="assets/images/Beneath the Pier/Pier unframed 40x60.jpg" alt="40x60 Unframed" />
+          <span>40×60 Unframed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Beneath the Pier/Pier framed 48x72.jpg"
+                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier framed 48x72.jpg')">
+          <img src="assets/images/Beneath the Pier/Pier framed 48x72.jpg" alt="48x72 Framed" />
+          <span>48×72 Framed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Beneath the Pier/Pier unframed 48x72.jpg"
+                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier unframed 48x72.jpg')">
+          <img src="assets/images/Beneath the Pier/Pier unframed 48x72.jpg" alt="48x72 Unframed" />
+          <span>48×72 Unframed</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Coastal · Capitola, California</span>
+      <h2 class="artwork-title">Beneath the Pier</h2>
+      <p class="artwork-sub">Capitola Wharf · Limited Edition</p>
+      <p class="artwork-desc">Looking up through the weathered pilings of Capitola Pier as the Pacific rolls in — a meditative study of light, structure, and time. Available in large-format sizes, hand-signed and numbered by Sarah.</p>
+      <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="collections/beneath-the-pier.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+
+  </article>
+
+
+  <div class="sr-divider"><span>03</span></div>
+
+
+  <!-- ══════════════════════════════════════════
+       03 — MOONRISE NAMIBIA
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="moonrise-namibia">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Limited Edition</span>
+        <div class="slide-dots" id="moon-dots"></div>
+        <img id="moon-img"
+             src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg"
+             alt="Moonrise Namibia" />
+      </div>
+      <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg"
+                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg')">
+          <img src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg" alt="24x36 Framed" />
+          <span>24×36 Framed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg"
+                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg')">
+          <img src="assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg" alt="24x36 Unframed" />
+          <span>24×36 Unframed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg"
+                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg')">
+          <img src="assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg" alt="32x48 Framed" />
+          <span>32×48 Framed</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg"
+                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg')">
+          <img src="assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg" alt="32x48 Unframed" />
+          <span>32×48 Unframed</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Landscape · Namibia, Africa</span>
+      <h2 class="artwork-title">Moonrise Namibia</h2>
+      <p class="artwork-sub">Sossusvlei Desert · Limited Edition</p>
+      <p class="artwork-desc">The moon cresting the ancient dunes of Namibia at dusk — a vast, silent landscape suspended between two worlds. Printed to gallery scale on archival paper, hand-signed and numbered.</p>
+      <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="collections/moonrise-namibia.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+
+  </article>
+
+
+  <!-- Commission strip -->
+  <div class="sr-commission">
+    <span class="section-label">Bespoke Commissions</span>
+    <h2>Something specific in mind?</h2>
+    <p>Sarah accepts a limited number of custom commission requests each season — a particular size, a private archive image, or a framing consultation.</p>
+    <a href="contact.html" class="btn-gold-outline">Request a Commission</a>
+  </div>
+
+  <!-- Slideshow JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.artwork-section').forEach(function(section) {
+        const thumbs = Array.from(section.querySelectorAll('.art-thumb[data-src]'));
+        if (!thumbs.length) return;
+        const img   = section.querySelector('.artwork-main img');
+        const dotsEl = section.querySelector('.slide-dots');
+        let idx = 0, timer;
+
+        // Build dots
+        thumbs.forEach(function(_, i) {
+          const d = document.createElement('button');
+          d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', 'View ' + (i+1));
+          d.addEventListener('click', function() { goTo(i); resetTimer(); });
+          dotsEl.appendChild(d);
+        });
+
+        function goTo(i) {
+          idx = i;
+          img.style.opacity = '0';
+          setTimeout(function() {
+            img.src = thumbs[idx].dataset.src;
+            img.style.opacity = '1';
+          }, 200);
+          thumbs.forEach(function(t) { t.classList.remove('active'); });
+          thumbs[idx].classList.add('active');
+          dotsEl.querySelectorAll('.slide-dot').forEach(function(d, j) {
+            d.classList.toggle('active', j === idx);
+          });
+        }
+
+        function advance() { goTo((idx + 1) % thumbs.length); }
+        function start()   { timer = setInterval(advance, 3500); }
+        function stop()    { clearInterval(timer); }
+        function resetTimer() { stop(); start(); }
+
+        section.addEventListener('mouseenter', stop);
+        section.addEventListener('mouseleave', start);
+        start();
+      });
+    });
+  </script>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                        
