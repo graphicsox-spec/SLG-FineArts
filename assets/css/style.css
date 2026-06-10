@@ -1227,6 +1227,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   display: block;
   overflow: hidden;
   border-radius: 2px;
+  position: relative;
 }
 .na-right img {
   width: 100%; height: 100%;
@@ -1235,6 +1236,26 @@ body.is-homepage .hero-slider { height: 100vh; }
   transition: transform .8s ease;
 }
 .na-right:hover img { transform: scale(1.03); }
+
+/* ── Cinematic slideshow (3 images, slow zoom + crossfade loop) ── */
+.na-slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+  will-change: transform, opacity;
+}
+.na-slide.is-on {
+  opacity: 1;
+  animation: na-kenburns 8s ease-out forwards;
+}
+/* outgoing slide keeps its zoomed state so the crossfade has no jump */
+.na-slide.is-off { transform: scale(1.12); }
+@keyframes na-kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
 
 @media (max-width: 768px) {
   .new-arrivals-split { grid-template-columns: 1fr; height: auto; }

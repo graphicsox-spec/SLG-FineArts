@@ -101,9 +101,11 @@
       <a href="shop.html" class="na-cta">Explore New Arrivals &nbsp;→</a>
     </div>
 
-    <!-- Right: one large image -->
+    <!-- Right: cinematic slideshow (3 images) -->
     <a href="collections/baby-leopard.html" class="na-right reveal">
-      <img src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="Baby Leopard" />
+      <img class="na-slide is-on" src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="Baby Leopard" />
+      <img class="na-slide" src="assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg" alt="Moonrise Namibia" />
+      <img class="na-slide" src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — California Coast" />
     </a>
   </section>
 
@@ -121,9 +123,11 @@
         <a href="shop.html" class="na-cta">View All Best Sellers &nbsp;→</a>
       </div>
 
-      <!-- Right: one large image -->
+      <!-- Right: cinematic slideshow (3 images) -->
       <a href="collections/beneath-the-pier.html" class="na-right reveal">
-        <img src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — California Coast" />
+        <img class="na-slide is-on" src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — California Coast" />
+        <img class="na-slide" src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="Baby Leopard" />
+        <img class="na-slide" src="assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg" alt="Moonrise Namibia" />
       </a>
     </div>
   </section>
@@ -187,5 +191,21 @@
        ============================================================ -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Cinematic slideshows: New Arrivals + Best Sellers -->
+  <script>
+    document.querySelectorAll('.na-right').forEach(function (box) {
+      const slides = box.querySelectorAll('.na-slide');
+      if (slides.length < 2) return;
+      let i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('is-on');
+        slides[i].classList.add('is-off');
+        i = (i + 1) % slides.length;
+        slides[i].classList.remove('is-off');
+        slides[i].classList.add('is-on');
+      }, 6000);
+    });
+  </script>
 </body>
 </html>
