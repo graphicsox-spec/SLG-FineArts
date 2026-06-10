@@ -43,9 +43,14 @@
       font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.42);
-      max-width: 56ch;
+      max-width: 76ch; /* wide enough for 2 lines */
       margin: 0 auto;
       line-height: 1.75;
+    }
+    /* Mobile: shorter copy + slightly smaller text so it stays on 2 lines */
+    @media (max-width: 640px) {
+      .ti-page-head p { font-size: .9rem; max-width: none; }
+      .ti-head-extra { display: none; }
     }
 
     /* Collections wrapper */
@@ -340,7 +345,7 @@
   <div class="ti-page-head">
     <span class="section-label">Collections</span>
     <h1>The Images</h1>
-    <p>Every limited-edition print — wildlife, landscape, and cityscape. All fine art, all signed. Filter by collection or orientation to find your piece.</p>
+    <p>Every limited-edition print — wildlife, landscape, and cityscape. All fine art, all signed.<span class="ti-head-extra"> Filter by collection or orientation to find your piece.</span></p>
   </div>
 
   <!-- ============================================================
@@ -449,11 +454,4 @@
         if (matched) active[type] = value;
       }
 
-      buttons.forEach(btn => btn.addEventListener('click', () => {
-        setFilter(btn.dataset.ftype, btn.dataset.value);
-        apply();
-      }));
-
-      /* Apply collection from URL (?collection=wildlife) — used by footer links */
-      const urlCollection = new URLSearchParams(window.location.search).get('collection');
-      if (urlC
+      buttons.forEach(btn => btn.addEventListener('click', () 
