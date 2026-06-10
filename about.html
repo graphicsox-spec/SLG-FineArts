@@ -77,10 +77,13 @@
       font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.5);
-      max-width: 56ch;
+      max-width: 76ch; /* same paragraph width on every page header */
       line-height: 1.75;
       margin: 0 auto;
       text-align: center;
+    }
+    @media (max-width: 640px) {
+      .ab-hero-sub { font-size: .9rem; max-width: none; }
     }
     /* scroll hint — hidden now that the hero is a compact band */
     .ab-scroll-hint {
@@ -520,9 +523,4 @@
       <span class="ab-section-label">/ The Process</span>
       <h2>Captured,<br>then crafted.</h2>
       <p>Each photograph is captured in the field on professional equipment, then carefully refined in the studio with a light touch — preserving the truth of the moment, not invented from it.</p>
-      <p>Prints are produced on archival cotton-rag paper or gallery-wrapped canvas, color-tested for longevity, then signed and packaged by hand from the studio in Scottsdale, Arizona.</p>
-    </div>
-  </section>
-
-  <!-- ── Philosophy ── -->
-  <div class="ab
+      <p>Prints are produced on archival cotton-rag paper or gallery-wrapped canvas, color-tested for longevity, then signe

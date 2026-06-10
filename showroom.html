@@ -43,9 +43,12 @@
       font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.42);
-      max-width: 50ch;
+      max-width: 76ch; /* same paragraph width on every page header */
       margin: 0 auto;
       line-height: 1.75;
+    }
+    @media (max-width: 640px) {
+      .sr-hero p { font-size: .9rem; max-width: none; }
     }
 
     /* ── Artwork section ── */
@@ -596,7 +599,4 @@
   </script>
 
   <script src="assets/js/components.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
-                                                                                                               
+  <script src="assets/js/main

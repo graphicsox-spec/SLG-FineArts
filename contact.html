@@ -54,9 +54,12 @@
       font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.42);
-      max-width: 56ch;
+      max-width: 76ch; /* same paragraph width on every page header */
       margin: 0 auto;
       line-height: 1.75;
+    }
+    @media (max-width: 640px) {
+      .ct-hero p { font-size: .9rem; max-width: none; }
     }
 
     /* ── Main body: two columns ── */
@@ -503,9 +506,4 @@
           opt.classList.add('active');
           dropdown.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      document.addEventListener('click', function () {
-        dropdown.classList.remove('open');
-        btn.setAttribute('ar
+       

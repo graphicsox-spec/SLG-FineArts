@@ -47,9 +47,14 @@
       font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.42);
-      max-width: 56ch;
+      max-width: 76ch; /* same paragraph width on every page header */
       margin: 0 auto;
       line-height: 1.75;
+    }
+    /* Mobile: shorter copy + slightly smaller text */
+    @media (max-width: 640px) {
+      .shop-hero p { font-size: .9rem; max-width: none; }
+      .shop-head-extra { display: none; }
     }
 
     /* ── Layout: left sidebar controls + grid ── */
@@ -232,7 +237,7 @@
     <section class="shop-hero">
       <span class="section-label">The Shop</span>
       <h1>Fine Art Prints</h1>
-      <p>Browse the full collection of Sarah's wildlife, landscape, and cityscape work — every print hand-signed, museum-quality, and shipped across North America & Canada. Use the filters below to find your piece.</p>
+      <p>Browse the full collection of Sarah's wildlife, landscape, and cityscape work — every print hand-signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.<span class="shop-head-extra"> Use the filters below to find your piece.</span></p>
     </section>
 
     <!-- Layout: left sidebar controls + grid -->
@@ -355,11 +360,4 @@
         });
 
         if (countEl) countEl.textContent = visible + (visible === 1 ? ' Edition' : ' Editions');
-        emptyEl.style.display = visible === 0 ? 'block' : 'none';
-      }
-
-      buttons.forEach(btn => btn.addEventListener('click', () => {
-        const type = btn.dataset.ftype;
-        document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        active[type] = btn.dataset
+        emptyEl.style.display = visible === 0 ? 'block'
