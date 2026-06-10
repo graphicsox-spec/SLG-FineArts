@@ -51,9 +51,12 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   font-family: var(--sans);
   color: var(--ink);
   background: var(--bg);
@@ -1260,7 +1263,27 @@ body.is-homepage .hero-slider { height: 100vh; }
   .nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; padding: .5rem; cursor: pointer; }
   .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: transform .3s ease, opacity .3s ease; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-photo-bg { display: none; }
+
+  /* Mobile: same faded photo-as-background look as desktop, anchored to the bottom */
+  .footer { min-height: 0; }
+  .footer-photo-bg {
+    display: block;
+    inset: auto 0 0 0;                /* full width, anchored to the bottom */
+    height: 475px;                    /* taller image band */
+    z-index: 0;
+  }
+  .footer-photo-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 20% bottom;      /* Sarah shifted left, clear of the text */
+    opacity: 0.55;
+    /* fade the image top seamlessly into the navy — no hard edge/line */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+  }
+  .footer-photo-bg::before,
+  .footer-photo-bg::after { display: none; }     /* no overlay seam on mobile */
+  .footer-content { padding-bottom: 3rem; }
   .footer-bottom { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0.75rem; }
   .footer-bottom .footer-copy, .footer-bottom .dev-credit, .footer-bottom .socials { justify-self: center; }
   .mega-grid { grid-template-columns: 1fr; }
@@ -1622,6 +1645,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   cursor: pointer;
   position: relative;
   user-select: none;
+  padding-right: 1.5rem; /* reserve space for the +/– toggle icon */
 }
 .ti-filter-group > h3::after,
 .shop-filter-group > h3::after {
