@@ -506,4 +506,16 @@
           opt.classList.add('active');
           dropdown.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
-       
+        });
+      });
+
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    })();
+  </script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

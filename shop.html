@@ -360,4 +360,22 @@
         });
 
         if (countEl) countEl.textContent = visible + (visible === 1 ? ' Edition' : ' Editions');
-        emptyEl.style.display = visible === 0 ? 'block'
+        emptyEl.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        const type = btn.dataset.ftype;
+        document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        active[type] = btn.dataset.value;
+        apply();
+      }));
+
+      apply();
+    })();
+  </script>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

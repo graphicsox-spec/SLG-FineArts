@@ -454,4 +454,20 @@
         if (matched) active[type] = value;
       }
 
-      buttons.forEach(btn => btn.addEventListener('click', () 
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        setFilter(btn.dataset.ftype, btn.dataset.value);
+        apply();
+      }));
+
+      /* Apply collection from URL (?collection=wildlife) — used by footer links */
+      const urlCollection = new URLSearchParams(window.location.search).get('collection');
+      if (urlCollection) setFilter('collection', urlCollection.toLowerCase());
+
+      apply();
+    })();
+  </script>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
