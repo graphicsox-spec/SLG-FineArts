@@ -23,13 +23,16 @@
     .ti-page-head {
       background: #0D1B35;
       text-align: center;
-      padding: clamp(4rem, 8vw, 7rem) var(--gutter) 3rem;
+      /* uniform page-header band — same on every page */
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      min-height: clamp(380px, 32vw, 437px);
+      display: flex; flex-direction: column; justify-content: center;
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .ti-page-head .section-label { color: rgba(255,255,255,.4); margin-bottom: .5rem; }
     .ti-page-head h1 {
       font-family: var(--title);
-      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-size: clamp(3rem, 7vw, 6rem); /* same as shop hero */
       font-weight: 300;
       color: #FFFFFF;
       letter-spacing: -0.03em;
@@ -37,12 +40,12 @@
     }
     .ti-page-head p {
       font-family: var(--sans);
-      font-size: 1rem;
+      font-size: .95rem;
       font-weight: 300;
-      color: rgba(255,255,255,.4);
-      max-width: 52ch;
+      color: rgba(255,255,255,.42);
+      max-width: 56ch;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     /* Collections wrapper */
@@ -453,13 +456,4 @@
 
       /* Apply collection from URL (?collection=wildlife) — used by footer links */
       const urlCollection = new URLSearchParams(window.location.search).get('collection');
-      if (urlCollection) setFilter('collection', urlCollection.toLowerCase());
-
-      apply();
-    })();
-  </script>
-
-  <script src="assets/js/components.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+      if (urlC

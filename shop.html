@@ -21,7 +21,10 @@
     .shop-hero {
       background: var(--navy-bg, #0D1B35);
       text-align: center;
-      padding: clamp(5.5rem, 11vw, 9rem) var(--gutter) 4rem;
+      /* uniform page-header band — same on every page */
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      min-height: clamp(380px, 32vw, 437px);
+      display: flex; flex-direction: column; justify-content: center;
     }
     .shop-hero .section-label {
       display: block;
@@ -359,15 +362,4 @@
         const type = btn.dataset.ftype;
         document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        active[type] = btn.dataset.value;
-        apply();
-      }));
-
-      apply();
-    })();
-  </script>
-
-  <script src="assets/js/components.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+        active[type] = btn.dataset

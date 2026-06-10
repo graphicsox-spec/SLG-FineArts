@@ -19,11 +19,12 @@
     ══════════════════════════════════════ */
     .ab-hero {
       position: relative;
-      height: 100vh;
-      min-height: 600px;
       overflow: hidden;
-      display: flex;
-      align-items: flex-end;
+      background: var(--navy-bg, #0D1B35);
+      /* uniform page-header band — same on every page */
+      padding: calc(var(--nav-h, 72px) + 1.5rem) 0 2.5rem;
+      min-height: clamp(380px, 32vw, 437px);
+      display: flex; flex-direction: column; justify-content: center;
     }
     .ab-hero-img {
       position: absolute;
@@ -34,16 +35,14 @@
       object-position: center 30%;
       display: block;
     }
-    /* gradient overlay — bottom-heavy so text reads */
+    /* dark navy overlay so text reads over the photo */
     .ab-hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(13,27,53,.1)  0%,
-        rgba(13,27,53,.0) 35%,
-        rgba(13,27,53,.55) 70%,
-        rgba(13,27,53,.88) 100%
+        rgba(13,27,53,.55) 0%,
+        rgba(13,27,53,.8) 100%
       );
     }
     .ab-hero-content {
@@ -52,7 +51,7 @@
       width: 100%;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 var(--gutter) clamp(3rem, 6vw, 5rem);
+      padding: 0 var(--gutter);
       text-align: center;
     }
     .ab-hero-sub { margin: 0 auto; }
@@ -63,11 +62,11 @@
       letter-spacing: .24em;
       text-transform: uppercase;
       color: var(--gold, #C9A84C);
-      margin-bottom: 1rem;
+      margin-bottom: .7rem;
     }
     .ab-hero h1 {
       font-family: var(--title);
-      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-size: clamp(3rem, 7vw, 6rem); /* same as shop hero */
       font-weight: 300;
       color: #fff;
       letter-spacing: -.025em;
@@ -75,16 +74,17 @@
       margin: 0 0 1.2rem;
     }
     .ab-hero-sub {
-      font-size: clamp(.9rem, 1.3vw, 1.05rem);
+      font-size: .95rem;
       font-weight: 300;
       color: rgba(255,255,255,.5);
-      max-width: 50ch;
-      line-height: 1.7;
+      max-width: 56ch;
+      line-height: 1.75;
       margin: 0 auto;
       text-align: center;
     }
-    /* scroll hint */
+    /* scroll hint — hidden now that the hero is a compact band */
     .ab-scroll-hint {
+      display: none;
       position: absolute;
       bottom: 2rem;
       right: var(--gutter);
@@ -525,43 +525,4 @@
   </section>
 
   <!-- ── Philosophy ── -->
-  <div class="ab-philosophy">
-    <div class="ab-philosophy-inner reveal">
-      <div class="ab-philosophy-text">
-        <span class="ab-section-label">/ The Philosophy</span>
-        <h2>Quiet attention.<br>Honest light.</h2>
-        <p>I'm drawn to scenes that reward the looker who slows down. A canyon doesn't ask to be seen — but if you sit with it long enough, it will tell you something. The same is true of the wildlife I photograph: I work to remain a guest, never a director.</p>
-        <p>My hope is that each print invites that same quiet attention into the room it lives in.</p>
-      </div>
-      <div class="ab-philosophy-img">
-        <img src="assets/images/Peace.jpg" alt="Sarah L Glabman on location" />
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Quote ── -->
-  <section class="ab-quote reveal">
-    <blockquote>"There is a kind of looking that is, finally, also a kind of listening."</blockquote>
-    <cite>— Studio Notes · Sarah L. Glabman</cite>
-  </section>
-
-  <!-- ── CTA ── -->
-  <div class="ab-cta">
-    <a class="ab-cta-card reveal" href="showroom.html">
-      <span class="ab-cta-card-label">Showroom</span>
-      <h3>View the Collection</h3>
-      <p>Limited editions, room mockups, and the full body of work — explore every piece.</p>
-      <span class="ab-cta-arrow">Browse Showroom →</span>
-    </a>
-    <a class="ab-cta-card reveal" href="contact.html">
-      <span class="ab-cta-card-label">Commission</span>
-      <h3>Work With Sarah</h3>
-      <p>Custom sizing, private commissions, and gallery inquiries — Sarah replies personally.</p>
-      <span class="ab-cta-arrow">Get in Touch →</span>
-    </a>
-  </div>
-
-  <script src="assets/js/components.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+  <div class="ab
