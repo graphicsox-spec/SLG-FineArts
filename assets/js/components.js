@@ -272,8 +272,8 @@
         </div>
         <div class="menu-body">
           <div class="menu-account">
-            <a href="${r}contact.html" class="menu-btn menu-btn-primary">Sign In</a>
-            <a href="${r}contact.html" class="menu-btn menu-btn-ghost">Create Account</a>
+            <a href="${r}account.html" class="menu-btn menu-btn-primary">Sign In</a>
+            <a href="${r}register.html" class="menu-btn menu-btn-ghost">Create Account</a>
           </div>
           <nav class="menu-nav">
             <a href="${r}the-images.html">The Images</a>
