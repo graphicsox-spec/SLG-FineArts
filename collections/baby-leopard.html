@@ -214,13 +214,15 @@
     const PRODUCT = {
       images: {
         hero: '../assets/images/Wildlife/Leopard-9265-no-blood-web.jpg',
-        '32x48_unframed': '../assets/images/Wildlife/baby-leopard 32x48 no frame.jpg',
-        '32x48_framed':   '../assets/images/Wildlife/baby-leopard 32x48 framed.jpg',
-        '40x60_unframed': '../assets/images/Wildlife/baby-40x60 no frame.jpg',
-        '40x60_framed':   '../assets/images/Wildlife/baby-leopard 40x60 framed.jpg',
-        /* 48x72 mockup abhi nahi — original (no mockup) image dikhaao */
-        '48x72_unframed': '../assets/images/Wildlife/Leopard-9265-no-blood-web.jpg',
-        '48x72_framed':   '../assets/images/Wildlife/Leopard-9265-no-blood-web.jpg',
+        '32x48_unframed':     '../assets/images/Wildlife/Baby Leopard 32x48 NO FRAME.jpg',
+        '32x48_framed_black': '../assets/images/Wildlife/Baby Leopard 32x48 BLACK FRAME.jpg',
+        '32x48_framed_brown': '../assets/images/Wildlife/Baby Leopard 32x48 BROWN FRAME.jpg',
+        '40x60_unframed':     '../assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg',
+        '40x60_framed_black': '../assets/images/Wildlife/Baby Leopard 40x60 BLACK FRAME.jpg',
+        '40x60_framed_brown': '../assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg',
+        '48x72_unframed':     '../assets/images/Wildlife/Baby Leopard 48x72 NO FRAME.jpg',
+        '48x72_framed_black': '../assets/images/Wildlife/Baby Leopard 48x72 BLACK FRAME.jpg',
+        '48x72_framed_brown': '../assets/images/Wildlife/Baby Leopard 48x72 BROWN FRAME.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
@@ -254,11 +256,12 @@
 
     /* ─── Thumbnails ─── */
     const thumbOrder = [
-      { key: 'hero',           label: 'Web Preview' },
-      { key: '32x48_unframed', label: '32×48 Acrylic Mount' },
-      { key: '32x48_framed',   label: '32×48 Float Frame' },
-      { key: '40x60_unframed', label: '40×60 Acrylic Mount' },
-      { key: '40x60_framed',   label: '40×60 Float Frame' },
+      { key: 'hero',               label: 'Web Preview' },
+      { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed_black', label: '32×48 Black Frame' },
+      { key: '32x48_framed_brown', label: '32×48 Brown Frame' },
+      { key: '40x60_unframed',     label: '40×60 Acrylic Mount' },
+      { key: '48x72_framed_black', label: '48×72 Black Frame' },
     ];
 
     function buildThumbs() {
@@ -301,10 +304,13 @@
 
     /* ─── Determine current image key ─── */
     function getCurrentImageKey() {
-      if (currentPresentation === 'acrylic') {
-        return currentSize + '_unframed';
+      let key;
+      if (currentPresentation === 'framed') {
+        key = currentSize + '_framed_' + currentFrame;
+      } else {
+        key = currentSize + '_unframed';
       }
-      return currentSize + '_' + (currentPresentation === 'framed' ? 'framed' : 'unframed');
+      return PRODUCT.images[key] ? key : 'hero';
     }
 
     /* ─── Update display image + thumbnail highlight ─── */
