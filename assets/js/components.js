@@ -293,7 +293,7 @@
           </div>
         </div>
         <div class="menu-foot">
-          <a href="mailto:hello@slgmasterworks.com">hello@slgmasterworks.com</a>
+          <a href="mailto:hello@slg.art">hello@slg.art</a>
           <span>Scottsdale, Arizona · Ships to North America &amp; Canada</span>
         </div>
       </aside>`);
@@ -525,4 +525,43 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 
   syncLabel();
+})();
+
+/* ---- Mobile: "rotate phone" prompt (5s baad, portrait only) ---- */
+(function () {
+  const isSmallTouch = window.matchMedia('(max-width: 767px)').matches &&
+                       ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  if (!isSmallTouch) return;
+  if (sessionStorage.getItem('slg_rotate_prompt_shown')) return;
+
+  const portrait = window.matchMedia('(orientation: portrait)');
+
+  setTimeout(function () {
+    if (!portrait.matches) return;          // pehle se landscape me hai
+
+    const el = document.createElement('div');
+    el.className = 'rotate-prompt';
+    el.setAttribute('role', 'status');
+    el.innerHTML =
+      '<svg class="rotate-prompt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="7" y="3" width="10" height="18" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/>' +
+      '</svg>' +
+      '<span><strong>Rotate your phone</strong> for the best view — Sarah’s artworks look stunning in landscape.</span>' +
+      '<button class="rotate-prompt-close" aria-label="Dismiss">×</button>';
+    document.body.appendChild(el);
+    requestAnimationFrame(function () { el.classList.add('show'); });
+    sessionStorage.setItem('slg_rotate_prompt_shown', '1');
+
+    function hide() {
+      el.classList.remove('show');
+      setTimeout(function () { el.remove(); }, 600);
+    }
+    el.querySelector('.rotate-prompt-close').addEventListener('click', hide);
+    /* user ne rotate kar liya → prompt ka kaam khatam */
+    portrait.addEventListener
+      ? portrait.addEventListener('change', function (e) { if (!e.matches) hide(); })
+      : portrait.addListener(function (e) { if (!e.matches) hide(); });
+    /* 12 second baad khud hat jaye */
+    setTimeout(hide, 12000);
+  }, 5000);
 })();

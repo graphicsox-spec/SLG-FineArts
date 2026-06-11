@@ -1835,3 +1835,56 @@ body.is-homepage .hero-slider { height: 100vh; }
 .nav-toggle.is-active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
 .nav-toggle.is-active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ================================================================
+   ROTATE-PHONE PROMPT (mobile portrait only)
+   ================================================================ */
+.rotate-prompt {
+  position: fixed;
+  left: 1rem; right: 1rem; bottom: 1.25rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  background: var(--blue-deep, #0D1B35);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  box-shadow: 0 10px 30px rgba(13, 27, 53, 0.35);
+  color: #F0F0EE;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+  pointer-events: none;
+}
+.rotate-prompt.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.rotate-prompt-icon {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  color: var(--gold, #C9A84C);
+  animation: rotate-hint 2.2s ease-in-out infinite;
+}
+@keyframes rotate-hint {
+  0%, 25%  { transform: rotate(0deg); }
+  55%, 80% { transform: rotate(-90deg); }
+  100%     { transform: rotate(0deg); }
+}
+.rotate-prompt strong { color: var(--gold, #C9A84C); font-weight: 600; }
+.rotate-prompt-close {
+  flex-shrink: 0;
+  background: none; border: none;
+  color: rgba(255,255,255,.6);
+  font-size: 1.3rem; line-height: 1;
+  padding: .25rem .4rem;
+  cursor: pointer;
+}
+/* sirf chhoti portrait screens pe */
+@media (min-width: 768px), (orientation: landscape) {
+  .rotate-prompt { display: none !important; }
+}

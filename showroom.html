@@ -39,6 +39,18 @@
       letter-spacing: -.02em;
       margin-bottom: 1.1rem;
     }
+    .sr-appointment-badge {
+      display: inline-block;
+      margin: 0 auto 1.2rem;
+      padding: 0.6rem 1.3rem;
+      border: 1px solid rgba(201, 168, 76, 0.45);
+      background: rgba(201, 168, 76, 0.08);
+      color: var(--gold, #C9A84C);
+      font-family: var(--display);
+      font-size: 0.66rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
     .sr-hero p {
       font-size: .95rem;
       font-weight: 300;
@@ -54,12 +66,21 @@
     /* ── Artwork section ── */
     .artwork-section {
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
+      grid-template-columns: 1.32fr 1.3fr;   /* image column +20% +10% */
       min-height: 88vh;
     }
     /* Alternate: odd sections image-left, even image-right */
     .artwork-section:nth-child(even) .artwork-viewer { order: 2; }
     .artwork-section:nth-child(even) .artwork-info   { order: 1; }
+
+    /* Image-text gap 20% kam: text box image ki taraf chauda, bahar ki alignment same */
+    @media (min-width: 901px) {
+      .artwork-info { padding-left: clamp(1.8rem, 3vw, 3rem); }                 /* image left waale sections */
+      .artwork-section:nth-child(even) .artwork-info {
+        padding-left: clamp(3rem, 5vw, 5rem);                                   /* outer edge wapas normal */
+        padding-right: clamp(1.8rem, 3vw, 3rem);                                /* image right waale sections */
+      }
+    }
 
     /* ── Viewer (image + thumbnails) ── */
     .artwork-viewer {
@@ -157,7 +178,7 @@
       line-height: 1.75;
       color: #555;
       margin-bottom: 2rem;
-      max-width: 46ch;
+      max-width: none;   /* buttons jitni full column width */
     }
 
     /* Sizes */
@@ -385,6 +406,7 @@
   <section class="sr-hero">
     <span class="section-label">Limited Editions · Exclusively Here</span>
     <h1>Showroom</h1>
+    <span class="sr-appointment-badge">Private Showroom · Scottsdale, Arizona &nbsp;—&nbsp; By Appointment Only</span>
     <p>Each work is available only on SLGMasterworks.com — hand-signed, museum-quality, and strictly limited. Click any thumbnail to see the print in a real room.</p>
   </section>
 
@@ -436,7 +458,7 @@
       <p class="artwork-sub">Baby Leopard · Limited Edition</p>
       <p class="artwork-desc">A rare and fleeting moment — a leopard cub's very first descent from a tree, captured in extraordinary detail deep in the African bush. Hand-signed by Sarah L Glabman. Not available anywhere else.</p>
       <div class="artwork-actions">
-          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/baby-leopard.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
@@ -500,7 +522,7 @@
       <p class="artwork-sub">Capitola Wharf · Limited Edition</p>
       <p class="artwork-desc">Looking up through the weathered pilings of Capitola Pier as the Pacific rolls in — a meditative study of light, structure, and time. Available in large-format sizes, hand-signed and numbered by Sarah.</p>
       <div class="artwork-actions">
-          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/beneath-the-pier.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
@@ -558,13 +580,21 @@
       <p class="artwork-sub">Sossusvlei Desert · Limited Edition</p>
       <p class="artwork-desc">The moon cresting the ancient dunes of Namibia at dusk — a vast, silent landscape suspended between two worlds. Printed to gallery scale on archival paper, hand-signed and numbered.</p>
       <div class="artwork-actions">
-          <a href="contact.html" class="btn-enquire">Enquire to Purchase</a>
+          <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/moonrise-namibia.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
 
   </article>
 
+
+  <!-- Appointment strip -->
+  <div class="sr-commission" style="border-bottom: 1px solid var(--line);">
+    <span class="section-label">Visit the Showroom</span>
+    <h2>See the Work in Person</h2>
+    <p>The showroom is open <strong>by appointment only</strong>. Send a message to arrange a private viewing in Scottsdale, Arizona — Sarah will confirm a time that works for you.</p>
+    <a href="contact.html" class="btn-gold-outline">Book an Appointment</a>
+  </div>
 
   <!-- Commission strip -->
   <div class="sr-commission">
