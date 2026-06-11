@@ -192,7 +192,7 @@
       font-family: var(--title);
       font-size: clamp(1.9rem, 4vw, 3rem);
       font-weight: 300;
-      color: var(--ink);
+      color: var(--blue-deep);
       margin: 0 0 1.1rem;
       letter-spacing: -0.01em;
     }
@@ -277,40 +277,40 @@
 
       <!-- First Descent — Baby Leopard -->
       <a class="edition-card reveal" href="collections/baby-leopard.html?from=shop"
-         data-category="wildlife" data-orientation="vertical" data-tags="new,best" data-price="2800" data-index="0" data-title="First Descent">
+         data-category="wildlife" data-orientation="vertical" data-tags="new,best" data-price="1700" data-index="0" data-title="First Descent">
         <div class="edition-figure">
           <img src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="First Descent — Baby Leopard" />
         </div>
         <div class="edition-body">
           <span class="edition-edlabel">Limited Edition</span>
           <h2 class="edition-title">First Descent</h2>
-          <span class="edition-price">From $2,800</span>
+          <span class="edition-price">From $1,700</span>
         </div>
       </a>
 
       <!-- Beneath the Pier -->
       <a class="edition-card reveal" href="collections/beneath-the-pier.html?from=shop"
-         data-category="cityscape" data-orientation="vertical" data-tags="new,best" data-price="4600" data-index="1" data-title="Beneath the Pier">
+         data-category="cityscape" data-orientation="vertical" data-tags="new,best" data-price="1700" data-index="1" data-title="Beneath the Pier">
         <div class="edition-figure">
           <img src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — Capitola" />
         </div>
         <div class="edition-body">
           <span class="edition-edlabel">Limited Edition</span>
           <h2 class="edition-title">Beneath the Pier</h2>
-          <span class="edition-price">From $4,600</span>
+          <span class="edition-price">From $1,700</span>
         </div>
       </a>
 
       <!-- Moonrise Namibia -->
       <a class="edition-card reveal" href="collections/moonrise-namibia.html?from=shop"
-         data-category="landscape" data-orientation="horizontal" data-tags="new" data-price="960" data-index="2" data-title="Moonrise Namibia">
+         data-category="landscape" data-orientation="horizontal" data-tags="new" data-price="965" data-index="2" data-title="Moonrise Namibia">
         <div class="edition-figure">
           <img src="assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg" alt="Moonrise Namibia" />
         </div>
         <div class="edition-body">
           <span class="edition-edlabel">Limited Edition</span>
           <h2 class="edition-title">Moonrise Namibia</h2>
-          <span class="edition-price">From $960</span>
+          <span class="edition-price">From $965</span>
         </div>
       </a>
 
@@ -370,6 +370,30 @@
         active[type] = btn.dataset.value;
         apply();
       }));
+
+      /* ── Pre-select filters from URL (e.g. shop.html?tag=new) ── */
+      const params = new URLSearchParams(window.location.search);
+      let paramApplied = false;
+      ['collection', 'tag', 'orientation', 'sort'].forEach(type => {
+        const value = params.get(type);
+        if (!value) return;
+        const btn = document.querySelector('.shop-filter[data-ftype="' + type + '"][data-value="' + value + '"]');
+        if (!btn) return;
+        document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        active[type] = value;
+        paramApplied = true;
+        btn.closest('.shop-filter-group').dataset.fromUrl = '1';
+      });
+
+      /* URL param se aane par: sirf wahi group expanded, baaki collapsed */
+      if (paramApplied) {
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.shop-filter-group').forEach(g => {
+            g.classList.toggle('collapsed', !g.dataset.fromUrl);
+          });
+        });
+      }
 
       apply();
     })();

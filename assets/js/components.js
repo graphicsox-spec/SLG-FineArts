@@ -96,7 +96,18 @@
         <div class="footer-brand">
           <img src="${r}assets/images/SLG-Signature-Logo-Footer.svg.svg" alt="SLG Masterworks" class="footer-brand-logo" />
         </div>
-        <p class="footer-tag">Fine art landscape &amp; wildlife photography.<br>Limited-edition signed prints.<br>Scottsdale, Arizona — shipped across North America &amp; Canada.</p>
+        <p class="footer-tag">Fine art Wildlife, Landscape, Cityscape photography.<br>Limited-edition signed prints. Scottsdale, Arizona.<br>Shipped across North America<br>and Canada.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+          </a>
+        </div>
       </div>
 
       <!-- The Images -->
@@ -118,6 +129,8 @@
           <li><a href="${r}the-images.html?collection=wildlife">Wildlife</a></li>
           <li><a href="${r}the-images.html?collection=landscape">Landscape</a></li>
           <li><a href="${r}the-images.html?collection=cityscape">Cityscape</a></li>
+          <li><a href="${r}shop.html?tag=new">New Arrivals</a></li>
+          <li><a href="${r}shop.html?tag=best">Best Sellers</a></li>
         </ul>
       </div>
 
@@ -136,18 +149,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-copy">© <span class="footer-year"></span> SLG Masterworks · Sarah L Glabman. All rights reserved. &nbsp;|&nbsp; Design &amp; Development by &nbsp;<a href="https://www.behance.net/advarto" target="_blank" rel="noopener" aria-label="Bisen Brandcraft"><img src="${r}assets/images/BB_DP_Logo_1.svg" alt="Bisen Brandcraft" class="bb-logo" /></a></span>
-      <div class="socials">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
-        </a>
-      </div>
+      <span class="footer-copy">© <span class="footer-year"></span> SLG.Art · Sarah L Glabman. All rights reserved. &nbsp;|&nbsp; Design &amp; Development by &nbsp;<a href="https://www.behance.net/advarto" target="_blank" rel="noopener" aria-label="Bisen Brandcraft"><img src="${r}assets/images/BB_DP_Logo_1.svg" alt="Bisen Brandcraft" class="bb-logo" /></a></span>
     </div>
   </div>
 
@@ -480,4 +482,47 @@
     }
   }
 
+})();
+
+/* ---- Product page: "Select Size" ko dropdown banana ---- */
+(function () {
+  const list = document.getElementById('size-options');
+  if (!list || !list.querySelector('.size-btn')) return;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'size-dropdown';
+  list.parentNode.insertBefore(wrap, list);
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'size-dd-trigger';
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.innerHTML = '<span class="size-dd-label"></span><span class="size-dd-caret" aria-hidden="true"></span>';
+  wrap.appendChild(trigger);
+  wrap.appendChild(list);
+
+  const label = trigger.querySelector('.size-dd-label');
+  function syncLabel() {
+    const a = list.querySelector('.size-btn.active');
+    if (!a) return;
+    const dim = a.querySelector('.size-dim');
+    const sub = a.querySelector('.size-label');
+    label.innerHTML = (dim ? dim.innerHTML : a.textContent) +
+      (sub ? ' &nbsp;<span class="size-dd-sub">· ' + sub.textContent + '</span>' : '');
+  }
+  function close() { wrap.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+
+  trigger.addEventListener('click', () => {
+    wrap.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', wrap.classList.contains('open'));
+  });
+  /* page ka apna handler pehle चलता hai (active set karta hai), phir ye */
+  list.addEventListener('click', (e) => {
+    if (e.target.closest('.size-btn')) { syncLabel(); close(); }
+  });
+  document.addEventListener('click', (e) => { if (!wrap.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  syncLabel();
 })();

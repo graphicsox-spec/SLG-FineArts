@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Showroom — SLG Masterworks · Sarah L Glabman</title>
-  <meta name="description" content="View limited-edition fine art prints by Sarah L Glabman in real room settings. Wildlife, coastal, and landscape — exclusively on SLGMasterworks.com." />
+  <meta name="description" content="View limited-edition fine art prints by Sarah L Glabman in real room settings. Wildlife, Landscape, and Cityscape — exclusively on SLGMasterworks.com." />
   <meta name="theme-color" content="#0D1B35" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -141,7 +141,7 @@
       font-family: var(--title);
       font-size: clamp(2.2rem, 3.5vw, 3.6rem);
       font-weight: 300;
-      color: var(--ink);
+      color: var(--blue-deep);
       line-height: 1.1;
       margin-bottom: .5rem;
     }
@@ -208,7 +208,7 @@
       font-family: var(--title);
       font-size: 2rem;
       font-weight: 300;
-      color: var(--ink);
+      color: var(--blue-deep);
     }
     .artwork-actions {
       display: flex;
@@ -247,6 +247,27 @@
       transition: all .2s;
     }
     .btn-view-detail:hover { border-color: var(--ink); color: var(--ink) !important; }
+
+    /* ── Cinematic slides (crossfade + slow zoom loop) ── */
+    .artwork-main .sr-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition: opacity 1.6s ease;
+      will-change: transform, opacity;
+    }
+    .artwork-main .sr-slide.is-on {
+      opacity: 1;
+      animation: sr-kenburns 7s ease-out forwards;
+    }
+    @keyframes sr-kenburns {
+      from { transform: scale(1); }
+      to   { transform: scale(1.1); }
+    }
 
     /* ── Slide dots ── */
     .slide-dots {
@@ -474,7 +495,7 @@
     </div>
 
     <div class="artwork-info">
-      <span class="artwork-category">Coastal · Capitola, California</span>
+      <span class="artwork-category">Cityscape · Capitola, California</span>
       <h2 class="artwork-title">Beneath the Pier</h2>
       <p class="artwork-sub">Capitola Wharf · Limited Edition</p>
       <p class="artwork-desc">Looking up through the weathered pilings of Capitola Pier as the Pacific rolls in — a meditative study of light, structure, and time. Available in large-format sizes, hand-signed and numbered by Sarah.</p>
@@ -553,32 +574,44 @@
     <a href="contact.html" class="btn-gold-outline">Request a Commission</a>
   </div>
 
-  <!-- Slideshow JS -->
+  <!-- Slideshow JS — cinematic crossfade + zoom loop -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.artwork-section').forEach(function(section) {
         const thumbs = Array.from(section.querySelectorAll('.art-thumb[data-src]'));
         if (!thumbs.length) return;
-        const img   = section.querySelector('.artwork-main img');
+        const main   = section.querySelector('.artwork-main');
         const dotsEl = section.querySelector('.slide-dots');
+        const baseImg = main.querySelector('img');
+        const altText = baseImg ? baseImg.alt : '';
+        if (baseImg) baseImg.remove();
+
+        /* layered slides — saare available mockups */
+        const slides = thumbs.map(function(t, i) {
+          const im = document.createElement('img');
+          im.className = 'sr-slide' + (i === 0 ? ' is-on' : '');
+          im.src = t.dataset.src;
+          im.alt = altText;
+          im.loading = 'lazy';
+          main.insertBefore(im, main.firstChild);
+          return im;
+        });
+
         let idx = 0, timer;
 
-        // Build dots
         thumbs.forEach(function(_, i) {
           const d = document.createElement('button');
           d.className = 'slide-dot' + (i === 0 ? ' active' : '');
-          d.setAttribute('aria-label', 'View ' + (i+1));
+          d.setAttribute('aria-label', 'View ' + (i + 1));
           d.addEventListener('click', function() { goTo(i); resetTimer(); });
           dotsEl.appendChild(d);
         });
 
         function goTo(i) {
+          if (i === idx) return;
+          slides[idx].classList.remove('is-on');
           idx = i;
-          img.style.opacity = '0';
-          setTimeout(function() {
-            img.src = thumbs[idx].dataset.src;
-            img.style.opacity = '1';
-          }, 200);
+          slides[idx].classList.add('is-on');
           thumbs.forEach(function(t) { t.classList.remove('active'); });
           thumbs[idx].classList.add('active');
           dotsEl.querySelectorAll('.slide-dot').forEach(function(d, j) {
@@ -586,13 +619,14 @@
           });
         }
 
-        function advance() { goTo((idx + 1) % thumbs.length); }
-        function start()   { timer = setInterval(advance, 3500); }
+        function advance() { goTo((idx + 1) % slides.length); }
+        function start()   { timer = setInterval(advance, 5000); }
         function stop()    { clearInterval(timer); }
         function resetTimer() { stop(); start(); }
 
-        section.addEventListener('mouseenter', stop);
-        section.addEventListener('mouseleave', start);
+        /* sirf image box pe hover karne par pause ho */
+        main.addEventListener('mouseenter', stop);
+        main.addEventListener('mouseleave', start);
         start();
       });
     });
@@ -602,4 +636,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                        

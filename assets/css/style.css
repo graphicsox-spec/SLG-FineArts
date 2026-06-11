@@ -17,11 +17,11 @@
   --ink:          #141414;
   --ink-muted:    #666662;
   --line:         #E0E0DC;
-  --line-soft:    rgba(27, 63, 123, 0.12);
+  --line-soft:    rgba(13, 27, 53, 0.12);
 
   /* Navy Blue Accent (primary brand colour) */
-  --blue:         #1B3F7B;      /* medium navy — backgrounds, dark sections */
-  --blue-bright:  #1B3F7B;      /* kept for legacy refs */
+  --blue:         #0D1B35;      /* deep navy — single brand blue */
+  --blue-bright:  #0D1B35;      /* kept for legacy refs */
   --blue-deep:    #0D1B35;      /* darkest navy — replaces black */
   --blue-glow:    rgba(13, 27, 53, 0.12);
 
@@ -77,7 +77,7 @@ button { font: inherit; cursor: pointer; color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--title);
   font-weight: 300;
-  color: var(--ink);
+  color: var(--blue-deep);  /* navy headings — brand consistency */
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin: 0 0 .5em;
@@ -440,9 +440,9 @@ body.panel-open { overflow: hidden; }
 .mega-card-label span {
   font-family: var(--sans);
   font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase;
-  color: #9BBCE0;
+  color: #C9A84C;
 }
-.mega-card:hover .mega-card-label h4 { color: #9BBCE0; }
+.mega-card:hover .mega-card-label h4 { color: #C9A84C; }
 .mega-foot {
   margin-top: 1.5rem; padding-top: 1.5rem;
   border-top: 1px solid var(--line);
@@ -701,7 +701,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   font-weight: 300;
   letter-spacing: -0.025em;
   margin: 0;
-  color: var(--ink);
+  color: var(--blue-deep);  /* navy headings — brand consistency */
 }
 .home-section-head .section-label {
   margin-bottom: .5rem;
@@ -1003,7 +1003,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   font-family: var(--title);
   font-style: italic; font-weight: 300;
   font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-  line-height: 1.5; color: var(--ink);
+  line-height: 1.5; color: var(--blue-deep);
 }
 /* On mobile, drop the forced break so the quote wraps naturally */
 @media (max-width: 640px) {
@@ -1026,7 +1026,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   border-bottom: 1px solid var(--line);
 }
 .newsletter-inner { max-width: 540px; margin: 0 auto; }
-.newsletter h2 { color: var(--ink); }
+.newsletter h2 { color: var(--blue-deep); }
 .newsletter p { color: var(--ink-muted); margin: 1rem 0 2rem; }
 .newsletter-form {
   display: flex; gap: 0; max-width: 460px; margin: 0 auto;
@@ -1064,7 +1064,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .footer-photo-bg img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 90%;   /* image 40% upar shift (50% center se) */
   display: block;
   opacity: 0.55;
 }
@@ -1134,15 +1134,17 @@ body.is-homepage .hero-slider { height: 100vh; }
 /* Footer bottom strip — grid: copyright | dev credit (center) | socials (right) */
 .footer-bottom {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   align-items: center;
+  justify-items: center;
+  text-align: center;
   gap: 1rem;
   padding-top: 2rem;
   font-size: 0.82rem;
   color: rgba(255,255,255,.5);
   max-width: var(--max); margin: 0 auto;
 }
-.footer-bottom .footer-copy { justify-self: start; }
+.footer-bottom .footer-copy { justify-self: center; }
 .footer-bottom .footer-copy a { color: var(--gold); text-decoration: none; }
 .footer-bottom .footer-copy a:hover { color: var(--gold); text-decoration: underline; }
 .bb-logo { height: 26px; width: auto; display: inline-block; vertical-align: middle; opacity: 0.75; transition: opacity .25s ease; }
@@ -1150,29 +1152,28 @@ body.is-homepage .hero-slider { height: 100vh; }
 .footer-bottom .dev-credit  { justify-self: center; white-space: nowrap; text-align: center; }
 .footer-bottom .dev-credit a { color: var(--gold); }
 .footer-bottom .dev-credit a:hover { color: var(--gold-light); }
-.footer-bottom .socials {
-  justify-self: end;
-  margin-top: 0;
-  margin-left: 0;
+/* Socials — brand column me, logo + tagline ke neeche */
+.footer .socials {
+  margin-top: 1.4rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.footer-bottom .socials a {
+.footer .socials a {
   color: rgba(255,255,255,.70);
   width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   transition: color .25s ease;
 }
-.footer-bottom .socials a:hover { color: var(--gold); }
-.footer-bottom .socials svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+.footer .socials a:hover { color: var(--gold); }
+.footer .socials svg { width: 20px; height: 20px; fill: currentColor; display: block; }
 
 
 /* Footer brand logo */
 .footer-brand { margin-bottom: 0.6rem; }
 .footer-brand-logo {
-  height: 48px;
+  height: 43px;   /* 48px se 10% kam */
   width: auto;
   display: block;
   opacity: 0.95;
@@ -1228,33 +1229,30 @@ body.is-homepage .hero-slider { height: 100vh; }
   overflow: hidden;
   border-radius: 2px;
   position: relative;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
 }
+/* Images keep their original ratio inside the box — never cropped,
+   never touching the box edges (inner padding all around) */
 .na-right img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: clamp(1rem, 2vw, 1.75rem);
   display: block;
-  transition: transform .8s ease;
 }
-.na-right:hover img { transform: scale(1.03); }
 
-/* ── Cinematic slideshow (3 images, slow zoom + crossfade loop) ── */
+/* ── Cinematic slideshow (crossfade only — no zoom, so nothing crops) ── */
 .na-slide {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: clamp(1rem, 2vw, 1.75rem);
   opacity: 0;
   transition: opacity 1.8s ease;
-  will-change: transform, opacity;
+  will-change: opacity;
 }
 .na-slide.is-on {
   opacity: 1;
-  animation: na-kenburns 8s ease-out forwards;
-}
-/* outgoing slide keeps its zoomed state so the crossfade has no jump */
-.na-slide.is-off { transform: scale(1.12); }
-@keyframes na-kenburns {
-  from { transform: scale(1); }
-  to   { transform: scale(1.12); }
 }
 
 @media (max-width: 768px) {
@@ -1309,7 +1307,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   .footer-photo-bg::after { display: none; }     /* no overlay seam on mobile */
   .footer-content { padding-bottom: 3rem; }
   .footer-bottom { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0.75rem; }
-  .footer-bottom .footer-copy, .footer-bottom .dev-credit, .footer-bottom .socials { justify-self: center; }
+  .footer-bottom .footer-copy, .footer-bottom .dev-credit { justify-self: center; }
   .mega-grid { grid-template-columns: 1fr; }
   .hero-slider { height: 85vh; }
   .hero-controls { bottom: 1.5rem; }
@@ -1437,7 +1435,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .modal-title {
   font-family: var(--serif);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  color: var(--ink);
+  color: var(--blue-deep);  /* navy headings — brand consistency */
   margin: 0.4rem 0 0.3rem;
   font-weight: 400;
   line-height: 1.15;

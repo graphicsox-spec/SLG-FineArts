@@ -73,6 +73,10 @@
             <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
             <span class="size-label">Large</span>
           </button>
+          <button class="size-btn" data-size="40x60" type="button">
+            <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
+            <span class="size-label">Large / Statement</span>
+          </button>
         </div>
       </div>
 
@@ -81,13 +85,13 @@
         <span class="selector-label">Presentation</span>
         <div class="presentation-options" id="presentation-options">
 
-          <button class="presentation-btn active" data-presentation="unframed" type="button">
+          <button class="presentation-btn active" data-presentation="acrylic" type="button">
             <span class="presentation-radio"></span>
             <span class="presentation-text">
-              <span class="presentation-name">Unframed Print</span>
-              <span class="presentation-note">Ready for your custom framing</span>
+              <span class="presentation-name">Acrylic Mount</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">$960</span>
+            <span class="presentation-price-tag" id="price-unframed">$965</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -99,15 +103,6 @@
             <span class="presentation-price-tag" id="price-framed">$1,475</span>
           </button>
 
-          <button class="presentation-btn" data-presentation="acrylic" type="button">
-            <span class="presentation-radio"></span>
-            <span class="presentation-text">
-              <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic</span>
-            </span>
-            <span class="presentation-price-tag">Inquire</span>
-          </button>
-
         </div>
 
         <!-- Frame Color Sub-selector (only visible when "framed" is selected) -->
@@ -116,11 +111,11 @@
           <div class="frame-colors" id="frame-colors">
             <button class="frame-color-btn active" data-frame="black" type="button">
               <span class="frame-color-swatch swatch-black"></span>
-              <span class="frame-color-text">Black Float</span>
+              <span class="frame-color-text">Black Float Frame</span>
             </button>
             <button class="frame-color-btn" data-frame="brown" type="button">
               <span class="frame-color-swatch swatch-brown"></span>
-              <span class="frame-color-text">Dark Brown</span>
+              <span class="frame-color-text">Dark Brown Float Frame</span>
             </button>
           </div>
         </div>
@@ -138,17 +133,17 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency">$</span><span id="price-amount">960</span>
+          <span class="currency">$</span><span id="price-amount">965</span>
         </div>
         <div class="price-config" id="price-config">
-          24 × 36" (61 × 91 cm) · Unframed Print
+          24 × 36" (61 × 91 cm) · Acrylic Mount
         </div>
       </div>
 
       <!-- CTA -->
       <div class="product-cta">
         <a href="#" class="btn-navy" id="cta-purchase">Add to Cart</a>
-        <a href="../contact.html" class="btn-navy-outline">Request Custom Sizing</a>
+        <a href="../contact.html" class="btn-navy-outline">Get Custom Size</a>
       </div>
 
       <hr class="product-divider" />
@@ -165,11 +160,11 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">24×36" &amp; 32×48"</span>
+          <span class="spec-value">24×36" · 32×48" · 40×60"</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
-          <span class="spec-value">Black Float · Dark Brown Float</span>
+          <span class="spec-value">Acrylic Mount · Black Float · Dark Brown Float</span>
         </li>
         <li>
           <span class="spec-label">Shipping</span>
@@ -223,20 +218,24 @@
         '24x36_framed':   '../assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg',
         '32x48_unframed': '../assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg',
         '32x48_framed':   '../assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg',
+        /* 40x60 mockup abhi nahi — original (no mockup) image dikhaao */
+        '40x60_unframed': '../assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg',
+        '40x60_framed':   '../assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
       pricing: {
-        '24x36': { unframed: 960,  framed: 1475 },
+        '24x36': { unframed: 965,  framed: 1475 },
         '32x48': { unframed: 1700, framed: 2300 },
+        '40x60': { unframed: 3750, framed: 4500 },
       }
     };
 
     /* ─── State ─── */
     let currentSize = '24x36';
-    let currentPresentation = 'unframed'; // unframed | framed | acrylic
+    let currentPresentation = 'acrylic'; // acrylic | framed
     let currentFrame = 'black';           // black | brown
 
     /* ─── DOM refs ─── */
@@ -256,10 +255,10 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',           label: 'Web Preview' },
-      { key: '24x36_unframed', label: '24×36 Unframed' },
-      { key: '24x36_framed',   label: '24×36 Framed' },
-      { key: '32x48_unframed', label: '32×48 Unframed' },
-      { key: '32x48_framed',   label: '32×48 Framed' },
+      { key: '24x36_unframed', label: '24×36 Acrylic Mount' },
+      { key: '24x36_framed',   label: '24×36 Float Frame' },
+      { key: '32x48_unframed', label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed',   label: '32×48 Float Frame' },
     ];
 
     function buildThumbs() {
@@ -331,22 +330,18 @@
       priceFramed.textContent   = '$' + fmtPrice(sp.framed);
 
       // Main price display
-      if (currentPresentation === 'acrylic') {
-        priceDisplay.textContent = '—';
-        priceConfig.textContent  = sizeLabel() + ' · Acrylic Mount · Contact for Pricing';
-      } else {
-        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        priceDisplay.textContent = fmtPrice(price);
-        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
-      }
+      const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+      priceDisplay.textContent = fmtPrice(price);
+      priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
     }
 
     function sizeLabel() {
-      return currentSize === '24x36' ? '24 × 36" (61 × 91 cm)' : '32 × 48" (81 × 122 cm)';
+      if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
+      if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
+      return '40 × 60" (102 × 152 cm)';
     }
     
     function presentationLabel() {
-      if (currentPresentation === 'unframed') return 'Unframed Print';
       if (currentPresentation === 'framed') {
         return currentFrame === 'black' ? 'Black Float Frame' : 'Dark Brown Float Frame';
       }
@@ -408,7 +403,6 @@
       const name = (document.querySelector('.product-title')?.textContent || 'Print').trim();
       cta.addEventListener('click', e => {
         e.preventDefault();
-        if (currentPresentation === 'acrylic') { window.location.href = '../contact.html'; return; }
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();

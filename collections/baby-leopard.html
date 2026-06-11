@@ -73,6 +73,10 @@
             <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
             <span class="size-label">Large / Statement</span>
           </button>
+          <button class="size-btn" data-size="48x72" type="button">
+            <span class="size-dim">48 × 72" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(122 × 183 cm)</span></span>
+            <span class="size-label">Extra Large</span>
+          </button>
         </div>
       </div>
 
@@ -81,11 +85,11 @@
         <span class="selector-label">Presentation</span>
         <div class="presentation-options" id="presentation-options">
 
-          <button class="presentation-btn active" data-presentation="unframed" type="button">
+          <button class="presentation-btn active" data-presentation="acrylic" type="button">
             <span class="presentation-radio"></span>
             <span class="presentation-text">
-              <span class="presentation-name">Unframed Print</span>
-              <span class="presentation-note">Ready for your custom framing</span>
+              <span class="presentation-name">Acrylic Mount</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
             </span>
             <span class="presentation-price-tag" id="price-unframed">$1,700</span>
           </button>
@@ -99,15 +103,6 @@
             <span class="presentation-price-tag" id="price-framed">$2,300</span>
           </button>
 
-          <button class="presentation-btn" data-presentation="acrylic" type="button">
-            <span class="presentation-radio"></span>
-            <span class="presentation-text">
-              <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic</span>
-            </span>
-            <span class="presentation-price-tag">Inquire</span>
-          </button>
-
         </div>
 
         <!-- Frame Color Sub-selector (only visible when "framed" is selected) -->
@@ -116,11 +111,11 @@
           <div class="frame-colors" id="frame-colors">
             <button class="frame-color-btn active" data-frame="black" type="button">
               <span class="frame-color-swatch swatch-black"></span>
-              <span class="frame-color-text">Black Float</span>
+              <span class="frame-color-text">Black Float Frame</span>
             </button>
             <button class="frame-color-btn" data-frame="brown" type="button">
               <span class="frame-color-swatch swatch-brown"></span>
-              <span class="frame-color-text">Dark Brown</span>
+              <span class="frame-color-text">Dark Brown Float Frame</span>
             </button>
           </div>
         </div>
@@ -141,14 +136,14 @@
           <span class="currency">$</span><span id="price-amount">1,700</span>
         </div>
         <div class="price-config" id="price-config">
-          32 × 48" · Unframed Print
+          32 × 48" · Acrylic Mount
         </div>
       </div>
 
       <!-- CTA -->
       <div class="product-cta">
         <a href="#" class="btn-navy" id="cta-purchase">Add to Cart</a>
-        <a href="../contact.html" class="btn-navy-outline">Request Custom Sizing</a>
+        <a href="../contact.html" class="btn-navy-outline">Get Custom Size</a>
       </div>
 
       <hr class="product-divider" />
@@ -165,11 +160,11 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">32×48" &amp; 40×60"</span>
+          <span class="spec-value">32×48" · 40×60" · 48×72"</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
-          <span class="spec-value">Black Float · Dark Brown Float</span>
+          <span class="spec-value">Acrylic Mount · Black Float · Dark Brown Float</span>
         </li>
         <li>
           <span class="spec-label">Shipping</span>
@@ -223,6 +218,9 @@
         '32x48_framed':   '../assets/images/Wildlife/baby-leopard 32x48 framed.jpg',
         '40x60_unframed': '../assets/images/Wildlife/baby-40x60 no frame.jpg',
         '40x60_framed':   '../assets/images/Wildlife/baby-leopard 40x60 framed.jpg',
+        /* 48x72 mockup abhi nahi — original (no mockup) image dikhaao */
+        '48x72_unframed': '../assets/images/Wildlife/Leopard-9265-no-blood-web.jpg',
+        '48x72_framed':   '../assets/images/Wildlife/Leopard-9265-no-blood-web.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
@@ -231,12 +229,13 @@
       pricing: {
         '32x48': { unframed: 1700, framed: 2300 },
         '40x60': { unframed: 3750, framed: 4500 },
+        '48x72': { unframed: 4600, framed: 6300 },
       }
     };
 
     /* ─── State ─── */
     let currentSize = '32x48';
-    let currentPresentation = 'unframed'; // unframed | framed | acrylic
+    let currentPresentation = 'acrylic'; // acrylic | framed
     let currentFrame = 'black';           // black | brown
 
     /* ─── DOM refs ─── */
@@ -256,10 +255,10 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',           label: 'Web Preview' },
-      { key: '32x48_unframed', label: '32×48 Unframed' },
-      { key: '32x48_framed',   label: '32×48 Framed' },
-      { key: '40x60_unframed', label: '40×60 Unframed' },
-      { key: '40x60_framed',   label: '40×60 Framed' },
+      { key: '32x48_unframed', label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed',   label: '32×48 Float Frame' },
+      { key: '40x60_unframed', label: '40×60 Acrylic Mount' },
+      { key: '40x60_framed',   label: '40×60 Float Frame' },
     ];
 
     function buildThumbs() {
@@ -331,21 +330,17 @@
       priceFramed.textContent   = '$' + fmtPrice(sp.framed);
 
       // Main price display
-      if (currentPresentation === 'acrylic') {
-        priceDisplay.textContent = '—';
-        priceConfig.textContent  = sizeLabel() + ' · Acrylic Mount · Contact for Pricing';
-      } else {
-        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        priceDisplay.textContent = fmtPrice(price);
-        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
-      }
+      const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+      priceDisplay.textContent = fmtPrice(price);
+      priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
     }
 
     function sizeLabel() {
-      return currentSize === '32x48' ? '32 × 48" (81 × 122 cm)' : '40 × 60" (102 × 152 cm)';
+      if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
+      if (currentSize === '40x60') return '40 × 60" (102 × 152 cm)';
+      return '48 × 72" (122 × 183 cm)';
     }
     function presentationLabel() {
-      if (currentPresentation === 'unframed') return 'Unframed Print';
       if (currentPresentation === 'framed') {
         return currentFrame === 'black' ? 'Black Float Frame' : 'Dark Brown Float Frame';
       }
@@ -407,7 +402,6 @@
       const name = (document.querySelector('.product-title')?.textContent || 'Print').trim();
       cta.addEventListener('click', e => {
         e.preventDefault();
-        if (currentPresentation === 'acrylic') { window.location.href = '../contact.html'; return; }
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();

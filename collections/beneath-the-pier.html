@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beneath the Pier — Coastal Collection | SLG Masterworks</title>
+  <title>Beneath the Pier — Cityscape Collection | SLG Masterworks</title>
   <meta name="description" content="A dramatic ocean artwork captured below a coastal pier in Capitola, California. This fine art seascape draws the eye through repeating pillars, shadow, color, and motion." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -43,7 +43,7 @@
 
     <!-- RIGHT: Info -->
     <div class="product-info">
-      <span class="product-eyebrow">/ Coastal Collection</span>
+      <span class="product-eyebrow">/ Cityscape Collection</span>
 
       <h1 class="product-title">Beneath the Pier</h1>
       <p class="product-subtitle">A Natural Tunnel of Light over Pacific Water</p>
@@ -85,11 +85,11 @@
         <span class="selector-label">Presentation</span>
         <div class="presentation-options" id="presentation-options">
 
-          <button class="presentation-btn active" data-presentation="unframed" type="button">
+          <button class="presentation-btn active" data-presentation="acrylic" type="button">
             <span class="presentation-radio"></span>
             <span class="presentation-text">
-              <span class="presentation-name">Unframed Print</span>
-              <span class="presentation-note">Ready for your custom framing</span>
+              <span class="presentation-name">Acrylic Mount</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
             </span>
             <span class="presentation-price-tag" id="price-unframed">$1,700</span>
           </button>
@@ -103,15 +103,6 @@
             <span class="presentation-price-tag" id="price-framed">$2,300</span>
           </button>
 
-          <button class="presentation-btn" data-presentation="acrylic" type="button">
-            <span class="presentation-radio"></span>
-            <span class="presentation-text">
-              <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic</span>
-            </span>
-            <span class="presentation-price-tag">Inquire</span>
-          </button>
-
         </div>
 
         <!-- Frame Color Sub-selector (only visible when "framed" is selected) -->
@@ -120,11 +111,11 @@
           <div class="frame-colors" id="frame-colors">
             <button class="frame-color-btn active" data-frame="black" type="button">
               <span class="frame-color-swatch swatch-black"></span>
-              <span class="frame-color-text">Black Float</span>
+              <span class="frame-color-text">Black Float Frame</span>
             </button>
             <button class="frame-color-btn" data-frame="brown" type="button">
               <span class="frame-color-swatch swatch-brown"></span>
-              <span class="frame-color-text">Dark Brown</span>
+              <span class="frame-color-text">Dark Brown Float Frame</span>
             </button>
           </div>
         </div>
@@ -145,14 +136,14 @@
           <span class="currency">$</span><span id="price-amount">1,700</span>
         </div>
         <div class="price-config" id="price-config">
-          32 × 48" (81 × 122 cm) · Unframed Print
+          32 × 48" (81 × 122 cm) · Acrylic Mount
         </div>
       </div>
 
       <!-- CTA -->
       <div class="product-cta">
         <a href="#" class="btn-navy" id="cta-purchase">Add to Cart</a>
-        <a href="../contact.html" class="btn-navy-outline">Request Custom Sizing</a>
+        <a href="../contact.html" class="btn-navy-outline">Get Custom Size</a>
       </div>
 
       <hr class="product-divider" />
@@ -173,7 +164,7 @@
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
-          <span class="spec-value">Black Float · Dark Brown Float</span>
+          <span class="spec-value">Acrylic Mount · Black Float · Dark Brown Float</span>
         </li>
         <li>
           <span class="spec-label">Shipping</span>
@@ -224,7 +215,7 @@
       images: {
         hero: '../assets/images/Beneath the Pier/Pier MAIN web.jpg',
         '32x48_unframed': '../assets/images/Beneath the Pier/Pier Unframed 32x48.jpg',
-        '32x48_framed':   '../assets/images/Beneath the Pier/Pier frmaed 40x60.jpg', /* Fallback using 40x60 */
+        '32x48_framed':   '../assets/images/Beneath the Pier/Pier MAIN web.jpg', /* 32x48 framed mockup abhi nahi — original image */
         '40x60_unframed': '../assets/images/Beneath the Pier/Pier unframed 40x60.jpg',
         '40x60_framed':   '../assets/images/Beneath the Pier/Pier frmaed 40x60.jpg',
         '48x72_unframed': '../assets/images/Beneath the Pier/Pier unframed 48x72.jpg',
@@ -243,7 +234,7 @@
 
     /* ─── State ─── */
     let currentSize = '32x48';
-    let currentPresentation = 'unframed'; // unframed | framed | acrylic
+    let currentPresentation = 'acrylic'; // acrylic | framed
     let currentFrame = 'black';           // black | brown
 
     /* ─── DOM refs ─── */
@@ -263,12 +254,12 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',           label: 'Web Preview' },
-      { key: '32x48_unframed', label: '32×48 Unframed' },
-      { key: '32x48_framed',   label: '32×48 Framed' },
-      { key: '40x60_unframed', label: '40×60 Unframed' },
-      { key: '40x60_framed',   label: '40×60 Framed' },
-      { key: '48x72_unframed', label: '48×72 Unframed' },
-      { key: '48x72_framed',   label: '48×72 Framed' },
+      { key: '32x48_unframed', label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed',   label: '32×48 Float Frame' },
+      { key: '40x60_unframed', label: '40×60 Acrylic Mount' },
+      { key: '40x60_framed',   label: '40×60 Float Frame' },
+      { key: '48x72_unframed', label: '48×72 Acrylic Mount' },
+      { key: '48x72_framed',   label: '48×72 Float Frame' },
     ];
 
     function buildThumbs() {
@@ -340,14 +331,9 @@
       priceFramed.textContent   = '$' + fmtPrice(sp.framed);
 
       // Main price display
-      if (currentPresentation === 'acrylic') {
-        priceDisplay.textContent = '—';
-        priceConfig.textContent  = sizeLabel() + ' · Acrylic Mount · Contact for Pricing';
-      } else {
-        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        priceDisplay.textContent = fmtPrice(price);
-        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
-      }
+      const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+      priceDisplay.textContent = fmtPrice(price);
+      priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
     }
 
     function sizeLabel() {
@@ -357,7 +343,6 @@
     }
     
     function presentationLabel() {
-      if (currentPresentation === 'unframed') return 'Unframed Print';
       if (currentPresentation === 'framed') {
         return currentFrame === 'black' ? 'Black Float Frame' : 'Dark Brown Float Frame';
       }
@@ -419,7 +404,6 @@
       const name = (document.querySelector('.product-title')?.textContent || 'Print').trim();
       cta.addEventListener('click', e => {
         e.preventDefault();
-        if (currentPresentation === 'acrylic') { window.location.href = '../contact.html'; return; }
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
