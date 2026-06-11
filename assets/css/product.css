@@ -658,3 +658,18 @@
 }
 .size-dropdown .size-btn:last-child { border-bottom: none; }
 .size-dropdown .size-btn .size-dim { margin-bottom: 0; }
+
+/* ── Unavailable presentation option (e.g. acrylic-exclusive editions) ── */
+.presentation-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: var(--bg-2, #F6F6F4);
+}
+.presentation-btn.disabled:hover { border-color: var(--line); box-shadow: none; }
+.presentation-btn.disabled .presentation-price-tag {
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
