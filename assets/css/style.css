@@ -1311,7 +1311,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   .mega-grid { grid-template-columns: 1fr; }
   /* Mobile: slider 30% chhota — neeche ka content pehli jhalak me dikhe */
   body.is-homepage .hero-slider,
-  .hero-slider { height: 60vh; min-height: 420px; }
+  .hero-slider { height: 66vh; min-height: 460px; }
   .hero-controls { bottom: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
