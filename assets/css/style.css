@@ -1309,7 +1309,9 @@ body.is-homepage .hero-slider { height: 100vh; }
   .footer-bottom { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0.75rem; }
   .footer-bottom .footer-copy, .footer-bottom .dev-credit { justify-self: center; }
   .mega-grid { grid-template-columns: 1fr; }
-  .hero-slider { height: 85vh; }
+  /* Mobile: slider 30% chhota — neeche ka content pehli jhalak me dikhe */
+  body.is-homepage .hero-slider,
+  .hero-slider { height: 60vh; min-height: 420px; }
   .hero-controls { bottom: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
