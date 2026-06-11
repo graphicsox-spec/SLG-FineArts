@@ -532,7 +532,12 @@
   const isSmallTouch = window.matchMedia('(max-width: 767px)').matches &&
                        ('ontouchstart' in window || navigator.maxTouchPoints > 0);
   if (!isSmallTouch) return;
-  if (sessionStorage.getItem('slg_rotate_prompt_shown')) return;
+
+  /* Kab dikhana hai: pehli visit pe, ya jab user page REFRESH kare.
+     Site ke andar normal navigation (link clicks) pe dobara nahi. */
+  const navEntry = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+  const isReload = navEntry ? navEntry.type === 'reload' : false;
+  if (sessionStorage.getItem('slg_rotate_prompt_shown') && !isReload) return;
 
   const portrait = window.matchMedia('(orientation: portrait)');
 

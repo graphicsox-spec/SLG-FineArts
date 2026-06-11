@@ -1062,11 +1062,21 @@ body.is-homepage .hero-slider { height: 100vh; }
   z-index: 0;
 }
 .footer-photo-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center 90%;   /* image 40% upar shift (50% center se) */
+  /* Image hamesha footer ki POORI height leti hai (top se bottom tak),
+     centered. Sarah ki position har desktop pe same, face kabhi crop nahi,
+     aur left/right edges mask se navy me fade. */
+  position: absolute;
+  height: 100%;
+  width: auto;                 /* natural ratio — box exactly image jitna */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
   display: block;
   opacity: 0.55;
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to right,
+      transparent 0, #000 12%, #000 88%, transparent 100%);
 }
 /* Dark navy overlay with a spotlight over Sarah + camera */
 .footer-photo-bg::before {
@@ -1077,6 +1087,21 @@ body.is-homepage .hero-slider { height: 100vh; }
       rgba(13,27,53,0.08) 0%,
       rgba(13,27,53,0.30) 45%,
       rgba(13,27,53,0.60) 100%);
+}
+/* Bade screens (1920+): image footer ki poori height leti hai (top touch),
+   box = image, aur left/right edges single mask se navy me fade.
+   Normal laptop/mobile pe ye apply nahi hota. */
+@media (min-width: 1700px) {
+  .footer-photo-bg::before {
+    background:
+      linear-gradient(to right,
+        #0D1B35 6%,  rgba(13,27,53,0) 32%,
+        rgba(13,27,53,0) 68%, #0D1B35 94%),
+      radial-gradient(ellipse 42% 65% at 27% 46%,
+        rgba(13,27,53,0.08) 0%,
+        rgba(13,27,53,0.30) 45%,
+        rgba(13,27,53,0.60) 100%);
+  }
 }
 /* Soft warm glow to lift the face + camera a touch */
 .footer-photo-bg img { opacity: 0.62; }
@@ -1295,6 +1320,7 @@ body.is-homepage .hero-slider { height: 100vh; }
     z-index: 0;
   }
   .footer-photo-bg img {
+    left: 0; bottom: 0; transform: none;   /* desktop anchoring reset */
     width: 100%; height: 100%;
     object-fit: cover;
     object-position: 20% bottom;      /* Sarah shifted left, clear of the text */
