@@ -41,8 +41,8 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(13,27,53,.55) 0%,
-        rgba(13,27,53,.8) 100%
+        rgba(13,27,53,.45) 0%,
+        rgba(13,27,53,.7) 100%
       );
     }
     .ab-hero-content {
@@ -83,6 +83,8 @@
       text-align: center;
     }
     @media (max-width: 640px) {
+      /* mobile: Sarah image ke right side me hai — frame use dikhaye */
+      .ab-hero-img { object-position: 65% 30%; }
       .ab-hero-sub { font-size: .9rem; max-width: none; }
     }
     /* scroll hint — hidden now that the hero is a compact band */
@@ -446,17 +448,14 @@
   <!-- ── Hero ── -->
   <section class="ab-hero">
     <img class="ab-hero-img"
-         src="assets/images/The Artist - Sarah L Glabman.jpg"
+         src="assets/images/artist-hero-web.jpg"
          alt="Sarah L Glabman — fine art photographer on location" />
     <div class="ab-hero-overlay"></div>
     <div class="ab-hero-content">
       <span class="ab-hero-label">The Artist</span>
       <h1>Sarah L. Glabman</h1>
-      <p class="ab-hero-sub">Wildlife, Landscape &amp; Cityscape Photographer — where light, weather, and wilderness tell the story.</p>
-    </div>
-    <div class="ab-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="ab-scroll-line"></div>
+      <p class="ab-hero-tagline" style="font-family: var(--title); font-style: italic; font-size: clamp(1.15rem, 2vw, 1.6rem); color: var(--gold, #C9A84C); margin: 0 0 .9rem;">Where Adventure Becomes Art</p>
+      <p class="ab-hero-sub">Museum-quality fine art photography inspired by extraordinary landscapes, remarkable wildlife encounters, and the timeless beauty of the natural world.</p>
     </div>
   </section>
 
@@ -504,12 +503,17 @@
     <div class="ab-bio">
       <div class="ab-bio-left">
         <span class="ab-bio-label">/ Biography</span>
-        <h2>A life spent<br><em>looking.</em></h2>
+        <h2>A Life Spent<br><em>Exploring.</em></h2>
       </div>
       <div class="ab-bio-right">
-        <p>I came to photography the way most people come to a long love — slowly, and without quite knowing it. I grew up watching desert light fall across the Sonoran, and somewhere between morning hikes and evening drives I realized the camera was simply a way to keep moments that otherwise would have passed.</p>
-        <p>The work in this collection is made over years, not minutes. From the slot canyons of northern Arizona to the savannas of Botswana, the kelp-rimmed coast of California to the wave-cut cliffs of Kauai, every image begins with patience: scouting the terrain, learning the weather, returning until the light gives something back.</p>
-        <p>Every print is signed by hand and made to last — archival fine art paper or museum-grade canvas, ready to hang in a home that pays attention.</p>
+        <p>For more than twenty years, photography was my profession.</p>
+        <p>I photographed magazine covers, advertising campaigns, and billboards seen in Times Square, Las Vegas, and Los Angeles. The camera took me places I never imagined and introduced me to extraordinary people along the way.</p>
+        <p>Then, in 2024, everything changed.</p>
+        <p>A journey through Africa awakened something I hadn’t felt in years. Standing among elephants in Botswana, watching the first light touch the dunes of Namibia, and witnessing wildlife on its own terms reminded me why I fell in love with photography in the first place.</p>
+        <p>Today, my work is devoted to fine art landscape and wildlife photography. From the deserts of Namibia and the waterways of the Okavango Delta to the coastlines of California, the mountains of Alaska, and the remote corners of the American West, I create museum-quality artwork inspired by the beauty, scale, and wonder of the natural world.</p>
+        <p>Every image begins with patience. Long before the shutter is pressed, there are miles traveled, forecasts studied, locations scouted, and countless returns in pursuit of the perfect light. My goal is not simply to document a place, but to preserve the feeling of standing there.</p>
+        <p>Each artwork is produced using archival museum-grade materials and crafted to become a lasting centerpiece for collectors, luxury homes, and thoughtfully designed interiors.</p>
+        <p>I believe the most meaningful photographs do more than show us a place.<br>They invite us into an experience.</p>
       </div>
     </div>
   </section>

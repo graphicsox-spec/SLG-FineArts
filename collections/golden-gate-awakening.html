@@ -65,20 +65,16 @@
       <div class="selector-group">
         <span class="selector-label">Select Size</span>
         <div class="size-options" id="size-options">
-          <button class="size-btn" data-size="24x36" type="button">
-            <span class="size-dim">24 × 36" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(61 × 91 cm)</span></span>
+          <button class="size-btn" data-size="20x40" type="button">
+            <span class="size-dim">20 × 40" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(51 × 102 cm)</span></span>
             <span class="size-label">Medium</span>
           </button>
-          <button class="size-btn" data-size="32x48" type="button">
-            <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
-            <span class="size-label">Medium / Large</span>
-          </button>
-          <button class="size-btn" data-size="40x60" type="button">
-            <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
+          <button class="size-btn" data-size="30x60" type="button">
+            <span class="size-dim">30 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(76 × 152 cm)</span></span>
             <span class="size-label">Large / Statement</span>
           </button>
-          <button class="size-btn" data-size="48x72" type="button">
-            <span class="size-dim">48 × 72" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(122 × 183 cm)</span></span>
+          <button class="size-btn" data-size="40x80" type="button">
+            <span class="size-dim">40 × 80" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 203 cm)</span></span>
             <span class="size-label">Extra Large</span>
           </button>
         </div>
@@ -164,7 +160,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">24×36" · 32×48" · 40×60" · 48×72"</span>
+          <span class="spec-value">20×40" · 30×60" · 40×80" — 1:2 Ratio</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -218,28 +214,26 @@
     const PRODUCT = {
       images: {
         hero: '../assets/images/Golden Gate/Golden-Gate-8751-website.jpg',
-        '24x36_unframed':     '../assets/images/Golden Gate/GG1 24x36 no frame.jpg',
-        '24x36_framed_black': '../assets/images/Golden Gate/GG1 24x36 Black frame.jpg',
-        '24x36_framed_brown': '../assets/images/Golden Gate/GG1 24x36 Brown frame.jpg',
-        '32x48_unframed':     '../assets/images/Golden Gate/GG1 32x48 no frame.jpg',
-        '32x48_framed_black': '../assets/images/Golden Gate/GG1 32x48 Black Frame.jpg',
-        '32x48_framed_brown': '../assets/images/Golden Gate/GG1 32x48 Brown Frame.jpg',
-        '40x60_unframed':     '../assets/images/Golden Gate/GG1 40x60 no frame.jpg',
-        '40x60_framed_black': '../assets/images/Golden Gate/GG1 40x60 black frame.jpg',
-        '40x60_framed_brown': '../assets/images/Golden Gate/GG1 40x60 Brown Frame.jpg',
-        '48x72_unframed':     '../assets/images/Golden Gate/GG1 48x72 no frame.jpg',
-        '48x72_framed_black': '../assets/images/Golden Gate/GG1 48x72 black frame.jpg',
-        '48x72_framed_brown': '../assets/images/Golden Gate/GG1 48x72 brown frame.jpg',
+        /* 1:2 ratio revised mockups (Sarah, 11 Jun) */
+        '20x40_unframed':     '../assets/images/Golden Gate/the gate 20x40 no frame.jpg',
+        '20x40_framed_black': '../assets/images/Golden Gate/the gate-20x40 black frame.jpg',
+        '20x40_framed_brown': '../assets/images/Golden Gate/the gate 20x40 brown frame.jpg',
+        '30x60_unframed':     '../assets/images/Golden Gate/the gate-full 30x60 no frame.jpg',
+        '30x60_framed_black': '../assets/images/Golden Gate/the gate-30x60 back frame.jpg',
+        '30x60_framed_brown': '../assets/images/Golden Gate/the gate 30x60 brown frame.jpg',
+        '40x80_unframed':     '../assets/images/Golden Gate/the gate-40x80.jpg',
+        '40x80_framed_black': '../assets/images/Golden Gate/the gate-40x80 black frame.jpg',
+        '40x80_framed_brown': '../assets/images/Golden Gate/the gate-40x80 brown frame.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
+      /* 1:2 ratio ki pricing Sarah se pending — null = "coming soon" */
       pricing: {
-        '24x36': { unframed: 965,  framed: 1475 },
-        '32x48': { unframed: 1700, framed: 2300 },
-        '40x60': { unframed: 3750, framed: 4500 },
-        '48x72': { unframed: 4600, framed: 6300 },
+        '20x40': { unframed: null, framed: null },
+        '30x60': { unframed: null, framed: null },
+        '40x80': { unframed: null, framed: null },
       }
     };
 
@@ -265,12 +259,12 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',               label: 'Web Preview' },
-      { key: '24x36_unframed',     label: '24×36 Acrylic Mount' },
-      { key: '24x36_framed_black', label: '24×36 Black Frame' },
-      { key: '24x36_framed_brown', label: '24×36 Brown Frame' },
-      { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
-      { key: '40x60_framed_black', label: '40×60 Black Frame' },
-      { key: '48x72_framed_brown', label: '48×72 Brown Frame' },
+      { key: '20x40_unframed',     label: '20×40 Acrylic Mount' },
+      { key: '20x40_framed_black', label: '20×40 Black Frame' },
+      { key: '20x40_framed_brown', label: '20×40 Brown Frame' },
+      { key: '30x60_unframed',     label: '30×60 Acrylic Mount' },
+      { key: '40x80_framed_black', label: '40×80 Black Frame' },
+      { key: '40x80_framed_brown', label: '40×80 Brown Frame' },
     ];
 
     function buildThumbs() {
@@ -341,19 +335,26 @@
     /* ─── Update all prices ─── */
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp && sp.framed ? '$' + fmtPrice(sp.framed) : '—';
+      priceUnframed.textContent = sp && sp.unframed != null ? '$' + fmtPrice(sp.unframed) : '—';
+      priceFramed.textContent   = sp && sp.framed   != null ? '$' + fmtPrice(sp.framed)   : '—';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        /* abhi selection adhoori — price pending, cart disabled */
         priceDisplay.textContent = '—';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
+        return;
+      }
+      const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+      if (price == null) {
+        /* 1:2 ratio pricing abhi pending */
+        priceDisplay.textContent = '—';
+        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel() + ' — pricing coming soon';
+        if (cur) cur.style.display = 'none';
+        if (cta) cta.classList.add('disabled');
       } else {
-        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         priceDisplay.textContent = fmtPrice(price);
         priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
         if (cur) cur.style.display = '';
@@ -362,10 +363,9 @@
     }
 
     function sizeLabel() {
-      if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
-      if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
-      if (currentSize === '40x60') return '40 × 60" (102 × 152 cm)';
-      return '48 × 72" (122 × 183 cm)';
+      if (currentSize === '20x40') return '20 × 40" (51 × 102 cm)';
+      if (currentSize === '30x60') return '30 × 60" (76 × 152 cm)';
+      return '40 × 80" (102 × 203 cm)';
     }
     
     function presentationLabel() {
@@ -431,6 +431,8 @@
       cta.addEventListener('click', e => {
         e.preventDefault();
         if (!currentSize || !currentPresentation) return;   /* selection adhoori */
+        const sp0 = PRODUCT.pricing[currentSize];
+        if (!sp0 || (currentPresentation === 'framed' ? sp0.framed : sp0.unframed) == null) return;  /* pricing pending */
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();

@@ -1212,7 +1212,8 @@ body.is-homepage .hero-slider { height: 100vh; }
   grid-template-columns: 380px 1fr;
   max-width: calc(var(--max) - (var(--gutter) * 2));
   margin: clamp(4rem, 7vw, 6rem) auto;
-  height: 420px;
+  height: auto;             /* text lamba ho to section badhe — image hamesha center */
+  min-height: 420px;
   overflow: hidden;
   padding: 0 var(--gutter);
   gap: clamp(1.5rem, 2.5vw, 2.5rem);
