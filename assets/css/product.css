@@ -76,7 +76,8 @@
   opacity: 0.3;
 }
 
-/* Thumbnails */
+/* Thumbnails — default me sirf original (Web Preview) thumb dikhe;
+   expand/selection par baaki mockup thumbs bhi */
 .product-thumbs {
   display: flex;
   gap: 0.75rem;
@@ -84,6 +85,34 @@
   overflow-x: auto;
   padding-bottom: 0.5rem;
 }
+.product-thumbs .product-thumb { display: none; }
+.product-thumbs .product-thumb[data-img-key="hero"] { display: block; }
+.product-thumbs.expanded .product-thumb { display: block; }
+
+/* Add to Cart disabled — jab tak size + presentation select na ho */
+.btn-navy.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-navy.disabled:hover { background: var(--navy); }
+.thumbs-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-deep, #A8892A);
+  transition: color .25s;
+}
+.thumbs-toggle:hover { color: var(--navy, #0D1B35); }
+
+
 .product-thumb {
   flex: 0 0 80px;
   height: 80px;

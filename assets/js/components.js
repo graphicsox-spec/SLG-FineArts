@@ -228,8 +228,8 @@
     }
 
     function refresh() { renderBadge(); renderDrawer(); }
-    function open()  { renderDrawer(); drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-    function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+    function open()  { renderDrawer(); drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.documentElement.style.overflow = 'hidden'; }
+    function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); document.documentElement.style.overflow = ''; }
 
     const cartBtn = document.querySelector('.nav-cart');
     if (cartBtn) cartBtn.addEventListener('click', open);
@@ -301,8 +301,8 @@
     const overlay = document.getElementById('menuOverlay');
     const drawer  = document.getElementById('menuDrawer');
 
-    function open()  { drawer.classList.add('open'); overlay.classList.add('open'); toggle.classList.add('is-active'); toggle.setAttribute('aria-expanded', 'true'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-    function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); toggle.classList.remove('is-active'); toggle.setAttribute('aria-expanded', 'false'); drawer.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+    function open()  { drawer.classList.add('open'); overlay.classList.add('open'); toggle.classList.add('is-active'); toggle.setAttribute('aria-expanded', 'true'); drawer.setAttribute('aria-hidden', 'false'); document.documentElement.style.overflow = 'hidden'; }
+    function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); toggle.classList.remove('is-active'); toggle.setAttribute('aria-expanded', 'false'); drawer.setAttribute('aria-hidden', 'true'); document.documentElement.style.overflow = ''; }
 
     toggle.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
     document.getElementById('menuClose').addEventListener('click', close);
@@ -505,7 +505,7 @@
   const label = trigger.querySelector('.size-dd-label');
   function syncLabel() {
     const a = list.querySelector('.size-btn.active');
-    if (!a) return;
+    if (!a) { label.innerHTML = 'Select Size'; return; }
     const dim = a.querySelector('.size-dim');
     const sub = a.querySelector('.size-label');
     label.innerHTML = (dim ? dim.innerHTML : a.textContent) +
@@ -569,4 +569,66 @@
     /* 12 second baad khud hat jaye */
     setTimeout(hide, 12000);
   }, 5000);
+})();
+
+/* ---- Product page: room-preview thumbnails (collapse by default,
+        selection pe expand + thumbnail→selection reverse sync) ---- */
+(function () {
+  const thumbs = document.getElementById('product-thumbs');
+  if (!thumbs) return;
+
+  /* "View Room Previews" toggle link (image ke neeche) */
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'thumbs-toggle';
+  thumbs.parentElement.insertBefore(toggle, thumbs);
+
+  function setExpanded(on) {
+    thumbs.classList.toggle('expanded', on);
+    toggle.innerHTML = on
+      ? 'Hide Room Previews &nbsp;▴'
+      : 'View Room Previews &nbsp;▾';
+  }
+  setExpanded(false);
+  toggle.addEventListener('click', function () {
+    setExpanded(!thumbs.classList.contains('expanded'));
+  });
+
+  /* koi bhi size / presentation / frame select hote hi thumbnails expand */
+  ['size-options', 'presentation-options', 'frame-colors'].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', function (e) {
+      const b = e.target.closest('button');
+      if (b && !b.classList.contains('disabled')) setExpanded(true);
+    });
+  });
+
+  /* thumbnail click → size/presentation/frame selection auto-sync */
+  thumbs.addEventListener('click', function (e) {
+    const btn = e.target.closest('.product-thumb');
+    if (!btn) return;
+    const key = btn.dataset.imgKey || '';
+    if (key === 'hero') {
+      /* Web Preview: poora panel default unselected state pe reset */
+      if (window.SLGResetToDefault) window.SLGResetToDefault();
+      const ddLabel = document.querySelector('.size-dd-label');
+      if (ddLabel) ddLabel.innerHTML = 'Select Size';
+      return;
+    }
+    const m = key.match(/^(\d+x\d+)_(unframed|framed)(?:_(black|brown))?$/);
+    if (!m) return;
+    const size = m[1], pres = m[2] === 'framed' ? 'framed' : 'acrylic', frame = m[3];
+
+    const sBtn = document.querySelector('.size-btn[data-size="' + size + '"]');
+    if (sBtn && !sBtn.classList.contains('active')) sBtn.click();
+
+    const pBtn = document.querySelector('.presentation-btn[data-presentation="' + pres + '"]');
+    if (pBtn && !pBtn.classList.contains('active') && !pBtn.classList.contains('disabled')) pBtn.click();
+
+    if (frame) {
+      const fBtn = document.querySelector('.frame-color-btn[data-frame="' + frame + '"]');
+      if (fBtn && !fBtn.classList.contains('active')) fBtn.click();
+    }
+  });
 })();

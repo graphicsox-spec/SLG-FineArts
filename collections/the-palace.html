@@ -65,7 +65,7 @@
       <div class="selector-group">
         <span class="selector-label">Select Size</span>
         <div class="size-options" id="size-options">
-          <button class="size-btn active" data-size="24x36" type="button">
+          <button class="size-btn" data-size="24x36" type="button">
             <span class="size-dim">24 × 36" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(61 × 91 cm)</span></span>
             <span class="size-label">Medium</span>
           </button>
@@ -89,13 +89,13 @@
         <span class="selector-label">Presentation</span>
         <div class="presentation-options" id="presentation-options">
 
-          <button class="presentation-btn active" data-presentation="acrylic" type="button">
+          <button class="presentation-btn" data-presentation="acrylic" type="button">
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
               <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">$965</span>
+            <span class="presentation-price-tag" id="price-unframed">—</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -104,7 +104,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">$1,475</span>
+            <span class="presentation-price-tag" id="price-framed">—</span>
           </button>
 
         </div>
@@ -137,16 +137,16 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency">$</span><span id="price-amount">965</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
         </div>
         <div class="price-config" id="price-config">
-          24 × 36" (61 × 91 cm) · Acrylic Mount
+          Select size & presentation to see pricing
         </div>
       </div>
 
       <!-- CTA -->
       <div class="product-cta">
-        <a href="#" class="btn-navy" id="cta-purchase">Add to Cart</a>
+        <a href="#" class="btn-navy disabled" id="cta-purchase">Add to Cart</a>
         <a href="../contact.html" class="btn-navy-outline">Get Custom Size</a>
       </div>
 
@@ -241,8 +241,8 @@
     };
 
     /* ─── State ─── */
-    let currentSize = '24x36';
-    let currentPresentation = 'acrylic'; // acrylic | framed
+    let currentSize = null;            /* default: kuch select nahi */
+    let currentPresentation = null;    /* acrylic | framed */
     let currentFrame = 'black';           // black | brown
 
     /* ─── DOM refs ─── */
@@ -309,6 +309,7 @@
 
     /* ─── Determine current image key ─── */
     function getCurrentImageKey() {
+      if (!currentSize || !currentPresentation) return 'hero';
       let key;
       if (currentPresentation === 'framed') {
         key = currentSize + '_framed_' + currentFrame;
@@ -335,15 +336,25 @@
 
     /* ─── Update all prices ─── */
     function syncPrices() {
-      const sp = PRODUCT.pricing[currentSize];
-      // Update presentation option prices
-      priceUnframed.textContent = '$' + fmtPrice(sp.unframed);
-      priceFramed.textContent   = '$' + fmtPrice(sp.framed);
+      const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
+      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
+      priceFramed.textContent   = sp && sp.framed ? '$' + fmtPrice(sp.framed) : '—';
 
-      // Main price display
-      const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-      priceDisplay.textContent = fmtPrice(price);
-      priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
+      const cta = document.getElementById('cta-purchase');
+      const cur = document.querySelector('.price-current .currency');
+      if (!currentSize || !currentPresentation) {
+        /* abhi selection adhoori — price pending, cart disabled */
+        priceDisplay.textContent = '—';
+        priceConfig.textContent  = 'Select size & presentation to see pricing';
+        if (cur) cur.style.display = 'none';
+        if (cta) cta.classList.add('disabled');
+      } else {
+        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+        priceDisplay.textContent = fmtPrice(price);
+        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel();
+        if (cur) cur.style.display = '';
+        if (cta) cta.classList.remove('disabled');
+      }
     }
 
     function sizeLabel() {
@@ -415,6 +426,7 @@
       const name = (document.querySelector('.product-title')?.textContent || 'Print').trim();
       cta.addEventListener('click', e => {
         e.preventDefault();
+        if (!currentSize || !currentPresentation) return;   /* selection adhoori */
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
         const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
@@ -425,9 +437,24 @@
       });
     })();
 
+    /* ─── Web Preview thumb → poora panel default (unselected) state ─── */
+    window.SLGResetToDefault = function () {
+      currentSize = null;
+      currentPresentation = null;
+      currentFrame = 'black';
+      sizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      presOptions.querySelectorAll('.presentation-btn').forEach(b => b.classList.remove('active'));
+      frameColors.querySelectorAll('.frame-color-btn').forEach(b => b.classList.toggle('active', b.dataset.frame === 'black'));
+      syncPrices();
+      syncFrameUI();
+      setHeroImage('hero');
+      thumbsWrap.querySelectorAll('.product-thumb').forEach(b => b.classList.toggle('active', b.dataset.imgKey === 'hero'));
+    };
+
     /* ─── Init ─── */
     buildThumbs();
-    sync();
+    syncPrices();
+    syncFrameUI();   /* image: original hi rahegi jab tak selection na ho */
 
   })();
   </script>
