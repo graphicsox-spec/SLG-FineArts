@@ -43,7 +43,7 @@
   margin: 0 auto;
   padding: 2rem var(--gutter) 5rem;
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 5rem);
   align-items: start;
 }
@@ -52,6 +52,7 @@
 .product-gallery {
   position: sticky;
   top: 100px;
+  min-width: 0;   /* allow column to shrink so thumbs wrap instead of widening page */
 }
 .product-hero-wrap {
   position: relative;
@@ -80,9 +81,9 @@
    expand/selection par baaki mockup thumbs bhi */
 .product-thumbs {
   display: flex;
+  flex-wrap: wrap;          /* thumbs wrap to 2nd/3rd line, never wider than image box */
   gap: 0.75rem;
   margin-top: 1rem;
-  overflow-x: auto;
   padding-bottom: 0.5rem;
 }
 .product-thumbs .product-thumb { display: none; }
@@ -204,7 +205,8 @@
 }
 .size-btn {
   flex: 1;
-  padding: 0.9rem 1rem;
+  min-width: 0;
+  padding: 0.9rem 0.6rem;
   background: transparent;
   border: none;
   border-right: 1px solid var(--line);
@@ -232,6 +234,11 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 0.15rem;
+  white-space: nowrap;
+}
+/* put the (cm) measurement on its own line so 4 sizes fit the column */
+.size-btn .size-dim span {
+  display: block;
   white-space: nowrap;
 }
 .size-btn .size-label {
@@ -432,7 +439,15 @@
   gap: 0.75rem;
   margin-bottom: 2.5rem;
 }
-.product-cta > a { flex: 1 1 0; width: auto; min-width: 200px; }
+.product-cta > a {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  padding: 1.1rem 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;   /* keep "Request Custom Size" on one line, same height as Add to Cart */
+}
 .btn-navy {
   display: flex;
   align-items: center;

@@ -77,6 +77,10 @@
             <span class="size-dim">40 × 80" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 203 cm)</span></span>
             <span class="size-label">Extra Large</span>
           </button>
+          <button class="size-btn" data-size="48x96" type="button">
+            <span class="size-dim">48 × 96" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(122 × 244 cm)</span></span>
+            <span class="size-label">XL / Grand</span>
+          </button>
         </div>
       </div>
 
@@ -143,7 +147,7 @@
       <!-- CTA -->
       <div class="product-cta">
         <a href="#" class="btn-navy disabled" id="cta-purchase">Add to Cart</a>
-        <a href="../contact.html" class="btn-navy-outline">Get Custom Size</a>
+        <a href="../contact.html" class="btn-navy-outline">Request Custom Size</a>
       </div>
 
       <hr class="product-divider" />
@@ -160,7 +164,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">20×40" · 30×60" · 40×80" — 1:2 Ratio</span>
+          <span class="spec-value">20×40" · 30×60" · 40×80" · 48×96" — 1:2 Ratio</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -224,16 +228,21 @@
         '40x80_unframed':     '../assets/images/Golden Gate/the gate-40x80.jpg',
         '40x80_framed_black': '../assets/images/Golden Gate/the gate-40x80 black frame.jpg',
         '40x80_framed_brown': '../assets/images/Golden Gate/the gate-40x80 brown frame.jpg',
+        /* 48x96 XL — 1:2 ratio (Sarah, 12 Jun) */
+        '48x96_unframed':     '../assets/images/Golden Gate/the gate-48x96.jpg',
+        '48x96_framed_black': '../assets/images/Golden Gate/the gate-48x96 black frame.jpg',
+        '48x96_framed_brown': '../assets/images/Golden Gate/the gate-48x96 brown frame.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
-      /* 1:2 ratio ki pricing Sarah se pending — null = "coming soon" */
+      /* 1:2 Ratio Panorama pricing — SLG.Art master price list (Sarah, 12 Jun) */
       pricing: {
-        '20x40': { unframed: null, framed: null },
-        '30x60': { unframed: null, framed: null },
-        '40x80': { unframed: null, framed: null },
+        '20x40': { unframed: 965,  framed: 1525 },
+        '30x60': { unframed: 1950, framed: 2820 },
+        '40x80': { unframed: 4295, framed: 5495 },
+        '48x96': { unframed: 7950, framed: 9390 },
       }
     };
 
@@ -265,6 +274,9 @@
       { key: '30x60_unframed',     label: '30×60 Acrylic Mount' },
       { key: '40x80_framed_black', label: '40×80 Black Frame' },
       { key: '40x80_framed_brown', label: '40×80 Brown Frame' },
+      { key: '48x96_unframed',     label: '48×96 Acrylic Mount' },
+      { key: '48x96_framed_black', label: '48×96 Black Frame' },
+      { key: '48x96_framed_brown', label: '48×96 Brown Frame' },
     ];
 
     function buildThumbs() {
@@ -365,7 +377,8 @@
     function sizeLabel() {
       if (currentSize === '20x40') return '20 × 40" (51 × 102 cm)';
       if (currentSize === '30x60') return '30 × 60" (76 × 152 cm)';
-      return '40 × 80" (102 × 203 cm)';
+      if (currentSize === '40x80') return '40 × 80" (102 × 203 cm)';
+      return '48 × 96" (122 × 244 cm)';
     }
     
     function presentationLabel() {
