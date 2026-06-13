@@ -102,10 +102,8 @@
     </div>
 
     <!-- Right: cinematic slideshow (3 images) -->
-    <a href="shop.html?tag=new" class="na-right reveal">
-      <img class="na-slide is-on" src="assets/images/Where the Ocean Meets Light/Hawaii 0202 copy website.jpg" alt="Where the Ocean Meets Light — Kauai, Hawaii" />
-      <img class="na-slide" src="assets/images/Golden Gate/Golden-Gate-8751-website.jpg" alt="Golden Gate Awakening — San Francisco" />
-      <img class="na-slide" src="assets/images/Faces/Page-6253-MAIN-website.jpg" alt="The Passage — Antelope Canyon, Arizona" />
+    <a href="shop.html?tag=new" class="na-right reveal" data-feed="new" data-feed-max="6">
+      <!-- slides auto-built from assets/js/products.js (tag: new) -->
     </a>
   </section>
 
@@ -124,10 +122,8 @@
       </div>
 
       <!-- Right: cinematic slideshow (3 images) -->
-      <a href="shop.html?tag=best" class="na-right reveal">
-        <img class="na-slide is-on" src="assets/images/Beneath the Pier/Pier MAIN web.jpg" alt="Beneath the Pier — California Coast" />
-        <img class="na-slide" src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg" alt="Baby Leopard" />
-        <img class="na-slide" src="assets/images/The Palace/Palace-8706-website.jpg" alt="The Palace — San Francisco" />
+      <a href="shop.html?tag=best" class="na-right reveal" data-feed="best" data-feed-max="6">
+        <!-- slides auto-built from assets/js/products.js (tag: best) -->
       </a>
     </div>
   </section>
@@ -194,9 +190,30 @@
        ============================================================ -->
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
 
-  <!-- Cinematic slideshows: New Arrivals + Best Sellers -->
+  <!-- Cinematic slideshows: auto-built from products.js (tag-driven), then rotate -->
   <script>
+    // 1) Build slides for each feed box from the shared product list
+    document.querySelectorAll('.na-right[data-feed]').forEach(function (box) {
+      const feed = box.dataset.feed;                       // "new" or "best"
+      const max  = parseInt(box.dataset.feedMax || '6', 10);
+      const list = (window.SLG_PRODUCTS || [])
+        .filter(function (p) { return (p.tags || []).indexOf(feed) !== -1; })
+        .slice(0, max);
+      if (!list.length) return;
+      box.innerHTML = '';
+      list.forEach(function (p, idx) {
+        const img = document.createElement('img');
+        img.className = 'na-slide' + (idx === 0 ? ' is-on' : '');
+        img.src = p.img;
+        img.alt = p.title;
+        img.loading = 'lazy';
+        box.appendChild(img);
+      });
+    });
+
+    // 2) Rotate the slides
     document.querySelectorAll('.na-right').forEach(function (box) {
       const slides = box.querySelectorAll('.na-slide');
       if (slides.length < 2) return;
