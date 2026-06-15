@@ -214,13 +214,12 @@
     const PRODUCT = {
       images: {
         hero: '../assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg',
-        '24x36_unframed': '../assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg',
-        '24x36_framed':   '../assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg',
-        '32x48_unframed': '../assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg',
-        '32x48_framed':   '../assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg',
-        /* 40x60 mockup abhi nahi — original (no mockup) image dikhaao */
-        '40x60_unframed': '../assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg',
-        '40x60_framed':   '../assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg',
+        '24x36_unframed':     '../assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg',
+        '24x36_framed_black': '../assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg',
+        '24x36_framed_brown': '../assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg',
+        '32x48_unframed':     '../assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg',
+        '32x48_framed_black': '../assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg',
+        '32x48_framed_brown': '../assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
@@ -254,11 +253,13 @@
 
     /* ─── Thumbnails ─── */
     const thumbOrder = [
-      { key: 'hero',           label: 'Web Preview' },
-      { key: '24x36_unframed', label: '24×36 Acrylic Mount' },
-      { key: '24x36_framed',   label: '24×36 Float Frame' },
-      { key: '32x48_unframed', label: '32×48 Acrylic Mount' },
-      { key: '32x48_framed',   label: '32×48 Float Frame' },
+      { key: 'hero',               label: 'Web Preview' },
+      { key: '24x36_unframed',     label: '24×36 Acrylic Mount' },
+      { key: '24x36_framed_black', label: '24×36 Framed' },
+      { key: '24x36_framed_brown', label: '24×36 Framed (Brown)' },
+      { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed_black', label: '32×48 Framed' },
+      { key: '32x48_framed_brown', label: '32×48 Framed (Brown)' },
     ];
 
     function buildThumbs() {
