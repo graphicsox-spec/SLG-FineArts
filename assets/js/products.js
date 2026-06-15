@@ -10,11 +10,12 @@
    Order here = order shown everywhere (newest first).
    ============================================================ */
 window.SLG_PRODUCTS = [
+  { title: 'Cathedral of Light', href: 'collections/cathedral-of-light.html', img: 'assets/images/Cathedral of Light/Ripples-Web-Version.png', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Lake Powell Borderlands', href: 'collections/lake-powell-borderlands.html', img: 'assets/images/Lake Powell/lakepowell-web.jpg', category: 'landscape', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new', 'best'] },
   { title: 'Bell Rock Before the Storm', href: 'collections/bell-rock.html', img: 'assets/images/Bell Rock/bellrock-web.jpg', category: 'landscape', orientation: 'horizontal', price: 1700, priceLabel: 'From $1,700', tags: ['new'] },
   { title: 'Monument Valley Silence', href: 'collections/monument-valley-silence.html', img: 'assets/images/Monument Valley/monument-web.jpg', category: 'landscape', orientation: 'horizontal', price: 1700, priceLabel: 'From $1,700', tags: ['new'] },
   { title: 'Home', href: 'collections/seattle-skyline.html', img: 'assets/images/Seattle/seattle-web.jpg', category: 'landscape', orientation: 'horizontal', price: 845, priceLabel: 'From $845', tags: ['new'] },
-  { title: 'Golden Gate Awakening', href: 'collections/golden-gate-awakening.html', img: 'assets/images/Golden Gate/Golden-Gate-8751-website.jpg', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new', 'best'] },
+  { title: 'Golden Gate Awakening', href: 'collections/golden-gate-awakening.html', img: 'assets/images/Golden Gate/Golden-Gate-8751-website 1 2 ratio.png', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new', 'best'] },
   { title: 'The Passage', href: 'collections/the-passage.html', img: 'assets/images/Faces/Page-6253-MAIN-website.jpg', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Where the Ocean Meets Light', href: 'collections/where-the-ocean-meets-light.html', img: 'assets/images/Where the Ocean Meets Light/Hawaii 0202 copy website.jpg', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Moonrise Namibia', href: 'collections/moonrise-namibia.html', img: 'assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg', category: 'landscape', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },

@@ -126,9 +126,12 @@
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: clamp(4rem, 8vw, 9rem);
-      align-items: center;
+      align-items: start;
     }
-    .ab-bio-left {}
+    .ab-bio-left {
+      position: sticky;
+      top: calc(var(--nav-h, 72px) + clamp(5rem, 9vw, 8rem));
+    }
     .ab-bio-label {
       display: block;
       font-family: var(--display);
