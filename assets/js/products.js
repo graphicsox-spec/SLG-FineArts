@@ -10,6 +10,9 @@
    Order here = order shown everywhere (newest first).
    ============================================================ */
 window.SLG_PRODUCTS = [
+  { title: 'Palace of Light', href: 'collections/palace-of-light.html', img: 'assets/images/Palace of Light/Palace 8722 copy.jpg', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },
+  { title: 'Golden Gate Sunrise', href: 'collections/golden-gate-sunrise.html', img: 'assets/images/Golden Gate Sunrise/Golden Gate Sunrise.png', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },
+  { title: 'The Window of Light', href: 'collections/the-window-of-light.html', img: 'assets/images/The Window of Light/Window-of-Light-Web.png', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Cathedral of Light', href: 'collections/cathedral-of-light.html', img: 'assets/images/Cathedral of Light/Ripples-Web-Version.png', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Lake Powell Borderlands', href: 'collections/lake-powell-borderlands.html', img: 'assets/images/Lake Powell/lakepowell-web.jpg', category: 'landscape', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new', 'best'] },
   { title: 'Bell Rock Before the Storm', href: 'collections/bell-rock.html', img: 'assets/images/Bell Rock/bellrock-web.jpg', category: 'landscape', orientation: 'horizontal', price: 1700, priceLabel: 'From $1,700', tags: ['new'] },
