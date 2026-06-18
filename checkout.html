@@ -178,6 +178,22 @@
 
     .pay-method-row input[type="radio"] { accent-color: var(--blue); width: 16px; height: 16px; flex-shrink: 0; }
 
+    /* plain icon — no box, no border */
+    .pay-method-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      height: 22px;
+      width: auto;
+    }
+    .pay-method-icon img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
     .pay-method-label {
       font-family: var(--sans);
       font-size: 0.9rem;
@@ -186,15 +202,56 @@
       flex: 1;
     }
 
-    /* Payment logos */
+    /* Payment logos (card networks) */
     .pay-logos { display: flex; gap: 0.4rem; align-items: center; }
-    .pay-logo {
-      height: 22px;
-      width: auto;
-      border-radius: 3px;
-    }
+    .pay-logo { height: 22px; width: auto; border-radius: 3px; }
 
-    /* Card fields panel */
+    /* Expand panels (card fields + redirect notices) */
+    .pay-expand {
+      padding: 1.1rem 1rem 1.1rem;
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      display: none;
+    }
+    .pay-expand.open { display: block; }
+
+    /* redirect notice inside expand panel */
+    .pay-redirect-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+    .pay-redirect-notice svg { flex-shrink: 0; margin-top: 2px; color: var(--ink-muted); }
+    .pay-redirect-notice strong { display: block; color: var(--ink); font-weight: 400; margin-bottom: 0.2rem; font-size: 0.85rem; }
+
+    /* Klarna installments */
+    .klarna-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .klarna-step {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 0.6rem 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+    .klarna-step strong { display: block; color: var(--ink); font-size: 0.82rem; font-weight: 500; margin-bottom: 0.1rem; }
+    .klarna-step span { font-size: 0.68rem; }
+
+    /* alias — card fields use same .pay-expand */
     .card-fields {
       padding: 1.25rem 1rem 1rem;
       background: var(--bg-2);
@@ -240,44 +297,71 @@
       margin: 0;
     }
 
-    .co-items { padding: 1rem 1.5rem; border-bottom: 1px solid var(--line); }
+    .co-items { padding: 0 1.5rem; border-bottom: 1px solid var(--line); }
 
     .co-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;       /* all three vertically centered */
       gap: 1rem;
-      padding: 0.75rem 0;
+      padding: 1rem 0;
       border-bottom: 1px solid var(--line);
     }
-    .co-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .co-item-img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 2px;
+    .co-item:last-child { border-bottom: none; }
+
+    /* image container — fixed box, image inside fits fully uncropped */
+    .co-item-img-wrap {
+      width: 72px;
+      height: 72px;
       flex-shrink: 0;
       border: 1px solid var(--line);
+      border-radius: 2px;
+      background: var(--bg-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    .co-item-details { flex: 1; }
+    .co-item-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;       /* full image, no crop */
+      display: block;
+    }
+
+    /* right side */
+    .co-item-right {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;       /* title+meta block & price vertically centered */
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .co-item-details { flex: 1; min-width: 0; }
     .co-item-title {
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 400;
       color: var(--ink);
       display: block;
+      line-height: 1.45;
     }
     .co-item-meta {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--ink-muted);
       display: block;
       margin-top: 0.2rem;
+      line-height: 1.5;
     }
     .co-item-price {
       font-family: var(--display);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       font-weight: 500;
       color: var(--blue);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Empty cart */
@@ -607,38 +691,23 @@
         <div class="pay-methods" id="payMethods">
 
           <!-- Card -->
+          <!-- Card -->
           <label class="pay-method-row" id="pay-card-row">
-            <input type="radio" name="payment" value="card" checked />
+            <input type="radio" name="payment" value="card" />
+            <span class="pay-method-icon">
+              <img src="assets/images/Payment icon/credit-card-icon.svg" alt="Card" />
+            </span>
             <span class="pay-method-label">Card</span>
             <span class="pay-logos">
-              <!-- Visa -->
-              <svg class="pay-logo" style="width:38px;height:22px;" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="38" height="24" rx="3" fill="#1A1F71"/>
-                <text x="7" y="16" font-family="Arial" font-size="10" font-weight="bold" fill="white" letter-spacing="1">VISA</text>
-              </svg>
-              <!-- Mastercard -->
-              <svg class="pay-logo" style="width:36px;height:22px;" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="38" height="24" rx="3" fill="#252525"/>
-                <circle cx="15" cy="12" r="7" fill="#EB001B"/>
-                <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
-                <path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/>
-              </svg>
-              <!-- Amex -->
-              <svg class="pay-logo" style="width:36px;height:22px;" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="38" height="24" rx="3" fill="#2E77BC"/>
-                <text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text>
-              </svg>
-              <!-- Discover -->
-              <svg class="pay-logo" style="width:36px;height:22px;" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="38" height="24" rx="3" fill="#F76F20"/>
-                <text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text>
-                <circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/>
-              </svg>
+              <svg width="34" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#1A1F71"/><text x="7" y="16" font-family="Arial" font-size="10" font-weight="bold" fill="white" letter-spacing="1">VISA</text></svg>
+              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/></svg>
+              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
+              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
             </span>
           </label>
 
-          <!-- Card Fields (shown when Card is selected) -->
-          <div class="card-fields open" id="cardFields">
+          <!-- Card Fields expand -->
+          <div class="card-fields" id="cardFields">
             <div class="co-field">
               <label class="co-label" for="cc-num">Card Number</label>
               <input class="co-input" type="text" id="cc-num" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" inputmode="numeric" />
@@ -660,7 +729,7 @@
           </div>
 
           <!-- Save card -->
-          <label class="co-check-row">
+          <label class="co-check-row" style="display:none;">
             <input type="checkbox" id="saveCard" />
             Store this card for future purchases
           </label>
@@ -668,30 +737,68 @@
           <!-- Apple Pay -->
           <label class="pay-method-row">
             <input type="radio" name="payment" value="applepay" />
+            <span class="pay-method-icon">
+              <img src="assets/images/Payment icon/apple-pay-icon.svg" alt="Apple Pay" />
+            </span>
             <span class="pay-method-label">Apple Pay</span>
-            <svg class="pay-logo" style="width:44px;height:22px;background:#000;border-radius:3px;padding:2px 5px;box-sizing:border-box;" viewBox="0 0 44 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="3" y="15" font-family="Arial" font-size="9" font-weight="bold" fill="white">Pay</text>
-            </svg>
           </label>
+
+          <!-- Apple Pay expand -->
+          <div class="pay-expand" id="applePayFields">
+            <div class="pay-redirect-notice">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg>
+              <div>
+                <strong>Apple Pay selected.</strong>
+                After clicking "Place Order", you will be prompted to authenticate using Face ID, Touch ID, or your device passcode to complete the payment securely.
+              </div>
+            </div>
+          </div>
 
           <!-- Klarna -->
           <label class="pay-method-row">
             <input type="radio" name="payment" value="klarna" />
+            <span class="pay-method-icon">
+              <img src="assets/images/Payment icon/klarna-icon.svg" alt="Klarna" />
+            </span>
             <span class="pay-method-label">Klarna <span style="font-size:0.75rem;color:var(--ink-muted);">— Buy now, pay later</span></span>
-            <svg class="pay-logo" style="width:52px;height:22px;background:#FFB3C7;border-radius:3px;box-sizing:border-box;" viewBox="0 0 52 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="7" y="15" font-family="Arial" font-size="9" font-weight="bold" fill="#17120F">klarna</text>
-            </svg>
           </label>
+
+          <!-- Klarna expand -->
+          <div class="pay-expand" id="klarnaFields">
+            <div class="klarna-grid" id="klarnaGrid">
+              <div class="klarna-step"><strong>Today</strong><span id="k0">—</span></div>
+              <div class="klarna-step"><strong>30 days</strong><span id="k1">—</span></div>
+              <div class="klarna-step"><strong>60 days</strong><span id="k2">—</span></div>
+              <div class="klarna-step"><strong>90 days</strong><span id="k3">—</span></div>
+            </div>
+            <div class="pay-redirect-notice">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <div>
+                <strong>Pay in 4 interest-free installments.</strong>
+                You will be redirected to Klarna to review your payment schedule and complete the order. No hidden fees, no interest.
+              </div>
+            </div>
+          </div>
 
           <!-- PayPal -->
           <label class="pay-method-row">
             <input type="radio" name="payment" value="paypal" />
+            <span class="pay-method-icon">
+              <img src="assets/images/Payment icon/paypal-icon.svg" alt="PayPal" />
+            </span>
             <span class="pay-method-label">PayPal</span>
-            <svg class="pay-logo" style="width:58px;height:22px;background:#003087;border-radius:3px;box-sizing:border-box;padding:0 4px;" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="4" y="15" font-family="Arial" font-size="9" font-weight="bold" fill="#009CDE">Pay</text>
-              <text x="22" y="15" font-family="Arial" font-size="9" font-weight="bold" fill="#012169">Pal</text>
-            </svg>
           </label>
+
+          <!-- PayPal expand -->
+          <div class="pay-expand" id="paypalFields">
+            <div class="pay-redirect-notice">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+              <div>
+                <strong>PayPal selected.</strong>
+                After submission, you will be redirected to PayPal to log in and complete your payment securely.
+              </div>
+            </div>
+          </div>
 
         </div><!-- /pay-methods -->
       </div><!-- /co-card payment -->
@@ -770,10 +877,14 @@
     const read  = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
     const money = (n) => '$' + Number(n).toLocaleString('en-US');
 
-    /* ---- Product lookup for thumbnail ---- */
+    /* ---- Product lookup for thumbnail (fuzzy: cart title may include size/frame details) ---- */
     const getImg = (title) => {
       const products = window.SLG_PRODUCTS || [];
-      const match = products.find(p => p.title.toLowerCase() === title.toLowerCase());
+      const t = title.toLowerCase();
+      /* exact match first, then "starts with" partial match */
+      const match = products.find(p => t === p.title.toLowerCase()) ||
+                    products.find(p => t.startsWith(p.title.toLowerCase())) ||
+                    products.find(p => t.includes(p.title.toLowerCase()));
       return match ? match.img : null;
     };
 
@@ -792,14 +903,17 @@
       }
       coItems.innerHTML = items.map(it => {
         const img = getImg(it.title);
+        const linePrice = (it.price || 0) * (it.qty || 1);
         return `
           <div class="co-item">
-            ${img ? `<img class="co-item-img" src="${img}" alt="${it.title}" />` : ''}
-            <div class="co-item-details">
-              <span class="co-item-title">${it.title}</span>
-              <span class="co-item-meta">Limited Edition · Signed &amp; Numbered${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
+            ${img ? `<div class="co-item-img-wrap"><img class="co-item-img" src="${img}" alt="${it.title}" /></div>` : ''}
+            <div class="co-item-right">
+              <div class="co-item-details">
+                <span class="co-item-title">${it.title}</span>
+                <span class="co-item-meta">Limited Edition · Signed &amp; Numbered${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
+              </div>
+              <span class="co-item-price">${money(linePrice)}</span>
             </div>
-            <span class="co-item-price">${money((it.price || 0) * (it.qty || 1))}</span>
           </div>`;
       }).join('');
       renderTotals(items);
@@ -827,6 +941,14 @@
           <span>${money(total)}</span>
         </div>`;
 
+      /* Update Klarna installment amounts */
+      const installment = total / 4;
+      const fmtK = v => '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      ['k0','k1','k2','k3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = fmtK(installment);
+      });
+
       /* Update pay button label */
       const btn = document.getElementById('coPayBtn');
       if (btn) btn.setAttribute('data-total', money(total));
@@ -840,18 +962,25 @@
       });
     });
 
-    /* ---- Payment toggle (show/hide card fields) ---- */
+    /* ---- Payment toggle (show/hide expand panels) ---- */
+    const payPanels = {
+      card:     document.getElementById('cardFields'),
+      applepay: document.getElementById('applePayFields'),
+      klarna:   document.getElementById('klarnaFields'),
+      paypal:   document.getElementById('paypalFields'),
+    };
+    const saveRow = document.querySelector('.co-check-row');
+
     document.querySelectorAll('input[name="payment"]').forEach(r => {
       r.addEventListener('change', function () {
-        const cardFields = document.getElementById('cardFields');
-        const saveRow = document.querySelector('.co-check-row');
-        if (this.value === 'card') {
-          cardFields.classList.add('open');
-          if (saveRow) saveRow.style.display = '';
-        } else {
-          cardFields.classList.remove('open');
-          if (saveRow) saveRow.style.display = 'none';
-        }
+        /* close all panels */
+        Object.values(payPanels).forEach(p => { if (p) p.classList.remove('open'); });
+        if (saveRow) saveRow.style.display = 'none';
+
+        /* open the selected panel */
+        const panel = payPanels[this.value];
+        if (panel) panel.classList.add('open');
+        if (this.value === 'card' && saveRow) saveRow.style.display = '';
       });
     });
 
@@ -941,8 +1070,10 @@
         return;
       }
 
-      /* Card payment validation */
-      const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+      /* Payment method must be selected */
+      const selectedPayment = document.querySelector('input[name="payment"]:checked');
+      if (!selectedPayment) { alert('Please select a payment method.'); return; }
+      const paymentMethod = selectedPayment.value;
       if (paymentMethod === 'card') {
         const num = (document.getElementById('cc-num').value || '').replace(/\s/g,'');
         const exp = document.getElementById('cc-exp').value;
