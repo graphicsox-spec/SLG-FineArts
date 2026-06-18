@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Shop — Fine Art Prints · SLG Masterworks</title>
+  <meta name="description" content="Acquire a limited-edition, hand-signed fine art print directly from Sarah L Glabman. Each piece is exclusive to SLG Masterworks." />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ════════════════════════════════════════
+       SHOP — light gallery minimal redesign
+       ════════════════════════════════════════ */
+    .shop-main { background: var(--bg, #fff); }
+
+    /* ── Hero (matches showroom dark hero) ── */
+    .shop-hero {
+      background: var(--navy-bg, #0D1B35);
+      text-align: center;
+      /* uniform page-header band — same on every page */
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      min-height: clamp(380px, 32vw, 437px);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .shop-hero .section-label {
+      display: block;
+      color: rgba(255,255,255,.38);
+      letter-spacing: .18em;
+      margin-bottom: .7rem;
+      font-size: .72rem;
+    }
+    .shop-hero h1 {
+      font-family: var(--title);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.02;
+      margin-bottom: 1.1rem;
+      white-space: nowrap;
+    }
+    .shop-hero p {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.42);
+      max-width: 76ch; /* same paragraph width on every page header */
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+    /* Mobile: shorter copy + slightly smaller text */
+    @media (max-width: 640px) {
+      .shop-hero p { font-size: .9rem; max-width: none; }
+      .shop-head-extra { display: none; }
+    }
+
+    /* ── Layout: left sidebar controls + grid ── */
+    .shop-layout {
+      max-width: var(--max);
+      margin: clamp(2.5rem, 5vw, 4rem) auto clamp(3rem, 6vw, 5rem);
+      padding: 0 var(--gutter);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: start;
+    }
+    .shop-sidebar { position: sticky; top: calc(var(--nav-h, 72px) + 1rem); }
+    .shop-filter-group { margin-bottom: 2rem; }
+    .shop-filter-group h3 {
+      font-family: var(--display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin: 0 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .shop-filter {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      padding: 0.45rem 0;
+      transition: color 0.2s;
+    }
+    .shop-filter:hover { color: var(--ink); }
+    .shop-filter.active { color: var(--gold-deep); font-weight: 600; }
+    .shop-count {
+      font-family: var(--display);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin: 0.5rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ── Editions grid ── */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+    }
+    @media (max-width: 860px) {
+      .shop-layout { grid-template-columns: 1fr; }
+      .shop-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
+      .shop-filter-group { margin-bottom: 0; }
+      .shop-count { flex-basis: 100%; }
+    }
+    /* whole card is one gray box — image + caption inside (lik-style, matches The Images) */
+    .edition-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-2);
+      padding: 1.5rem 1.5rem 1.6rem;
+    }
+    .edition-figure {
+      height: clamp(280px, 24vw, 360px);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .edition-figure img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform .6s var(--ease);
+    }
+    .edition-card:hover .edition-figure img { transform: scale(1.04); }
+    /* centered caption inside the box */
+    .edition-body { padding-top: 1.2rem; text-align: center; }
+    .edition-edlabel {
+      display: block;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: .6rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: .4rem;
+    }
+    .edition-title {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--blue-deep);
+      margin: 0 0 .4rem;
+    }
+    .edition-price {
+      display: block;
+      font-family: var(--title);
+      font-size: 1.05rem;
+      color: var(--blue-deep);
+    }
+
+    /* empty state */
+    .shop-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 0;
+      font-family: var(--sans);
+      color: var(--ink-muted);
+      display: none;
+    }
+
+    /* ── Commission strip (light) ── */
+    .commission-strip {
+      background: var(--bg-2);
+      text-align: center;
+      padding: clamp(4rem, 8vw, 6.5rem) var(--gutter);
+      border-top: 1px solid var(--line);
+    }
+    .commission-strip .section-label { color: var(--gold-deep); margin-bottom: 0.6rem; display: block; }
+    .commission-strip h2 {
+      font-family: var(--title);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    .commission-strip p {
+      font-family: var(--sans);
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      max-width: 50ch;
+      margin: 0 auto 2.2rem;
+      line-height: 1.8;
+    }
+    .commission-strip .btn-gold {
+      display: inline-block;
+      padding: 0.95rem 2.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-deep);
+      font-family: var(--display);
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .commission-strip .btn-gold:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    @media (max-width: 760px) {
+      .shop-toolbar { flex-direction: column; align-items: stretch; }
+      .toolbar-right { justify-content: space-between; }
+      .filter-pills { justify-content: center; }
+    }
+    @media (max-width: 520px) {
+      .shop-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="shop-main">
+
+    <!-- Hero -->
+    <section class="shop-hero">
+      <span class="section-label">The Shop</span>
+      <h1>Fine Art Prints</h1>
+      <p>Browse the full collection of Sarah's wildlife, landscape, and water work — every print hand-signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.<span class="shop-head-extra"> Use the filters below to find your piece.</span></p>
+    </section>
+
+    <!-- Layout: left sidebar controls + grid -->
+    <div class="shop-layout">
+
+      <!-- Sidebar controls -->
+      <aside class="shop-sidebar" aria-label="Shop controls">
+        <div class="shop-filter-group">
+          <h3>Collections</h3>
+          <button class="shop-filter active" data-ftype="collection" data-value="all">View All</button>
+          <button class="shop-filter" data-ftype="collection" data-value="wildlife">Wildlife</button>
+          <button class="shop-filter" data-ftype="collection" data-value="landscape">Landscape</button>
+          <button class="shop-filter" data-ftype="collection" data-value="water">Water</button>
+        </div>
+        <div class="shop-filter-group">
+          <h3>Highlights</h3>
+          <button class="shop-filter active" data-ftype="tag" data-value="all">All</button>
+          <button class="shop-filter" data-ftype="tag" data-value="new">New Arrivals</button>
+          <button class="shop-filter" data-ftype="tag" data-value="best">Best Sellers</button>
+        </div>
+        <div class="shop-filter-group">
+          <h3>Orientation</h3>
+          <button class="shop-filter active" data-ftype="orientation" data-value="all">All</button>
+          <button class="shop-filter" data-ftype="orientation" data-value="horizontal">Horizontal</button>
+          <button class="shop-filter" data-ftype="orientation" data-value="vertical">Vertical</button>
+        </div>
+        <div class="shop-filter-group">
+          <h3>Sort</h3>
+          <button class="shop-filter active" data-ftype="sort" data-value="featured">Featured</button>
+          <button class="shop-filter" data-ftype="sort" data-value="price-asc">Price: Low to High</button>
+          <button class="shop-filter" data-ftype="sort" data-value="price-desc">Price: High to Low</button>
+        </div>
+      </aside>
+
+      <!-- Editions grid -->
+      <div class="shop-grid" id="shopGrid">
+        <!-- cards auto-built from assets/js/products.js -->
+
+        <p class="shop-empty" data-empty>No editions match this filter.</p>
+
+      </div><!-- /.shop-grid -->
+    </div><!-- /.shop-layout -->
+
+    <!-- Commission strip -->
+    <div class="commission-strip">
+      <span class="section-label">Bespoke Commissions</span>
+      <h2>Don't see what you're looking for?</h2>
+      <p>Sarah accepts a limited number of custom commission requests each season — a specific size, a private location, or a print from the archive not yet listed here.</p>
+      <a href="contact.html" class="btn-gold">Request a Commission</a>
+    </div>
+
+  </main>
+
+  <script src="assets/js/products.js"></script>
+
+  <script>
+    /* ── Sidebar controls: collection + orientation filter, sort ── */
+    (function () {
+      const grid    = document.getElementById('shopGrid');
+      const emptyEl0 = document.querySelector('[data-empty]');
+      /* Build cards from the shared product list (single source of truth) */
+      if (grid && window.SLG_PRODUCTS) {
+        window.SLG_PRODUCTS.forEach(function (pr, i) {
+          const a = document.createElement('a');
+          a.className = 'edition-card reveal';
+          a.href = pr.href + '?from=shop';
+          a.dataset.category = pr.category;
+          a.dataset.orientation = pr.orientation;
+          a.dataset.tags = (pr.tags || []).join(',');
+          a.dataset.price = pr.price;
+          a.dataset.index = i;
+          a.dataset.title = pr.title;
+          a.innerHTML =
+            '<div class="edition-figure"><img src="' + pr.img + '" alt="' + pr.title + '" loading="lazy" /></div>' +
+            '<div class="edition-body">' +
+              '<span class="edition-edlabel">Limited Edition</span>' +
+              '<h2 class="edition-title">' + pr.title + '</h2>' +
+              '<span class="edition-price">' + pr.priceLabel + '</span>' +
+            '</div>';
+          grid.insertBefore(a, emptyEl0);
+        });
+      }
+      const cards   = Array.from(grid.querySelectorAll('.edition-card'));
+      const buttons = Array.from(document.querySelectorAll('.shop-filter'));
+      const countEl = document.querySelector('[data-count-label]');
+      const emptyEl = document.querySelector('[data-empty]');
+      const active  = { collection: 'all', orientation: 'all', tag: 'all', sort: 'featured' };
+
+      function apply() {
+        // sort
+        const sorted = cards.slice();
+        if (active.sort === 'price-asc')       sorted.sort((a, b) => (+a.dataset.price) - (+b.dataset.price));
+        else if (active.sort === 'price-desc') sorted.sort((a, b) => (+b.dataset.price) - (+a.dataset.price));
+        else sorted.sort((a, b) => (+a.dataset.index) - (+b.dataset.index));
+        sorted.forEach(c => grid.insertBefore(c, emptyEl));
+
+        // filter (collection AND orientation)
+        let visible = 0;
+        cards.forEach(c => {
+          const okC = active.collection === 'all' || c.dataset.category === active.collection;
+          const okO = active.orientation === 'all' || c.dataset.orientation === active.orientation;
+          const tags = (c.dataset.tags || '').split(',');
+          const okT = active.tag === 'all' || tags.indexOf(active.tag) !== -1;
+          const show = okC && okO && okT;
+          c.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        if (countEl) countEl.textContent = visible + (visible === 1 ? ' Edition' : ' Editions');
+        emptyEl.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        const type = btn.dataset.ftype;
+        document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        active[type] = btn.dataset.value;
+        apply();
+      }));
+
+      /* ── Pre-select filters from URL (e.g. the-shop.html?tag=new) ── */
+      const params = new URLSearchParams(window.location.search);
+      let paramApplied = false;
+      ['collection', 'tag', 'orientation', 'sort'].forEach(type => {
+        const value = params.get(type);
+        if (!value) return;
+        const btn = document.querySelector('.shop-filter[data-ftype="' + type + '"][data-value="' + value + '"]');
+        if (!btn) return;
+        document.querySelectorAll('.shop-filter[data-ftype="' + type + '"]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        active[type] = value;
+        paramApplied = true;
+        btn.closest('.shop-filter-group').dataset.fromUrl = '1';
+      });
+
+      /* URL param se aane par: sirf wahi group expanded, baaki collapsed */
+      if (paramApplied) {
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.shop-filter-group').forEach(g => {
+            g.classList.toggle('collapsed', !g.dataset.fromUrl);
+          });
+        });
+      }
+
+      apply();
+    })();
+  </script>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+        

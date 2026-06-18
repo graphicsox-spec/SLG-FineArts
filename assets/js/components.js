@@ -17,7 +17,7 @@
   const active = (seg) => on(seg) ? ' class="is-active"' : '';
   /* came from the shop? (collection pages are shared by The Images + The Shop) */
   const fromShop = (new URLSearchParams(window.location.search).get('from') === 'shop')
-                   || /\/shop\.html/i.test(document.referrer);
+                   || /\/the-shop\.html/i.test(document.referrer);
 
   /* ================================================================
      HEADER HTML
@@ -44,8 +44,8 @@
           </a>
         </li>
 
-        <li><a href="${r}shop.html"${(on('shop') || fromShop) ? ' class="is-active"' : ''}>The Shop</a></li>
-        <li><a href="${r}about.html"${active('about')}>The Artist</a></li>
+        <li><a href="${r}the-shop.html"${(on('shop') || fromShop) ? ' class="is-active"' : ''}>The Shop</a></li>
+        <li><a href="${r}the-artist.html"${active('the-artist')}>The Artist</a></li>
         <li><a href="${r}showroom.html"${active('showroom')}>Showroom</a></li>
         <li><a href="${r}contact.html"${active('contact')}>Contact</a></li>
 
@@ -115,8 +115,8 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="${r}the-images.html">The Images</a></li>
-          <li><a href="${r}shop.html">The Shop</a></li>
-          <li><a href="${r}about.html">The Artist</a></li>
+          <li><a href="${r}the-shop.html">The Shop</a></li>
+          <li><a href="${r}the-artist.html">The Artist</a></li>
           <li><a href="${r}showroom.html">Showroom</a></li>
           <li><a href="${r}contact.html">Contact</a></li>
         </ul>
@@ -129,8 +129,8 @@
           <li><a href="${r}the-images.html?collection=wildlife">Wildlife</a></li>
           <li><a href="${r}the-images.html?collection=landscape">Landscape</a></li>
           <li><a href="${r}the-images.html?collection=water">Water</a></li>
-          <li><a href="${r}shop.html?tag=new">New Arrivals</a></li>
-          <li><a href="${r}shop.html?tag=best">Best Sellers</a></li>
+          <li><a href="${r}the-shop.html?tag=new">New Arrivals</a></li>
+          <li><a href="${r}the-shop.html?tag=best">Best Sellers</a></li>
         </ul>
       </div>
 
@@ -221,7 +221,7 @@
         </div>`).join('');
       cfoot.innerHTML = `
         <div class="cart-total"><span>Total</span><span>${money(total())}</span></div>
-        <a href="${r}contact.html" class="cart-checkout">Proceed to Checkout</a>`;
+        <a href="${r}checkout.html" class="cart-checkout">Proceed to Checkout</a>`;
       cbody.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => {
         const items2 = read(); items2.splice(+b.dataset.remove, 1); write(items2); refresh();
       }));
@@ -277,8 +277,8 @@
           </div>
           <nav class="menu-nav">
             <a href="${r}the-images.html">The Images</a>
-            <a href="${r}shop.html">The Shop</a>
-            <a href="${r}about.html">The Artist</a>
+            <a href="${r}the-shop.html">The Shop</a>
+            <a href="${r}the-artist.html">The Artist</a>
             <a href="${r}showroom.html">Showroom</a>
             <a href="${r}contact.html">Contact</a>
           </nav>
@@ -347,7 +347,7 @@
     if (!links[1]) return;            // links[0] = Home, links[1] = section
     if (fromShop) {
       links[1].textContent = 'The Shop';
-      links[1].setAttribute('href', r + 'shop.html');
+      links[1].setAttribute('href', r + 'the-shop.html');
     } else {
       links[1].textContent = 'The Images';
       links[1].setAttribute('href', r + 'the-images.html');
@@ -631,4 +631,15 @@
       if (fBtn && !fBtn.classList.contains('active')) fBtn.click();
     }
   });
+})();
+
+/* ================================================================
+   LOAD SEARCH  — injected after components so nav exists
+   ================================================================ */
+(function () {
+  const s = document.createElement('script');
+  const inSub = document.body.dataset.sub === 'true';
+  s.src = (inSub ? '../' : '') + 'assets/js/search.js';
+  s.defer = true;
+  document.head.appendChild(s);
 })();
