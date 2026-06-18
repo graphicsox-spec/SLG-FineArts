@@ -138,10 +138,10 @@
       <div>
         <h4>Service</h4>
         <ul>
-          <li><a href="#">Shipping Info</a></li>
-          <li><a href="#">Care &amp; Handling</a></li>
-          <li><a href="#">Returns &amp; FAQ</a></li>
-          <li><a href="#">Custom Sizing</a></li>
+          <li><a href="${r}service.html#shipping">Shipping Info</a></li>
+          <li><a href="${r}service.html#care">Care &amp; Handling</a></li>
+          <li><a href="${r}service.html#faq">Returns &amp; FAQ</a></li>
+          <li><a href="${r}service.html#sizing">Custom Sizing</a></li>
           <li><a href="${r}contact.html">Custom Commissions</a></li>
         </ul>
       </div>
