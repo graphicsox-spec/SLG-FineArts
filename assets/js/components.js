@@ -15,9 +15,10 @@
   const p = window.location.pathname;
   const on = (seg) => p.includes(seg);
   const active = (seg) => on(seg) ? ' class="is-active"' : '';
-  /* came from the shop? (collection pages are shared by The Images + The Shop) */
+  /* came from the shop? (collection pages are shared by The Images + The Shop)
+     referrer check only applies on sub-pages (collections/) — not on top-level pages */
   const fromShop = (new URLSearchParams(window.location.search).get('from') === 'shop')
-                   || /\/the-shop\.html/i.test(document.referrer);
+                   || (inSub && /\/the-shop\.html/i.test(document.referrer));
 
   /* ================================================================
      HEADER HTML
