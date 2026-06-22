@@ -10,6 +10,8 @@
    Order here = order shown everywhere (newest first).
    ============================================================ */
 window.SLG_PRODUCTS = [
+  { title: 'The Edge', href: 'collections/the-edge.html', img: 'assets/images/The Edge/Cape Town The Edge web.jpg', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
+  { title: 'Silent Sovereign', href: 'collections/silent-sovereign.html', img: 'assets/images/Silent Sovereign/Silent Sovereign Web.png', category: 'wildlife', orientation: 'horizontal', price: 1085, priceLabel: 'From $1,085', tags: ['new'] },
   { title: 'Palace of Light', href: 'collections/palace-of-light.html', img: 'assets/images/Palace of Light/Palace 8722 copy.jpg', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'Golden Gate Sunrise', href: 'collections/golden-gate-sunrise.html', img: 'assets/images/Golden Gate Sunrise/Golden Gate Sunrise.png', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', tags: ['new'] },
   { title: 'The Window of Light', href: 'collections/the-window-of-light.html', img: 'assets/images/The Window of Light/Window-of-Light-Web.png', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', tags: ['new'] },
