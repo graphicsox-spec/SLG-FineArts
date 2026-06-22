@@ -345,6 +345,31 @@
     }
     .sr-divider span { display: none; }
 
+    /* ── Browse All mid-page band ── */
+    .sr-browse-band {
+      background: var(--bg-2, #F6F6F4);
+      text-align: center;
+      padding: clamp(4rem, 8vw, 6rem) var(--gutter);
+      border-top: 1px solid var(--line, #E0E0DC);
+      border-bottom: 1px solid var(--line, #E0E0DC);
+    }
+    .sr-browse-band .section-label { color: rgba(0,0,0,.4); display: block; margin-bottom: .5rem; }
+    .sr-browse-band h2 {
+      font-family: var(--title);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink, #141414);
+      margin-bottom: .8rem;
+    }
+    .sr-browse-band h2 em { font-style: italic; color: var(--gold, #C9A84C); }
+    .sr-browse-band p {
+      font-size: .95rem;
+      color: #666;
+      max-width: 44ch;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+    }
+
     /* ── Commission CTA ── */
     .sr-commission {
       background: #F6F5F2;
@@ -407,7 +432,7 @@
     <span class="section-label">Limited Editions · Exclusively Here</span>
     <h1>Showroom</h1>
     <span class="sr-appointment-badge">Private Showroom · Scottsdale, Arizona &nbsp;—&nbsp; By Appointment Only</span>
-    <p>Each work is available only on SLGMasterworks.com — hand-signed, museum-quality, and strictly limited. Click any thumbnail to see the print in a real room.</p>
+    <p>Each work is available only on SLGMasterworks.com — hand-signed, museum-quality, and strictly limited. Every viewer cycles through Acrylic Mount and framed room settings automatically.</p>
   </section>
 
 
@@ -424,42 +449,21 @@
              src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg"
              alt="First Descent — Baby Leopard" />
       </div>
-      <div class="artwork-thumbs">
+            <div class="artwork-thumbs">
         <button class="art-thumb active"
-                data-src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg" alt="Room — No Frame" />
-          <span>40×60 Unframed</span>
+                data-src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg">
+          <img src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 32x48 BLACK FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 32x48 BLACK FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 32x48 BLACK FRAME.jpg" alt="Room — Framed" />
-          <span>32×48 Framed</span>
+                data-src="assets/images/Wildlife/Baby Leopard 40x60 BLACK FRAME.jpg">
+          <img src="assets/images/Wildlife/Baby Leopard 40x60 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 32x48 NO FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 32x48 NO FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 32x48 NO FRAME.jpg" alt="Room — No Frame" />
-          <span>32×48 Unframed</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg" alt="Room — 40x60 Framed" />
-          <span>40×60 Framed</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 48x72 BLACK FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 48x72 BLACK FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 48x72 BLACK FRAME.jpg" alt="Room — 48x72 Black Frame" />
-          <span>48×72 Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 48x72 NO FRAME.jpg"
-                onclick="swap('leo-img', this, 'assets/images/Wildlife/Baby Leopard 48x72 NO FRAME.jpg')">
-          <img src="assets/images/Wildlife/Baby Leopard 48x72 NO FRAME.jpg" alt="Room — 48x72 Unframed" />
-          <span>48×72 Unframed</span>
+                data-src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg">
+          <img src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
         </button>
       </div>
     </div>
@@ -469,16 +473,31 @@
       <h2 class="artwork-title">First Descent</h2>
       <p class="artwork-sub">Baby Leopard · Limited Edition</p>
       <p class="artwork-desc">A rare and fleeting moment — a leopard cub's very first descent from a tree, captured in extraordinary detail deep in the African bush. Hand-signed by Sarah L Glabman. Not available anywhere else.</p>
-      <div class="artwork-actions">
+      <div class="artwork-sizes">
+        <h4>Available Sizes</h4>
+        <div class="size-pills">
+          <span class="size-pill">32 × 48"</span>
+          <span class="size-pill">40 × 60"</span>
+          <span class="size-pill">48 × 72"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$1,700</strong>
+        </div>
+        <div class="artwork-actions">
           <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/baby-leopard.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
+    </div>
 
   </article>
 
 
   <div class="sr-divider"><span>02</span></div>
+
 
 
   <!-- ══════════════════════════════════════════
@@ -494,46 +513,21 @@
              src="assets/images/Beneath the Pier/Pier Vertical 24x36 no frame.jpg"
              alt="Beneath the Pier — Capitola" />
       </div>
-      <div class="artwork-thumbs">
+            <div class="artwork-thumbs">
         <button class="art-thumb active"
-                data-src="assets/images/Beneath the Pier/Pier Vertical 24x36 no frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier Vertical 24x36 no frame.jpg')">
-          <img src="assets/images/Beneath the Pier/Pier Vertical 24x36 no frame.jpg" alt="24x36 Unframed" />
-          <span>32×48 Unframed</span>
+                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 NO FRAME.jpg">
+          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/Pier 24x36 black frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/Pier 24x36 black frame.jpg')">
-          <img src="assets/images/Beneath the Pier/Pier 24x36 black frame.jpg" alt="24x36 Black Frame" />
-          <span>40×60 Framed</span>
+                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 BLACK FRAME.jpg">
+          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/pier vertical 32x48 black frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/pier vertical 32x48 black frame.jpg')">
-          <img src="assets/images/Beneath the Pier/pier vertical 32x48 black frame.jpg" alt="32x48 Black Frame" />
-          <span>40×60 Unframed</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/pier vertical 32x48 brown frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/pier vertical 32x48 brown frame.jpg')">
-          <img src="assets/images/Beneath the Pier/pier vertical 32x48 brown frame.jpg" alt="32x48 Brown Frame" />
-          <span>48×72 Framed</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/pier vertical40x60 brown frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/pier vertical40x60 brown frame.jpg')">
-          <img src="assets/images/Beneath the Pier/pier vertical40x60 brown frame.jpg" alt="40x60 Brown Frame" />
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/pier vertical40x60m no frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/pier vertical40x60m no frame.jpg')">
-          <img src="assets/images/Beneath the Pier/pier vertical40x60m no frame.jpg" alt="40x60 Unframed" />
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/pier vertical 24x36 brown frame.jpg"
-                onclick="swap('pier-img', this, 'assets/images/Beneath the Pier/pier vertical 24x36 brown frame.jpg')">
-          <img src="assets/images/Beneath the Pier/pier vertical 24x36 brown frame.jpg" alt="24x36 Brown Frame" />
-          <span>48×72 Unframed</span>
+                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 BROWN FRAME.jpg">
+          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
         </button>
       </div>
     </div>
@@ -543,16 +537,32 @@
       <h2 class="artwork-title">Beneath the Pier</h2>
       <p class="artwork-sub">Capitola Wharf · Limited Edition</p>
       <p class="artwork-desc">Looking up through the weathered pilings of Capitola Pier as the Pacific rolls in — a meditative study of light, structure, and time. Available in large-format sizes, hand-signed and numbered by Sarah.</p>
-      <div class="artwork-actions">
+      <div class="artwork-sizes">
+        <h4>Available Sizes</h4>
+        <div class="size-pills">
+          <span class="size-pill">24 × 36"</span>
+          <span class="size-pill">32 × 48"</span>
+          <span class="size-pill">40 × 60"</span>
+          <span class="size-pill">48 × 72"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$965</strong>
+        </div>
+        <div class="artwork-actions">
           <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/beneath-the-pier.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
+    </div>
 
   </article>
 
 
   <div class="sr-divider"><span>03</span></div>
+
 
 
   <!-- ══════════════════════════════════════════
@@ -568,30 +578,21 @@
              src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg"
              alt="Moonrise Namibia" />
       </div>
-      <div class="artwork-thumbs">
+            <div class="artwork-thumbs">
         <button class="art-thumb active"
-                data-src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg"
-                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg')">
-          <img src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg" alt="24x36 Framed" />
-          <span>24×36 Framed</span>
+                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 NO FRAME.jpg">
+          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg"
-                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg')">
-          <img src="assets/images/Moonrise Namibia/moon-full 24x36 no frame.jpg" alt="24x36 Unframed" />
-          <span>24×36 Unframed</span>
+                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BLACK FRAME.jpg">
+          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
         </button>
         <button class="art-thumb"
-                data-src="assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg"
-                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg')">
-          <img src="assets/images/Moonrise Namibia/moon-full 32x48 framed.jpg" alt="32x48 Framed" />
-          <span>32×48 Framed</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg"
-                onclick="swap('moon-img', this, 'assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg')">
-          <img src="assets/images/Moonrise Namibia/moon-full32x48 no frame.jpg" alt="24x36 Unframed" />
-          <span>32×48 Unframed</span>
+                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BROWN FRAME.jpg">
+          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
         </button>
       </div>
     </div>
@@ -601,11 +602,232 @@
       <h2 class="artwork-title">Moonrise Namibia</h2>
       <p class="artwork-sub">Sossusvlei Desert · Limited Edition</p>
       <p class="artwork-desc">The moon cresting the ancient dunes of Namibia at dusk — a vast, silent landscape suspended between two worlds. Printed to gallery scale on archival paper, hand-signed and numbered.</p>
-      <div class="artwork-actions">
+      <div class="artwork-sizes">
+        <h4>Available Sizes</h4>
+        <div class="size-pills">
+          <span class="size-pill">24 × 36"</span>
+          <span class="size-pill">32 × 48"</span>
+          <span class="size-pill">40 × 60"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$965</strong>
+        </div>
+        <div class="artwork-actions">
           <a href="contact.html" class="btn-enquire">Commission</a>
           <a href="collections/moonrise-namibia.html" class="btn-view-detail">View Full Details</a>
         </div>
       </div>
+    </div>
+
+  </article>
+
+
+  <!-- ══════════════════════════════════════════
+       BROWSE ALL — mid-page collection prompt
+       ══════════════════════════════════════════ -->
+  <section class="sr-browse-band">
+    <div class="reveal">
+      <span class="section-label">The Full Collection</span>
+      <h2>Fourteen More <em>Limited Editions</em></h2>
+      <p>Wildlife, Landscape, and Water — each print hand-signed and strictly limited to a small edition.</p>
+      <a href="the-shop.html" class="btn-gold-outline">Browse All Prints &nbsp;→</a>
+    </div>
+  </section>
+
+
+
+
+  <div class="sr-divider"><span>04</span></div>
+
+
+  <!-- ══════════════════════════════════════════
+       04 — THE EDGE
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="the-edge">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Limited Edition</span>
+        <div class="slide-dots" id="edge-dots"></div>
+        <img id="edge-img"
+             src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg"
+             alt="The Edge — Cape Town coastline, South Africa" />
+      </div>
+            <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg">
+          <img src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/The Edge/THE EDGE 32X48 BLACK FRAME.jpg">
+          <img src="assets/images/The Edge/THE EDGE 32X48 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/The Edge/THE EDGE 32X48 BROWN FRAME.jpg">
+          <img src="assets/images/The Edge/THE EDGE 32X48 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Landscape · Cape Town, South Africa</span>
+      <h2 class="artwork-title">The Edge</h2>
+      <p class="artwork-sub">Cape Point Coastline · Limited Edition</p>
+      <p class="artwork-desc">Photographed in extreme winds along the rugged cliffs of Cape Town — where the Atlantic crashes against ancient rock and the sky dissolves into ocean. A landscape photograph that demands to be seen at scale.</p>
+      <div class="artwork-sizes">
+        <h4>Available Sizes</h4>
+        <div class="size-pills">
+          <span class="size-pill">24 x 36"</span>
+          <span class="size-pill">32 x 48"</span>
+          <span class="size-pill">40 x 60"</span>
+          <span class="size-pill">48 x 72"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$965</strong>
+        </div>
+        <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Commission</a>
+          <a href="collections/the-edge.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+
+  <div class="sr-divider"><span>05</span></div>
+
+
+  <!-- ══════════════════════════════════════════
+       05 — SILENT SOVEREIGN
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="silent-sovereign">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Wildlife · Panorama</span>
+        <div class="slide-dots" id="sovereign-dots"></div>
+        <img id="sovereign-img"
+             src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg"
+             alt="Silent Sovereign — Female Leopard, Mala Mala, South Africa" />
+      </div>
+            <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg">
+          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg">
+          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg">
+          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Wildlife · Mala Mala, South Africa</span>
+      <h2 class="artwork-title">Silent Sovereign</h2>
+      <p class="artwork-sub">Female Leopard · Panoramic Edition</p>
+      <p class="artwork-desc">A magnificent female leopard holds still for a single, breathless moment in Mala Mala Game Reserve. Rendered in timeless black and white, this panoramic image commands the wall in any space — quiet authority, no compromise.</p>
+      <div class="artwork-sizes">
+        <h4>Available Sizes · Panoramic 1:2 Ratio</h4>
+        <div class="size-pills">
+          <span class="size-pill">20 x 40"</span>
+          <span class="size-pill">30 x 60"</span>
+          <span class="size-pill">40 x 80"</span>
+          <span class="size-pill">48 x 96"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$965</strong>
+        </div>
+        <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Commission</a>
+          <a href="collections/silent-sovereign.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+
+  <div class="sr-divider"><span>06</span></div>
+
+
+  <!-- ══════════════════════════════════════════
+       06 — THE PASSAGE
+       ══════════════════════════════════════════ -->
+  <article class="artwork-section reveal" id="the-passage">
+
+    <div class="artwork-viewer">
+      <div class="artwork-main">
+        <span class="edition-number">Limited Edition</span>
+        <div class="slide-dots" id="passage-dots"></div>
+        <img id="passage-img"
+             src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg"
+             alt="The Passage — Antelope Canyon, Arizona" />
+      </div>
+            <div class="artwork-thumbs">
+        <button class="art-thumb active"
+                data-src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg">
+          <img src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg" alt="Acrylic Mount" />
+          <span>Acrylic Mount</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Faces/PASSAGE NEW 24X36 BLACK FRAME.jpg">
+          <img src="assets/images/Faces/PASSAGE NEW 24X36 BLACK FRAME.jpg" alt="Black Frame" />
+          <span>Black Frame</span>
+        </button>
+        <button class="art-thumb"
+                data-src="assets/images/Faces/PASSAGE NEW 24X36 BROWN FRAME.jpg">
+          <img src="assets/images/Faces/PASSAGE NEW 24X36 BROWN FRAME.jpg" alt="Brown Frame" />
+          <span>Brown Frame</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="artwork-info">
+      <span class="artwork-category">Landscape · Antelope Canyon, Arizona</span>
+      <h2 class="artwork-title">The Passage</h2>
+      <p class="artwork-sub">Antelope Canyon · Arizona Desert</p>
+      <p class="artwork-desc">Sculpted by wind and time over millions of years — the flowing sandstone walls of Antelope Canyon hold light unlike anywhere on earth. Photographed at the moment the canyon glows from within, this image belongs in the room it occupies.</p>
+      <div class="artwork-sizes">
+        <h4>Available Sizes</h4>
+        <div class="size-pills">
+          <span class="size-pill">24 x 36"</span>
+          <span class="size-pill">32 x 48"</span>
+          <span class="size-pill">40 x 60"</span>
+          <span class="size-pill">48 x 72"</span>
+        </div>
+      </div>
+      <div class="artwork-footer">
+        <div class="artwork-price">
+          <small>Starting From</small>
+          <strong>$965</strong>
+        </div>
+        <div class="artwork-actions">
+          <a href="contact.html" class="btn-enquire">Commission</a>
+          <a href="collections/the-passage.html" class="btn-view-detail">View Full Details</a>
+        </div>
+      </div>
+    </div>
 
   </article>
 
@@ -638,7 +860,7 @@
         const altText = baseImg ? baseImg.alt : '';
         if (baseImg) baseImg.remove();
 
-        /* layered slides — saare available mockups */
+        /* layered slides */
         const slides = thumbs.map(function(t, i) {
           const im = document.createElement('img');
           im.className = 'sr-slide' + (i === 0 ? ' is-on' : '');
@@ -676,7 +898,6 @@
         function stop()    { clearInterval(timer); }
         function resetTimer() { stop(); start(); }
 
-        /* sirf image box pe hover karne par pause ho */
         main.addEventListener('mouseenter', stop);
         main.addEventListener('mouseleave', start);
         start();
