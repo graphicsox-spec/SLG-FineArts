@@ -506,7 +506,7 @@
   const label = trigger.querySelector('.size-dd-label');
   function syncLabel() {
     const a = list.querySelector('.size-btn.active');
-    if (!a) { label.innerHTML = 'Select a size to see all options'; return; }
+    if (!a) { label.innerHTML = 'Choose a size to unlock options'; return; }
     const dim = a.querySelector('.size-dim');
     const sub = a.querySelector('.size-label');
     label.innerHTML = (dim ? dim.innerHTML : a.textContent) +
@@ -614,7 +614,7 @@
       /* Web Preview: poora panel default unselected state pe reset */
       if (window.SLGResetToDefault) window.SLGResetToDefault();
       const ddLabel = document.querySelector('.size-dd-label');
-      if (ddLabel) ddLabel.innerHTML = 'Select a size to see all options';
+      if (ddLabel) ddLabel.innerHTML = 'Choose a size to unlock options';
       return;
     }
     const m = key.match(/^(\d+x\d+)_(unframed|framed)(?:_(black|brown))?$/);
