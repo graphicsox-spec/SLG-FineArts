@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Shop — Fine Art Prints · SLG Masterworks</title>
-  <meta name="description" content="Acquire a limited-edition, hand-signed fine art print directly from Sarah L Glabman. Each piece is exclusive to SLG Masterworks." />
+  <meta name="description" content="Acquire a limited-edition, signed fine art print directly from Sarah L Glabman. Each piece is exclusive to SLG Masterworks." />
   <meta name="theme-color" content="#FFFFFF" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -237,7 +237,7 @@
     <section class="shop-hero">
       <span class="section-label">The Shop</span>
       <h1>Fine Art Prints</h1>
-      <p>Browse the full collection of Sarah's wildlife, landscape, and water work — every print hand-signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.<span class="shop-head-extra"> Use the filters below to find your piece.</span></p>
+      <p>Browse the full collection of Sarah's wildlife, landscape, and water work — every print signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.<span class="shop-head-extra"> Use the filters below to find your piece.</span></p>
     </section>
 
     <!-- Layout: left sidebar controls + grid -->
@@ -253,16 +253,10 @@
           <button class="shop-filter" data-ftype="collection" data-value="water">Water</button>
         </div>
         <div class="shop-filter-group">
-          <h3>Highlights</h3>
-          <button class="shop-filter active" data-ftype="tag" data-value="all">All</button>
-          <button class="shop-filter" data-ftype="tag" data-value="new">New Arrivals</button>
-          <button class="shop-filter" data-ftype="tag" data-value="best">Best Sellers</button>
-        </div>
-        <div class="shop-filter-group">
-          <h3>Orientation</h3>
-          <button class="shop-filter active" data-ftype="orientation" data-value="all">All</button>
-          <button class="shop-filter" data-ftype="orientation" data-value="horizontal">Horizontal</button>
-          <button class="shop-filter" data-ftype="orientation" data-value="vertical">Vertical</button>
+          <h3>Edition</h3>
+          <button class="shop-filter active" data-ftype="edition" data-value="all">All</button>
+          <button class="shop-filter" data-ftype="edition" data-value="open">Open Edition</button>
+          <button class="shop-filter" data-ftype="edition" data-value="limited">Limited Edition</button>
         </div>
         <div class="shop-filter-group">
           <h3>Sort</h3>
@@ -307,13 +301,14 @@
           a.dataset.category = pr.category;
           a.dataset.orientation = pr.orientation;
           a.dataset.tags = (pr.tags || []).join(',');
+          a.dataset.edition = pr.edition || 'open';
           a.dataset.price = pr.price;
           a.dataset.index = i;
           a.dataset.title = pr.title;
           a.innerHTML =
             '<div class="edition-figure"><img src="' + pr.img + '" alt="' + pr.title + '" loading="lazy" /></div>' +
             '<div class="edition-body">' +
-              '<span class="edition-edlabel">Limited Edition</span>' +
+              '<span class="edition-edlabel">' + (pr.edition === 'limited' ? 'Limited Edition' : 'Open Edition') + '</span>' +
               '<h2 class="edition-title">' + pr.title + '</h2>' +
               '<span class="edition-price">' + pr.priceLabel + '</span>' +
             '</div>';
@@ -324,7 +319,7 @@
       const buttons = Array.from(document.querySelectorAll('.shop-filter'));
       const countEl = document.querySelector('[data-count-label]');
       const emptyEl = document.querySelector('[data-empty]');
-      const active  = { collection: 'all', orientation: 'all', tag: 'all', sort: 'featured' };
+      const active  = { collection: 'all', orientation: 'all', edition: 'all', sort: 'featured' };
 
       function apply() {
         // sort
@@ -339,14 +334,14 @@
         cards.forEach(c => {
           const okC = active.collection === 'all' || c.dataset.category === active.collection;
           const okO = active.orientation === 'all' || c.dataset.orientation === active.orientation;
-          const tags = (c.dataset.tags || '').split(',');
-          const okT = active.tag === 'all' || tags.indexOf(active.tag) !== -1;
-          const show = okC && okO && okT;
+          const okE = active.edition === 'all' || c.dataset.edition === active.edition;
+          const show = okC && okO && okE;
           c.style.display = show ? '' : 'none';
           if (show) visible++;
         });
 
         if (countEl) countEl.textContent = visible + (visible === 1 ? ' Edition' : ' Editions');
+        if (emptyEl) { emptyEl.textContent = (active.edition === 'limited') ? 'Limited edition works coming soon.' : 'No editions match this filter.'; }
         emptyEl.style.display = visible === 0 ? 'block' : 'none';
       }
 
@@ -361,7 +356,7 @@
       /* ── Pre-select filters from URL (e.g. the-shop.html?tag=new) ── */
       const params = new URLSearchParams(window.location.search);
       let paramApplied = false;
-      ['collection', 'tag', 'orientation', 'sort'].forEach(type => {
+      ['collection', 'edition', 'orientation', 'sort'].forEach(type => {
         const value = params.get(type);
         if (!value) return;
         const btn = document.querySelector('.shop-filter[data-ftype="' + type + '"][data-value="' + value + '"]');
