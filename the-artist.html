@@ -22,7 +22,7 @@
       overflow: hidden;
       background: var(--navy-bg, #0D1B35);
       /* uniform page-header band — same on every page */
-      padding: calc(var(--nav-h, 72px) + 1.5rem) 0 2.5rem;
+      padding: calc(var(--nav-h, 72px) + 1.5rem) 0 calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
     }
@@ -78,6 +78,7 @@
       font-weight: 300;
       color: rgba(255,255,255,.5);
       max-width: 76ch; /* same paragraph width on every page header */
+      text-wrap: balance; /* avoid lone word on its own line */
       line-height: 1.75;
       margin: 0 auto;
       text-align: center;

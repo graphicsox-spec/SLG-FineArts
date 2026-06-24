@@ -20,7 +20,7 @@
       background: var(--navy-bg, #0D1B35);
       overflow: hidden;
       /* uniform page-header band — same on every page */
-      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
       text-align: center;
@@ -55,6 +55,7 @@
       font-weight: 300;
       color: rgba(255,255,255,.42);
       max-width: 76ch; /* same paragraph width on every page header */
+      text-wrap: balance; /* avoid lone word on its own line */
       margin: 0 auto;
       line-height: 1.75;
     }
@@ -386,7 +387,7 @@
   <section class="ct-hero reveal">
     <span class="ct-hero-label">Get in Touch</span>
     <h1>Contact the Studio</h1>
-    <p>Commissions, custom sizing, gallery exhibitions, and press — Sarah replies personally to every note.</p>
+    <p>Whether it's a commission, custom sizing, a gallery exhibition, or a press enquiry, Sarah personally reads and replies to every note she receives.</p>
   </section>
 
   <!-- Body -->

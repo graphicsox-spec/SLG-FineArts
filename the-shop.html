@@ -22,7 +22,7 @@
       background: var(--navy-bg, #0D1B35);
       text-align: center;
       /* uniform page-header band — same on every page */
-      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
     }
@@ -48,6 +48,7 @@
       font-weight: 300;
       color: rgba(255,255,255,.42);
       max-width: 76ch; /* same paragraph width on every page header */
+      text-wrap: balance; /* avoid lone word on its own line */
       margin: 0 auto;
       line-height: 1.75;
     }
@@ -237,7 +238,7 @@
     <section class="shop-hero">
       <span class="section-label">The Shop</span>
       <h1>Fine Art Prints</h1>
-      <p>Browse the full collection of Sarah's wildlife, landscape, and water work — every print signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.<span class="shop-head-extra"> Use the filters below to find your piece.</span></p>
+      <p>Browse the full collection of Sarah's wildlife, landscape, and water work — every print signed, museum-quality<span class="shop-head-extra">, and shipped across North America &amp; Canada</span>.</p>
     </section>
 
     <!-- Layout: left sidebar controls + grid -->

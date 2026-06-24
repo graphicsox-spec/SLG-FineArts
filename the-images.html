@@ -24,7 +24,7 @@
       background: #0D1B35;
       text-align: center;
       /* uniform page-header band — same on every page */
-      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) 2.5rem;
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
       border-bottom: 1px solid rgba(255,255,255,.06);
@@ -44,6 +44,7 @@
       font-weight: 300;
       color: rgba(255,255,255,.42);
       max-width: 76ch; /* wide enough for 2 lines */
+      text-wrap: balance; /* avoid lone word on its own line */
       margin: 0 auto;
       line-height: 1.75;
     }
@@ -345,7 +346,7 @@
   <div class="ti-page-head">
     <span class="section-label">Collections</span>
     <h1>The Images</h1>
-    <p>Every print — wildlife, landscape, and water. Museum-grade acrylic prints.<span class="ti-head-extra"> Filter by collection to find your piece.</span></p>
+    <p>Browse every print across Sarah's wildlife, landscape, and water collections — each one a museum-grade acrylic work, signed and ready to hang in your space.</p>
   </div>
 
   <!-- ============================================================
