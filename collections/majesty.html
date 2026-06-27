@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Majesty — Fine Art Print | SLG Masterworks</title>
+  <meta name="description" content="Majesty — a stunning open edition fine art equine portrait by Sarah L Glabman. Photographed in Scottsdale, Arizona. Museum-grade acrylic print." />
+  <meta name="theme-color" content="#FAF7F2" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/product.css" />
+</head>
+<body data-sub="true">
+
+  <!-- Breadcrumb -->
+  <div class="product-breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../the-images.html">The Images</a>
+    <span class="sep">›</span>
+    <span>Majesty</span>
+  </div>
+
+  <!-- ==================== PRODUCT SECTION ==================== -->
+  <section class="product-page" id="product-page">
+
+    <!-- LEFT: Gallery -->
+    <div class="product-gallery">
+      <div class="product-hero-wrap">
+        <img
+          id="product-hero"
+          class="product-hero-img"
+          src="../assets/images/Majesty/Majesty.png"
+          alt="Majesty — fine art equine portrait by Sarah L Glabman"
+        />
+      </div>
+      <div class="product-thumbs" id="product-thumbs">
+        <!-- Thumbnails populated by JS -->
+      </div>
+    </div>
+
+    <!-- RIGHT: Info -->
+    <div class="product-info">
+      <span class="product-eyebrow">/ Wildlife Collection</span>
+
+      <h1 class="product-title">Majesty</h1>
+      <p class="product-subtitle">Scottsdale, Arizona</p>
+
+      <p class="product-desc">
+        There is something profoundly moving about standing in the presence of a great horse. Long before a single photograph is made, there is a quiet conversation built on trust, patience, and respect.
+        <br><br>
+        Photographed in Scottsdale, Arizona, this remarkable equine portrait was created to celebrate the strength, elegance, and timeless beauty of one of nature's most magnificent animals. Rather than capturing motion, I wanted to reveal character. The dramatic lighting gently sculpts every contour of the horse's face and neck, drawing attention to the quiet intelligence reflected in its eye and the powerful grace that has captivated humanity for centuries.
+        <br><br>
+        To me, the true beauty of horses has never been found only in their athleticism, but in their presence. They possess a rare combination of power and gentleness that few animals can match. My goal with this portrait was to create more than a photograph. I wanted to create a timeless work of fine art that allows the viewer to experience that same connection every time they look upon it.
+        <br><br>
+        <em>Majesty</em> is available as an Open Edition museum-grade acrylic print, handcrafted for collectors who appreciate luxury equine photography, fine art horse portraits, Western-inspired artwork, and museum-quality wall art. Produced using archival materials and exceptional craftsmanship, each piece preserves the rich detail, dramatic contrast, and sculptural beauty of this unforgettable portrait.
+      </p>
+
+      <hr class="product-divider" />
+
+      <!-- Size Selector -->
+      <div class="selector-group">
+        <span class="selector-label">Select Size</span>
+        <div class="size-options" id="size-options">
+          <button class="size-btn" data-size="24x36" type="button">
+            <span class="size-dim">24 × 36" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(61 × 91 cm)</span></span>
+            <span class="size-label">Signature / Medium</span>
+          </button>
+          <button class="size-btn" data-size="32x48" type="button">
+            <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
+            <span class="size-label">Gallery / Large</span>
+          </button>
+          <button class="size-btn" data-size="40x60" type="button">
+            <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
+            <span class="size-label">Statement / XL</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Presentation Selector -->
+      <div class="selector-group">
+        <span class="selector-label">Presentation</span>
+        <div class="presentation-options" id="presentation-options">
+
+          <button class="presentation-btn" data-presentation="acrylic" type="button">
+            <span class="presentation-radio"></span>
+            <span class="presentation-text">
+              <span class="presentation-name">Acrylic Mount</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+            </span>
+            <span class="presentation-price-tag" id="price-unframed">—</span>
+          </button>
+
+          <button class="presentation-btn" data-presentation="framed" type="button">
+            <span class="presentation-radio"></span>
+            <span class="presentation-text">
+              <span class="presentation-name">Framed Acrylic Mount</span>
+              <span class="presentation-note">Premium floating frame, ready to hang</span>
+            </span>
+            <span class="presentation-price-tag" id="price-framed">—</span>
+          </button>
+
+        </div>
+
+        <!-- Frame Color Sub-selector -->
+        <div class="frame-color-wrap" id="frame-color-wrap">
+          <span class="frame-color-label">Choose Frame Color</span>
+          <div class="frame-colors" id="frame-colors">
+            <button class="frame-color-btn active" data-frame="black" type="button">
+              <span class="frame-color-swatch swatch-black"></span>
+              <span class="frame-color-text">Black Float Frame</span>
+            </button>
+            <button class="frame-color-btn" data-frame="brown" type="button">
+              <span class="frame-color-swatch swatch-brown"></span>
+              <span class="frame-color-text">Dark Brown Float Frame</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Frame Detail Close-up -->
+        <div class="frame-detail" id="frame-detail">
+          <img
+            id="frame-detail-img"
+            src="../assets/images/Wildlife/Black Float Frame.jpg"
+            alt="Black float frame close-up detail"
+          />
+        </div>
+      </div>
+
+      <!-- Price Display -->
+      <div class="product-price-display">
+        <div class="price-current" id="price-display">
+          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+        </div>
+        <div class="price-config" id="price-config">
+          Select size &amp; presentation to see pricing
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="product-cta">
+        <a href="#" class="btn-navy disabled" id="cta-purchase">Add to Cart</a>
+        <a href="../contact.html" class="btn-navy-outline">Request Custom Size</a>
+      </div>
+
+      <hr class="product-divider" />
+
+      <!-- Specs -->
+      <ul class="product-specs">
+        <li>
+          <span class="spec-label">Medium</span>
+          <span class="spec-value">Museum-Grade Acrylic Print</span>
+        </li>
+        <li>
+          <span class="spec-label">Location</span>
+          <span class="spec-value">Scottsdale, Arizona</span>
+        </li>
+        <li>
+          <span class="spec-label">Edition</span>
+          <span class="spec-value">Open Edition</span>
+        </li>
+        <li>
+          <span class="spec-label">Available Sizes</span>
+          <span class="spec-value">24×36" · 32×48" · 40×60"</span>
+        </li>
+        <li>
+          <span class="spec-label">Frame Options</span>
+          <span class="spec-value">Acrylic Mount · Black Float · Dark Brown Float</span>
+        </li>
+        <li>
+          <span class="spec-label">Shipping</span>
+          <span class="spec-value">North America &amp; Canada</span>
+        </li>
+        <li>
+          <span class="spec-label">Artist</span>
+          <span class="spec-value">Sarah L Glabman</span>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ==================== FRAMING INFO SECTION ==================== -->
+  <section class="framing-section">
+    <div class="framing-header">
+      <span class="eyebrow">/ Presentation Options</span>
+      <h2>Museum-Quality <span class="italic">Framing</span></h2>
+      <p>Every piece is crafted with the same care as the photograph itself. Choose from two handcrafted float frames or a crystal-clear acrylic face mount.</p>
+    </div>
+    <div class="framing-grid">
+      <div class="framing-card">
+        <img class="framing-card-img" src="../assets/images/Wildlife/Black Float Frame.jpg" alt="Black Float Frame detail" />
+        <h4>Black Float Frame</h4>
+        <p>A sleek, modern black float frame that suspends the print with a subtle reveal around all edges, giving the artwork a gallery-quality depth and presence.</p>
+      </div>
+      <div class="framing-card">
+        <img class="framing-card-img" src="../assets/images/Wildlife/Brown wood float frame.jpg" alt="Dark Brown Float Frame detail" />
+        <h4>Dark Brown Float Frame</h4>
+        <p>A warm, natural wood float frame with rich grain and dark espresso tones. The floating mount brings dimension and an organic elegance to the piece.</p>
+      </div>
+      <div class="framing-card">
+        <img class="framing-card-img" src="../assets/images/Majesty/Majesty.png" alt="Acrylic Mount preview" />
+        <h4>Acrylic Mount</h4>
+        <p>The photograph is face-mounted behind optically-clear acrylic, creating extraordinary depth, luminosity, and a contemporary floating effect on the wall.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT PAGE LOGIC ==================== -->
+  <script>
+  (function () {
+    /* ─── Data ─── */
+    const PRODUCT = {
+      images: {
+        hero:                '../assets/images/Majesty/Majesty.png',
+        '24x36_unframed':    '../assets/images/Majesty/BLACK BEAUTY 24X36 NO FRAME.jpg',
+        '24x36_framed_black':'../assets/images/Majesty/BLACK BEAUTY 24X36 BLACK FRAME.jpg',
+        '24x36_framed_brown':'../assets/images/Majesty/BLACK BEAUTY 24X36 BROWN FRAME.jpg',
+        '32x48_unframed':    '../assets/images/Majesty/BLACK BEAUTY 32X48 NO FRAME.jpg',
+        '32x48_framed_black':'../assets/images/Majesty/BLACK BEAUTY 32X48 BLACK FRAME.jpg',
+        '32x48_framed_brown':'../assets/images/Majesty/BLACK BEAUTY 32X48 BROWN FRAME.jpg',
+        '40x60_unframed':    '../assets/images/Majesty/BLACK BEAUTY 40X60 NO FRAME.jpg',
+        '40x60_framed_black':'../assets/images/Majesty/BLACK BEAUTY 40X60 BLACK FRAME.jpg',
+        '40x60_framed_brown':'../assets/images/Majesty/BLACK BEAUTY 40X60 BROWN FRAME.jpg',
+      },
+      frames: {
+        black: '../assets/images/Wildlife/Black Float Frame.jpg',
+        brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
+      },
+      pricing: {
+        '24x36': { unframed: 965,  framed: 1475 },
+        '32x48': { unframed: 1700, framed: 2300 },
+        '40x60': { unframed: 3750, framed: 4500 },
+      }
+    };
+
+    /* ─── State ─── */
+    let currentSize = null;
+    let currentPresentation = null;
+    let currentFrame = 'black';
+
+    /* ─── DOM refs ─── */
+    const heroImg        = document.getElementById('product-hero');
+    const thumbsWrap     = document.getElementById('product-thumbs');
+    const sizeOptions    = document.getElementById('size-options');
+    const presOptions    = document.getElementById('presentation-options');
+    const frameColorWrap = document.getElementById('frame-color-wrap');
+    const frameColors    = document.getElementById('frame-colors');
+    const frameDetail    = document.getElementById('frame-detail');
+    const frameDetailImg = document.getElementById('frame-detail-img');
+
+    /* ─── Thumbnails ─── */
+    const thumbOrder = [
+      { key: 'hero',               label: 'Web Preview' },
+      { key: '24x36_unframed',     label: '24×36 Acrylic Mount' },
+      { key: '24x36_framed_black', label: '24×36 Black Frame' },
+      { key: '24x36_framed_brown', label: '24×36 Brown Frame' },
+      { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
+      { key: '32x48_framed_black', label: '32×48 Black Frame' },
+      { key: '32x48_framed_brown', label: '32×48 Brown Frame' },
+      { key: '40x60_unframed',     label: '40×60 Acrylic Mount' },
+      { key: '40x60_framed_black', label: '40×60 Black Frame' },
+      { key: '40x60_framed_brown', label: '40×60 Brown Frame' },
+    ];
+
+    function buildThumbs() {
+      thumbsWrap.innerHTML = '';
+      thumbOrder.forEach((t, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'product-thumb' + (i === 0 ? ' active' : '');
+        btn.type = 'button';
+        btn.title = t.label;
+        btn.dataset.imgKey = t.key;
+        const img = document.createElement('img');
+        img.src = PRODUCT.images[t.key];
+        img.alt = t.label;
+        img.loading = 'lazy';
+        btn.appendChild(img);
+        btn.addEventListener('click', () => {
+          setHeroImage(t.key);
+          setActiveThumb(btn);
+        });
+        thumbsWrap.appendChild(btn);
+      });
+    }
+
+    function setActiveThumb(activeBtn) {
+      thumbsWrap.querySelectorAll('.product-thumb').forEach(b => b.classList.remove('active'));
+      activeBtn.classList.add('active');
+    }
+
+    function setHeroImage(key) {
+      const src = PRODUCT.images[key];
+      if (!src) return;
+      heroImg.classList.add('loading');
+      const loader = new Image();
+      loader.onload = () => {
+        heroImg.src = src;
+        heroImg.classList.remove('loading');
+      };
+      loader.src = src;
+    }
+
+    function getCurrentImageKey() {
+      if (!currentSize || !currentPresentation) return 'hero';
+      const key = currentPresentation === 'framed'
+        ? currentSize + '_framed_' + currentFrame
+        : currentSize + '_unframed';
+      return PRODUCT.images[key] ? key : 'hero';
+    }
+
+    function syncImageToSelection() {
+      const key = getCurrentImageKey();
+      setHeroImage(key);
+      thumbsWrap.querySelectorAll('.product-thumb').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.imgKey === key);
+      });
+    }
+
+    function fmtPrice(n) {
+      return n.toLocaleString('en-US');
+    }
+
+    function syncPrices() {
+      const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
+      document.getElementById('price-unframed').textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
+      document.getElementById('price-framed').textContent   = sp ? '$' + fmtPrice(sp.framed)   : '—';
+
+      const cta        = document.getElementById('cta-purchase');
+      const cur        = document.querySelector('.price-current .currency');
+      const priceAmt   = document.getElementById('price-amount');
+      const priceConf  = document.getElementById('price-config');
+
+      if (!currentSize || !currentPresentation) {
+        priceAmt.textContent  = '—';
+        priceConf.textContent = 'Select size & presentation to see pricing';
+        if (cur) cur.style.display = 'none';
+        cta.classList.add('disabled');
+      } else {
+        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+        priceAmt.textContent  = fmtPrice(price);
+        priceConf.textContent = sizeLabel() + ' · ' + presentationLabel();
+        if (cur) cur.style.display = '';
+        cta.classList.remove('disabled');
+      }
+    }
+
+    function sizeLabel() {
+      if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
+      if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
+      return '40 × 60" (102 × 152 cm)';
+    }
+
+    function presentationLabel() {
+      if (currentPresentation === 'framed') {
+        return currentFrame === 'black' ? 'Black Float Frame' : 'Dark Brown Float Frame';
+      }
+      return 'Acrylic Mount';
+    }
+
+    function syncFrameUI() {
+      const isFramed = currentPresentation === 'framed';
+      frameColorWrap.classList.toggle('visible', isFramed);
+      frameDetail.classList.toggle('visible', isFramed);
+      if (isFramed) {
+        frameDetailImg.src = PRODUCT.frames[currentFrame];
+        frameDetailImg.alt = (currentFrame === 'black' ? 'Black' : 'Dark Brown') + ' float frame detail';
+      }
+    }
+
+    function sync() {
+      syncPrices();
+      syncFrameUI();
+      syncImageToSelection();
+    }
+
+    /* ─── Events ─── */
+    sizeOptions.addEventListener('click', e => {
+      const btn = e.target.closest('.size-btn');
+      if (!btn) return;
+      sizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSize = btn.dataset.size;
+      sync();
+    });
+
+    presOptions.addEventListener('click', e => {
+      const btn = e.target.closest('.presentation-btn');
+      if (!btn) return;
+      presOptions.querySelectorAll('.presentation-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPresentation = btn.dataset.presentation;
+      sync();
+    });
+
+    frameColors.addEventListener('click', e => {
+      const btn = e.target.closest('.frame-color-btn');
+      if (!btn) return;
+      frameColors.querySelectorAll('.frame-color-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFrame = btn.dataset.frame;
+      sync();
+    });
+
+    /* ─── Add to Cart ─── */
+    (function () {
+      const cta  = document.getElementById('cta-purchase');
+      if (!cta) return;
+      const name = (document.querySelector('.product-title')?.textContent || 'Print').trim();
+      cta.addEventListener('click', e => {
+        e.preventDefault();
+        if (!currentSize || !currentPresentation) return;
+        const sp    = PRODUCT.pricing[currentSize];
+        const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
+        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        if (window.SLGCart) { window.SLGCart.add({ title, price }); window.SLGCart.open(); }
+        const orig = cta.textContent;
+        cta.textContent = 'Added ✓';
+        setTimeout(() => { cta.textContent = orig; }, 1500);
+      });
+    })();
+
+    /* ─── Init ─── */
+    buildThumbs();
+    syncPrices();
+    syncFrameUI();
+
+  })();
+  </script>
+
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

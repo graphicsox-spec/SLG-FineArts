@@ -10,6 +10,13 @@
    Order here = order shown everywhere (newest first).
    ============================================================ */
 window.SLG_PRODUCTS = [
+  { title: 'Majesty', href: 'collections/majesty.html', img: 'assets/images/Majesty/Majesty.png', category: 'wildlife', orientation: 'vertical', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
+  { title: 'Endurance', href: 'collections/endurance.html', img: 'assets/images/Endurance/endurance-web.jpg', category: 'landscape', orientation: 'vertical', price: 2920, priceLabel: 'From $2,920', edition: 'limited', tags: ['new'] },
+  { title: 'Sanctuary of Light', href: 'collections/sanctuary-of-light.html', img: 'assets/images/Sanctuary of Light/sanctuary-of-light-web.png', category: 'landscape', orientation: 'horizontal', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
+  { title: 'Eye of the Hunt', href: 'collections/eye-of-the-hunt.html', img: 'assets/images/Eye of the Hunt/Eye of the Hunt.jpg', category: 'wildlife', orientation: 'horizontal', price: 2480, priceLabel: 'From $2,480', edition: 'limited', tags: ['new'] },
+  { title: 'The Giant Within', href: 'collections/the-giant-within.html', img: 'assets/images/The Giant Within/the-giant-within-web.png', category: 'landscape', orientation: 'horizontal', price: 3350, priceLabel: 'From $3,350', edition: 'limited', tags: ['new'] },
+  { title: 'Evening Benediction', href: 'collections/evening-benediction.html', img: 'assets/images/Evening Benediction/Evening Benediction.png', category: 'water', orientation: 'horizontal', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
+  { title: 'MAMA Blue', href: 'collections/mama-blue.html', img: 'assets/images/MAMA Blue/mama-blue-web.png', category: 'wildlife', orientation: 'horizontal', price: 2480, priceLabel: 'From $2,480', edition: 'limited', tags: ['new'] },
   { title: 'The One', href: 'collections/the-one.html', img: 'assets/images/The One/The One Web Version.png', category: 'landscape', orientation: 'horizontal', price: 2920, priceLabel: 'From $2,920', edition: 'limited', tags: ['new', 'best'] },
   { title: 'Echoes of the Namib', href: 'collections/echoes-of-the-namib.html', img: 'assets/images/Echoes of the Namib/LIMBS Web Version.png', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
   { title: 'The Edge', href: 'collections/the-edge.html', img: 'assets/images/The Edge/Cape Town The Edge web.jpg', category: 'water', orientation: 'vertical', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
