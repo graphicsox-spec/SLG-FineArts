@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Shop — Fine Art Prints · SLG Masterworks</title>
-  <meta name="description" content="Acquire a limited-edition, signed fine art print directly from Sarah L Glabman. Each piece is exclusive to SLG Masterworks." />
+  <meta name="description" content="Acquire a Collector's Reserve, signed fine art print directly from Sarah L Glabman. Each piece is exclusive to SLG Masterworks." />
   <meta name="theme-color" content="#FFFFFF" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -257,7 +257,7 @@
           <h3>Edition</h3>
           <button class="shop-filter active" data-ftype="edition" data-value="all">All</button>
           <button class="shop-filter" data-ftype="edition" data-value="open">Open Edition</button>
-          <button class="shop-filter" data-ftype="edition" data-value="limited">Limited Edition</button>
+          <button class="shop-filter" data-ftype="edition" data-value="collectors-reserve">Collector's Reserve</button>
         </div>
         <div class="shop-filter-group">
           <h3>Sort</h3>
@@ -309,7 +309,7 @@
           a.innerHTML =
             '<div class="edition-figure"><img src="' + pr.img + '" alt="' + pr.title + '" loading="lazy" /></div>' +
             '<div class="edition-body">' +
-              '<span class="edition-edlabel">' + (pr.edition === 'limited' ? 'Limited Edition' : 'Open Edition') + '</span>' +
+              '<span class="edition-edlabel">' + (pr.edition === 'collectors-reserve' ? 'Collector\'s Reserve' : 'Open Edition') + '</span>' +
               '<h2 class="edition-title">' + pr.title + '</h2>' +
               '<span class="edition-price">' + pr.priceLabel + '</span>' +
             '</div>';
@@ -342,7 +342,7 @@
         });
 
         if (countEl) countEl.textContent = visible + (visible === 1 ? ' Edition' : ' Editions');
-        if (emptyEl) { emptyEl.textContent = (active.edition === 'limited') ? 'Limited edition works coming soon.' : 'No editions match this filter.'; }
+        if (emptyEl) { emptyEl.textContent = (active.edition === 'collectors-reserve') ? 'Collector\'s Reserve works coming soon.' : 'No editions match this filter.'; }
         emptyEl.style.display = visible === 0 ? 'block' : 'none';
       }
 

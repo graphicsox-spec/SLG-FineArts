@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Images — SLG Masterworks · Sarah L Glabman</title>
-  <meta name="description" content="Wildlife, Landscape, and Water fine art photography collections by Sarah L Glabman. Limited-edition signed prints." />
+  <meta name="description" content="Wildlife, Landscape, and Water fine art photography collections by Sarah L Glabman. Collector's Reserve signed prints." />
   <meta name="theme-color" content="#0A0A0A" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -367,7 +367,7 @@
           <h3>Edition</h3>
           <button class="ti-filter active" data-ftype="edition" data-value="all">All</button>
           <button class="ti-filter" data-ftype="edition" data-value="open">Open Edition</button>
-          <button class="ti-filter" data-ftype="edition" data-value="limited">Limited Edition</button>
+          <button class="ti-filter" data-ftype="edition" data-value="collectors-reserve">Collector's Reserve</button>
         </div>
         <div class="ti-filter-group">
           <h3>Sort</h3>
@@ -410,7 +410,7 @@
           a.innerHTML =
             '<div class="ti-work-figure"><img src="' + pr.img + '" alt="' + pr.title + '" loading="lazy" /></div>' +
             '<div class="ti-work-info">' +
-              '<span class="ti-edlabel">' + (pr.edition === 'limited' ? 'Limited Edition' : 'Open Edition') + '</span>' +
+              '<span class="ti-edlabel">' + (pr.edition === 'collectors-reserve' ? 'Collector\'s Reserve' : 'Open Edition') + '</span>' +
               '<h3 class="ti-work-title">' + pr.title + '</h3>' +
               '<span class="ti-work-price">' + pr.priceLabel + '</span>' +
             '</div>';
@@ -436,7 +436,7 @@
         if (active.sort === 'price-asc') sorted.sort((a,b) => a.dataset.price - b.dataset.price);
         else if (active.sort === 'price-desc') sorted.sort((a,b) => b.dataset.price - a.dataset.price);
         sorted.forEach(w => grid.insertBefore(w, emptyEl));
-        if (emptyEl) { emptyEl.textContent = (active.edition === 'limited') ? 'Limited edition works coming soon.' : 'No works match these filters.'; emptyEl.style.display = visible === 0 ? 'block' : 'none'; }
+        if (emptyEl) { emptyEl.textContent = (active.edition === 'collectors-reserve') ? 'Collector\'s Reserve works coming soon.' : 'No works match these filters.'; emptyEl.style.display = visible === 0 ? 'block' : 'none'; }
       }
 
       function setFilter(type, value) {

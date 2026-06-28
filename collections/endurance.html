@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Endurance — Fine Art Print | SLG Masterworks</title>
-  <meta name="description" content="Endurance — a stunning limited edition fine art landscape print by Sarah L Glabman. Camel thorn tree at sunrise, Namib Desert, Namibia. Museum-grade acrylic print." />
+  <meta name="description" content="Endurance — a stunning Collector's Reserve fine art landscape print by Sarah L Glabman. Camel thorn tree at sunrise, Namib Desert, Namibia. Museum-grade acrylic print." />
   <meta name="theme-color" content="#FAF7F2" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -47,7 +47,7 @@
       <h1 class="product-title">Endurance</h1>
       <p class="product-subtitle">Namib Desert, Namibia</p>
 
-      <div class="product-edition-badge">Limited Edition · Signed &amp; Numbered</div>
+      <div class="product-edition-badge">Collector's Reserve · Signed &amp; Numbered</div>
 
       <p class="product-desc">
         Some of the world's greatest masterpieces aren't painted by artists. They're shaped by time.
@@ -56,7 +56,7 @@
         <br><br>
         I've always been drawn to trees like this. They remind me that beauty doesn't disappear with age or hardship. Instead, it evolves. Through my photography, my hope is to breathe new life into these remarkable survivors, inviting others to pause, reflect, and discover the quiet elegance hidden within the world's most unforgiving places.
         <br><br>
-        Photographed at sunrise in the Namib Desert, Namibia, <em>Endurance</em> is offered as a Limited Edition museum-grade acrylic print for collectors of luxury landscape photography, African fine art, and museum-quality nature photography. Rich morning light, vibrant desert colors, and the sculptural form of this iconic camel thorn tree combine to create a striking statement piece that celebrates resilience, beauty, and the enduring spirit of the natural world. Every artwork is handcrafted using archival museum-quality materials, preserving exceptional detail, depth, and color for generations to come.
+        Photographed at sunrise in the Namib Desert, Namibia, <em>Endurance</em> is offered as a Collector's Reserve museum-grade acrylic print for collectors of luxury landscape photography, African fine art, and museum-quality nature photography. Rich morning light, vibrant desert colors, and the sculptural form of this iconic camel thorn tree combine to create a striking statement piece that celebrates resilience, beauty, and the enduring spirit of the natural world. Every artwork is handcrafted using archival museum-quality materials, preserving exceptional detail, depth, and color for generations to come.
       </p>
 
       <hr class="product-divider" />
@@ -65,6 +65,10 @@
       <div class="selector-group">
         <span class="selector-label">Select Size</span>
         <div class="size-options" id="size-options">
+          <button class="size-btn" data-size="24x36" type="button">
+            <span class="size-dim">24 × 36" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(61 × 91 cm)</span></span>
+            <span class="size-label">Medium</span>
+          </button>
           <button class="size-btn" data-size="32x48" type="button">
             <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
             <span class="size-label">Gallery / Large</span>
@@ -160,11 +164,11 @@
         </li>
         <li>
           <span class="spec-label">Edition</span>
-          <span class="spec-value">Limited Edition · Signed &amp; Numbered</span>
+          <span class="spec-value">Collector's Reserve · Signed &amp; Numbered</span>
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">32×48" · 40×60" · 48×72"</span>
+          <span class="spec-value">24×36" · 32×48" · 40×60" · 48×72"</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -216,6 +220,9 @@
     const PRODUCT = {
       images: {
         hero:                '../assets/images/Endurance/endurance-web.jpg',
+        '24x36_unframed':    '../assets/images/Endurance/NAMIB TREE 24X36 NO FRAME.jpg',
+        '24x36_framed_black':'../assets/images/Endurance/NAMIB TREE 24X36 BLACK FRAME.jpg',
+        '24x36_framed_brown':'../assets/images/Endurance/NAMIB TREE 24X36 BROWN FRAME.jpg',
         '32x48_unframed':    '../assets/images/Endurance/NAMIB TREE 32X48 NO FRAME.jpg',
         '32x48_framed_black':'../assets/images/Endurance/NAMIB TREE 32X48 BLACK FRAME.jpg',
         '32x48_framed_brown':'../assets/images/Endurance/NAMIB TREE 32X48 BROWN FRAME.jpg',
@@ -231,6 +238,7 @@
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
       pricing: {
+        '24x36': { unframed: 1700, framed: 2550 },
         '32x48': { unframed: 2920, framed: 3945 },
         '40x60': { unframed: 5000, framed: 6300 },
         '48x72': { unframed: 7400, framed: 8975 },
@@ -257,6 +265,9 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',               label: 'Web Preview' },
+      { key: '24x36_unframed',     label: '24×36 Acrylic Mount' },
+      { key: '24x36_framed_black', label: '24×36 Black Frame' },
+      { key: '24x36_framed_brown', label: '24×36 Brown Frame' },
       { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
       { key: '32x48_framed_black', label: '32×48 Black Frame' },
       { key: '32x48_framed_brown', label: '32×48 Brown Frame' },
@@ -356,6 +367,7 @@
     }
 
     function sizeLabel() {
+      if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
       if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
       if (currentSize === '40x60') return '40 × 60" (102 × 152 cm)';
       return '48 × 72" (122 × 183 cm)';
