@@ -48,6 +48,7 @@
         <li><a href="${r}the-shop.html"${(on('shop') || fromShop) ? ' class="is-active"' : ''}>The Shop</a></li>
         <li><a href="${r}the-artist.html"${active('the-artist')}>The Artist</a></li>
         <li><a href="${r}showroom.html"${active('showroom')}>Showroom</a></li>
+        <li><a href="${r}collectors-promise.html"${active('collectors-promise')}>The Promise</a></li>
         <li><a href="${r}contact.html"${active('contact')}>Contact</a></li>
 
       </ul>
@@ -120,6 +121,7 @@
           <li><a href="${r}the-artist.html">The Artist</a></li>
           <li><a href="${r}showroom.html">Showroom</a></li>
           <li><a href="${r}contact.html">Contact</a></li>
+          <li><a href="${r}collectors-promise.html">The Promise</a></li>
         </ul>
       </div>
 
