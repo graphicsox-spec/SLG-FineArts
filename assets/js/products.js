@@ -10,7 +10,8 @@
    Order here = order shown everywhere (newest first).
    ============================================================ */
 window.SLG_PRODUCTS = [
-  { title: 'Silent Focus', href: 'collections/silent-focus.html', img: 'assets/images/Silent Focus/Silent Focus Web.png', category: 'wildlife', orientation: 'vertical', price: 1700, priceLabel: 'From $1,700', edition: 'collectors-reserve', tags: ['new'] },
+  { title: 'Tempest Below', href: 'collections/tempest-below.html', img: 'assets/images/Tempest Below/1-Peace.jpg', category: 'water', orientation: 'vertical', price: 2920, priceLabel: 'From $2,920', edition: 'collectors-reserve', tags: ['new'] },
+  { title: 'Silent Focus', href: 'collections/silent-focus.html', img: 'assets/images/Silent Focus/Zebra 8602 FLARE.jpg', category: 'wildlife', orientation: 'vertical', price: 1700, priceLabel: 'From $1,700', edition: 'collectors-reserve', tags: ['new'] },
   { title: 'Together', href: 'collections/together.html', img: 'assets/images/Together/Botswana 0988 NEW 3 copy.jpg', category: 'wildlife', orientation: 'vertical', price: 1700, priceLabel: 'From $1,700', edition: 'collectors-reserve', tags: ['new'] },
   { title: 'Echoes of Another World', href: 'collections/echoes-of-another-world.html', img: 'assets/images/Echoes of Another World/Namibia 2294.jpg', category: 'landscape', orientation: 'horizontal', price: 1690, priceLabel: 'From $1,690', edition: 'collectors-reserve', tags: ['new'] },
   { title: 'Resurrection', href: 'collections/resurrection.html', img: 'assets/images/Resurrection/Monument Valley.jpg', category: 'landscape', orientation: 'vertical', price: 965, priceLabel: 'From $965', edition: 'open', tags: ['new'] },
