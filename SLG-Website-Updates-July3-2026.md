@@ -58,5 +58,12 @@ Zoom uses CSS scaling — the image never loses quality at any zoom level.
 
 ---
 
-All changes are live in the website files. Please let me know if you'd like any adjustments.
+## 5. Scroll-to-Zoom Bug Fix
 
+After initial testing, a bug was identified and fixed: the zoom feature was running correctly in the background (cursor was changing as expected) but the image wasn't visually zooming on screen.
+
+The cause was a CSS animation timing conflict — the lightbox open animation was locking the image's visual transform after it finished, overriding the JavaScript zoom. This has been resolved; the animation lock is now cleared immediately after the open animation completes, allowing the zoom to work correctly.
+
+---
+
+All changes are live in the website files. Please let me know if you'd like any adjustments.
