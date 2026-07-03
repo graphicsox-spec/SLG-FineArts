@@ -471,7 +471,7 @@ body.is-homepage .nav {
   transition: background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
 }
 body.is-homepage .nav .brand           { color: #fff; }
-body.is-homepage .nav:not(.nav-scrolled) .brand-logo { filter: brightness(0) invert(1); }
+body.is-homepage .nav:not(.nav-scrolled) .brand-logo { filter: brightness(0) invert(1); } /* blue logo → white over hero */
 body.is-homepage .nav .nav-link-main,
 body.is-homepage .nav #navLinks a      { color: rgba(255,255,255,.88); }
 body.is-homepage .nav .nav-caret       { color: rgba(255,255,255,.5); }
@@ -486,7 +486,7 @@ body.is-homepage .nav.nav-scrolled {
   backdrop-filter: saturate(180%) blur(18px);
   -webkit-backdrop-filter: saturate(180%) blur(18px);
 }
-body.is-homepage .nav.nav-scrolled .brand           { color: var(--ink); }
+body.is-homepage .nav.nav-scrolled .brand           { color: var(--blue); }
 body.is-homepage .nav.nav-scrolled .brand small     { color: var(--gold); }
 body.is-homepage .nav.nav-scrolled .nav-link-main,
 body.is-homepage .nav.nav-scrolled #navLinks a      { color: var(--ink); }

@@ -90,21 +90,20 @@
 
 
   <!-- ============================================================
-       COLLECTOR'S RESERVE
-       (Replaced New Arrivals — restore that section after Sarah's upcoming travels)
+       NEW ARRIVALS — Open Editions
        ============================================================ -->
-  <section class="new-arrivals-split" id="collectors-reserve">
+  <section class="new-arrivals-split" id="new-arrivals">
     <!-- Left: text + CTA -->
     <div class="na-left reveal">
-      <span class="section-label">Collector's Reserve</span>
-      <h2 class="section-title" style="white-space: normal;">A Promise to Every Collector</h2>
-      <p class="na-desc">Every photograph in this collection is more than an image — it is a commitment. Each signed, limited-edition print is produced on museum-grade archival materials, numbered within its edition, and backed by a personal guarantee from the artist.<br><br>When you collect a work by Sarah L. Glabman, you are not simply purchasing a photograph. You are acquiring a piece of the world as she witnessed it — with the assurance that its value, its quality, and its story will endure.</p>
-      <a href="collectors-promise.html" class="na-cta">Discover The Promise &nbsp;→</a>
+      <span class="section-label">Open Editions</span>
+      <h2 class="section-title" style="white-space: normal;">New Arrivals</h2>
+      <p class="na-desc">Discover Sarah's latest fine art photographs — available as signed open edition prints for collectors who want to bring the natural world into their home. Each piece is produced on museum-grade archival materials and personally signed by the artist.</p>
+      <a href="the-shop.html" class="na-cta">View All Open Editions &nbsp;→</a>
     </div>
 
-    <!-- Right: static signature image -->
-    <a href="collectors-promise.html" class="na-right reveal">
-      <img src="assets/images/Peace.jpg" alt="Peace — SLG Masterworks" class="na-slide is-on" />
+    <!-- Right: slideshow of open edition products -->
+    <a href="the-shop.html" class="na-right reveal" data-feed="new" data-feed-edition="open" data-feed-max="6">
+      <!-- slides auto-built from assets/js/products.js (edition: open) -->
     </a>
   </section>
 
@@ -160,6 +159,46 @@
 
 
   <!-- ============================================================
+       A PROMISE TO EVERY COLLECTOR
+       ============================================================ -->
+  <section class="new-arrivals-split" id="collectors-reserve">
+    <!-- Left: text + CTA -->
+    <div class="na-left reveal">
+      <span class="section-label">Collector's Reserve</span>
+      <h2 class="section-title" style="white-space: normal;">A Promise to Every Collector</h2>
+      <p class="na-desc">Every photograph in this collection is more than an image — it is a commitment. Each signed, limited-edition print is produced on museum-grade archival materials, numbered within its edition, and backed by a personal guarantee from the artist.<br><br>When you collect a work by Sarah L. Glabman, you are not simply purchasing a photograph. You are acquiring a piece of the world as she witnessed it — with the assurance that its value, its quality, and its story will endure.</p>
+      <a href="collectors-promise.html" class="na-cta">Discover The Promise &nbsp;→</a>
+    </div>
+
+    <!-- Right: static signature image -->
+    <a href="collectors-promise.html" class="na-right reveal">
+      <img src="assets/images/Peace.jpg" alt="Peace — SLG Masterworks" class="na-slide is-on" />
+    </a>
+  </section>
+
+
+  <!-- ============================================================
+       COLLECTOR'S RESERVE — Works
+       ============================================================ -->
+  <section id="collectors-reserve-works" style="background: var(--bg-2); padding: clamp(3.5rem, 7vw, 6rem) 0;">
+    <div class="new-arrivals-split" style="margin-top: 0; margin-bottom: 0;">
+      <!-- Left: text + CTA -->
+      <div class="na-left reveal">
+        <span class="section-label">Collector's Reserve</span>
+        <h2 class="section-title" style="white-space: normal;">Exclusive Limited Editions</h2>
+        <p class="na-desc">Each work in the Collector's Reserve is a signed, numbered limited-edition print — produced on museum-grade archival materials and backed by a personal guarantee from the artist. These are photographs that collectors treasure for a lifetime.</p>
+        <a href="the-shop.html" class="na-cta">View Collector's Reserve &nbsp;→</a>
+      </div>
+
+      <!-- Right: slideshow of collectors-reserve products -->
+      <a href="the-shop.html" class="na-right reveal" data-feed="new" data-feed-edition="collectors-reserve" data-feed-max="6">
+        <!-- slides auto-built from assets/js/products.js (edition: collectors-reserve) -->
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        QUOTE
        ============================================================ -->
   <hr class="divider" />
@@ -197,10 +236,15 @@
   <script>
     // 1) Build slides for each feed box from the shared product list
     document.querySelectorAll('.na-right[data-feed]').forEach(function (box) {
-      const feed = box.dataset.feed;                       // "new" or "best"
-      const max  = parseInt(box.dataset.feedMax || '6', 10);
+      const feed    = box.dataset.feed;                    // "new" or "best"
+      const edition = box.dataset.feedEdition || '';       // optional: "open" or "collectors-reserve"
+      const max     = parseInt(box.dataset.feedMax || '6', 10);
       const list = (window.SLG_PRODUCTS || [])
-        .filter(function (p) { return (p.tags || []).indexOf(feed) !== -1; })
+        .filter(function (p) {
+          const tagOk = (p.tags || []).indexOf(feed) !== -1;
+          const edOk  = !edition || p.edition === edition;
+          return tagOk && edOk;
+        })
         .slice(0, max);
       if (!list.length) return;
       box.innerHTML = '';

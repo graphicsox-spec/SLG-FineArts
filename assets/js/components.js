@@ -31,7 +31,7 @@
 
     <!-- Logo -->
     <a href="${r}index.html" class="brand" aria-label="SLG Masterworks home">
-      <img src="${r}assets/images/SLG-Signature-Logo-Header.svg.svg" alt="SLG Masterworks" class="brand-logo" />
+      <img src="${r}assets/images/SLG-Art-Logo-Header.svg" alt="SLG Masterworks" class="brand-logo" />
     </a>
 
     <!-- Centre navigation -->
@@ -96,7 +96,7 @@
       <!-- Brand -->
       <div class="footer-col-brand">
         <div class="footer-brand">
-          <img src="${r}assets/images/SLG-Signature-Logo-Footer.svg.svg" alt="SLG Masterworks" class="footer-brand-logo" />
+          <img src="${r}assets/images/SLG-Art-Logo-Footer.svg" alt="SLG Masterworks" class="footer-brand-logo" />
         </div>
         <p class="footer-tag">Fine art Wildlife, Landscape, Water photography.<br>Collector's Reserve signed prints. Scottsdale, Arizona.<br>Shipped across North America<br>and Canada.</p>
         <div class="socials">
