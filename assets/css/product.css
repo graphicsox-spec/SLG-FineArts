@@ -537,6 +537,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold-deep, #A8892A);
+  font-weight: 700;                 /* Collector's Reserve — bold gold, more prominent (per Sarah) */
   margin-bottom: 1.5rem;
 }
 .edition-badge .dot {
@@ -726,6 +727,7 @@
   background: rgba(0, 0, 0, 0.035);
   border: 1px solid rgba(0, 0, 0, 0.10);
   color: #888;
+  font-weight: 400;                 /* Open Edition stays regular weight */
 }
 .edition-badge.open-edition .dot {
   background: #c0c0c0;

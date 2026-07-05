@@ -97,12 +97,15 @@ Full-width dark panel with 3 typographic options: **Wildlife · Landscape · Cit
 ## Homepage Section Order
 
 1. **Hero Slider** — Full viewport, transparent nav overlay, 3 slides: Wildlife → Landscape → Cityscape
-2. **New Arrivals** — Label + h2 + Sarah's paragraph + print scroll
-3. **Best Sellers** — Label + h2 + Sarah's paragraph + print scroll
-4. **Artist Story** — Full-width image fading to white + centered story text
+2. **Open Editions** — Label + h2 + Sarah's paragraph + print scroll (feed: edition = open)
+3. **Artist Story** — Full-width image fading to white + centered story text
+4. **Collector's Reserve** — "A Promise to Every Collector" + Reserve works scroll (feed: edition = collectors-reserve)
 5. **Quote block** — Italic serif quote + attribution
 6. **Newsletter** — Minimal email signup
 7. **Footer** — Dark navy (`#0D1B35`), Sarah's photo darkened, gold headings
+
+> Note (Jul 2026): "New Arrivals" section removed per Sarah until she has actual new arrivals.
+> The non-Reserve homepage tier is now **Open Editions** (was "Best Sellers").
 
 ---
 

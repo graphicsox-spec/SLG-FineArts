@@ -132,8 +132,8 @@
           <li><a href="${r}the-images.html?collection=wildlife">Wildlife</a></li>
           <li><a href="${r}the-images.html?collection=landscape">Landscape</a></li>
           <li><a href="${r}the-images.html?collection=water">Water</a></li>
-          <li><a href="${r}the-shop.html?tag=new">New Arrivals</a></li>
-          <li><a href="${r}the-shop.html?tag=best">Best Sellers</a></li>
+          <li><a href="${r}the-shop.html?edition=open">Open Editions</a></li>
+          <li><a href="${r}the-shop.html?edition=collectors-reserve">Collector's Reserve</a></li>
         </ul>
       </div>
 
@@ -154,6 +154,7 @@
 
     <div class="footer-bottom">
       <span class="footer-copy">© <span class="footer-year"></span> SLG.Art · Sarah L Glabman. All rights reserved. &nbsp;|&nbsp; Design &amp; Development by &nbsp;<a href="https://www.behance.net/advarto" target="_blank" rel="noopener" aria-label="Bisen Brandcraft"><img src="${r}assets/images/BB_DP_Logo_1.svg" alt="Bisen Brandcraft" class="bb-logo" /></a></span>
+      <span class="footer-legal" style="display:block;margin-top:.6rem;font-size:.78rem;letter-spacing:.02em;"><a href="${r}service.html#shipping">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="${r}privacy.html">Privacy Policy</a></span>
     </div>
   </div>
 

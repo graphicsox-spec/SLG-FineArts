@@ -29,7 +29,8 @@
     <div class="hero-slides" id="heroSlides">
 
       <!-- ── Slide 1: Wildlife ─────────────────────────────── -->
-      <div class="hero-slide active" data-index="0" data-href="collections/baby-leopard.html">
+      <div class="hero-slide active" data-index="0" data-href="collections/baby-leopard.html"
+           style="--hero-img:url('assets/images/Wildlife/Leopard-9265-no-blood-web.jpg')">
         <img src="assets/images/Wildlife/Leopard-9265-no-blood-web.jpg"
              alt="First Descent — Baby Leopard, Mala Mala" />
         <div class="hero-content">
@@ -44,10 +45,10 @@
       </div>
 
       <!-- ── Slide 2: Landscape ────────────────────────────── -->
-      <div class="hero-slide" data-index="1" data-href="collections/the-passage.html">
+      <div class="hero-slide" data-index="1" data-href="collections/the-passage.html"
+           style="--hero-img:url('assets/images/Faces/Page-6253-MAIN-website.jpg')">
         <img src="assets/images/Faces/Page-6253-MAIN-website.jpg"
-             alt="The Passage — Antelope Canyon sandstone formation, Arizona — SLG Masterworks"
-             style="object-position: center 40%;" />
+             alt="The Passage — Antelope Canyon sandstone formation, Arizona — SLG Masterworks" />
         <div class="hero-content">
           <p class="hero-eyebrow">Sculpted by Wind &amp; Time &nbsp;·&nbsp; A Collector's Reserve</p>
           <h2 class="hero-title">The Passage</h2>
@@ -60,10 +61,10 @@
       </div>
 
       <!-- ── Slide 3: Water ─────────────────────────────── -->
-      <div class="hero-slide" data-index="2" data-href="collections/beneath-the-pier.html">
+      <div class="hero-slide" data-index="2" data-href="collections/beneath-the-pier.html"
+           style="--hero-img:url('assets/images/Beneath the Pier/Pier MAIN web.jpg')">
         <img src="assets/images/Beneath the Pier/Pier MAIN web.jpg"
-             alt="Beneath the Pier — SLG Masterworks"
-             style="object-position: center 40%;" />
+             alt="Beneath the Pier — SLG Masterworks" />
         <div class="hero-content">
           <p class="hero-eyebrow">Where Land Meets Sea &nbsp;·&nbsp; A Collector's Reserve</p>
           <h2 class="hero-title">Beneath the Pier</h2>
@@ -89,41 +90,26 @@
   </section>
 
 
-  <!-- ============================================================
-       NEW ARRIVALS — Open Editions
-       ============================================================ -->
-  <section class="new-arrivals-split" id="new-arrivals">
-    <!-- Left: text + CTA -->
-    <div class="na-left reveal">
-      <span class="section-label">Open Editions</span>
-      <h2 class="section-title" style="white-space: normal;">New Arrivals</h2>
-      <p class="na-desc">Discover Sarah's latest fine art photographs — available as signed open edition prints for collectors who want to bring the natural world into their home. Each piece is produced on museum-grade archival materials and personally signed by the artist.</p>
-      <a href="the-shop.html" class="na-cta">View All Open Editions &nbsp;→</a>
-    </div>
-
-    <!-- Right: slideshow of open edition products -->
-    <a href="the-shop.html" class="na-right reveal" data-feed="new" data-feed-edition="open" data-feed-max="6">
-      <!-- slides auto-built from assets/js/products.js (edition: open) -->
-    </a>
-  </section>
+  <!-- New Arrivals section removed per Sarah (Jul 3 2026) — re-add once she has
+       actual New Arrivals from upcoming shoot trips. Best Sellers + Collector's Reserve kept. -->
 
 
   <!-- ============================================================
-       BEST SELLERS
+       OPEN EDITIONS
        ============================================================ -->
-  <section id="best-sellers" style="background: var(--bg-2); padding: clamp(3.5rem, 7vw, 6rem) 0;">
+  <section id="open-editions" style="background: var(--bg-2); padding: clamp(3.5rem, 7vw, 6rem) 0;">
     <div class="new-arrivals-split" style="margin-top: 0; margin-bottom: 0;">
       <!-- Left: text + CTA -->
       <div class="na-left reveal">
-        <span class="section-label">Best Sellers</span>
-        <h2 class="section-title" style="white-space: normal;">Most Collected Works</h2>
-        <p class="na-desc">These are the photographs that collectors return to time and time again. Featuring iconic wildlife photography, breathtaking landscape photography, and museum-quality fine art prints from Africa, the American West, and beyond, these pieces have become some of the most sought-after works in the SLG Art collection. Created for collectors, interior designers, and luxury spaces, each image is chosen not only for its beauty, but for its ability to inspire wonder long after the moment has passed.</p>
-        <a href="the-shop.html?tag=best" class="na-cta">View All Best Sellers &nbsp;→</a>
+        <span class="section-label">Open Editions</span>
+        <h2 class="section-title" style="white-space: normal;">Signed Open Edition Prints</h2>
+        <p class="na-desc">Sarah's open edition photographs — signed prints produced on museum-grade archival materials and available in open quantity, so collectors can bring the natural world into any home or space. Iconic wildlife, landscape, and water imagery from Africa, the American West, and beyond.</p>
+        <a href="the-shop.html?edition=open" class="na-cta">View All Open Editions &nbsp;→</a>
       </div>
 
-      <!-- Right: cinematic slideshow (3 images) -->
-      <a href="the-shop.html?tag=best" class="na-right reveal" data-feed="best" data-feed-max="6">
-        <!-- slides auto-built from assets/js/products.js (tag: best) -->
+      <!-- Right: cinematic slideshow — open edition products -->
+      <a href="the-shop.html?edition=open" class="na-right reveal" data-feed="" data-feed-edition="open" data-feed-max="6">
+        <!-- slides auto-built from assets/js/products.js (edition: open) -->
       </a>
     </div>
   </section>
@@ -241,7 +227,7 @@
       const max     = parseInt(box.dataset.feedMax || '6', 10);
       const list = (window.SLG_PRODUCTS || [])
         .filter(function (p) {
-          const tagOk = (p.tags || []).indexOf(feed) !== -1;
+          const tagOk = !feed || (p.tags || []).indexOf(feed) !== -1;   // empty feed = edition-only
           const edOk  = !edition || p.edition === edition;
           return tagOk && edOk;
         })

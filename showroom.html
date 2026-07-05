@@ -439,402 +439,95 @@
 
 
   <!-- ══════════════════════════════════════════
-       01 — FIRST DESCENT (Baby Leopard)
+       SHOWROOM — location, photo & booking
+       (No artwork on this page — per Sarah, Jul 3 2026)
        ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="first-descent" style="margin-top:3rem;">
+  <style>
+    .sr-visit { max-width: 1100px; margin: 0 auto; padding: clamp(2rem,5vw,4rem) var(--gutter); }
+    .sr-visit-photo { text-align: center; }
+    .sr-visit-photo img {
+      max-height: 540px; width: auto; max-width: 100%;
+      object-fit: contain; margin: 0 auto;
+      border: 1px solid var(--line); border-radius: 2px; display: block;
+    }
+    .sr-visit-caption { font-family: var(--display); text-transform: uppercase;
+      letter-spacing: .28em; font-size: .62rem; color: var(--ink-muted);
+      text-align: center; margin-top: .9rem; }
+    .sr-loc { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem,4vw,3rem);
+      align-items: stretch; margin-top: clamp(2.5rem,6vw,4.5rem); }
+    @media (max-width: 760px){ .sr-loc { grid-template-columns: 1fr; } }
+    .sr-loc-map iframe { width: 100%; height: 100%; min-height: 340px; border: 0;
+      outline: 1px solid var(--line); border-radius: 2px; filter: grayscale(.12); }
+    .sr-loc-info { display: flex; flex-direction: column; justify-content: center; }
+    .sr-loc-info h2 { font-family: var(--title); font-weight: 300;
+      font-size: clamp(1.6rem,3vw,2.3rem); margin: .4rem 0 1.2rem; }
+    .sr-loc-line { font-family: var(--sans); color: var(--ink); line-height: 1.8;
+      font-size: 1.02rem; margin: 0 0 1rem; }
+    .sr-loc-line strong { display:block; font-weight:600; }
+    .sr-loc-info a { color: var(--blue); text-decoration: none; }
+    .sr-loc-info a:hover { color: var(--gold-deep); }
+    .sr-book { text-align: center; margin-top: clamp(2.5rem,6vw,4.5rem); }
+    .sr-book h2 { font-family: var(--title); font-weight: 300;
+      font-size: clamp(1.6rem,3vw,2.3rem); margin: .4rem 0 0; }
+    .sr-book-sub { max-width: 620px; margin: .6rem auto 2rem; color: var(--ink-muted); line-height: 1.7; }
+    .calendly-inline-widget { border: 1px solid var(--line); border-radius: 2px; }
+    .sr-book-fallback { margin-top: 1.4rem; font-size: .95rem; color: var(--ink-muted); }
+    .sr-book-fallback a { color: var(--blue); text-decoration: none; }
+  </style>
 
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Featured · Open Edition</span>
-        <div class="slide-dots" id="leo-dots"></div>
-        <img id="leo-img"
-             src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg"
-             alt="First Descent — Baby Leopard" />
+  <div class="sr-visit">
+
+    <!-- Actual showroom photo (kept modest in size) -->
+    <div class="sr-visit-photo reveal">
+      <img src="assets/images/Showroom/showroom-interior.jpg"
+           alt="Inside Sarah L Glabman's private fine art showroom in North Scottsdale, Arizona"
+           onerror="this.closest('.sr-visit-photo').style.display='none'" />
+      <p class="sr-visit-caption">Inside the private showroom · North Scottsdale, Arizona</p>
+    </div>
+
+    <!-- Location: Google Map + address & phone -->
+    <div class="sr-loc reveal">
+      <div class="sr-loc-map">
+        <iframe
+          src="https://www.google.com/maps?q=20715%20N%20Pima%20Road%20Suite%20108%20Scottsdale%20AZ%2085255&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="SLG.art showroom location — 20715 N Pima Road, Suite 108, Scottsdale AZ 85255"></iframe>
       </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg">
-          <img src="assets/images/Wildlife/Baby Leopard 40x60 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 40x60 BLACK FRAME.jpg">
-          <img src="assets/images/Wildlife/Baby Leopard 40x60 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg">
-          <img src="assets/images/Wildlife/Baby Leopard 40x60 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
+      <div class="sr-loc-info">
+        <span class="section-label">Find the Showroom</span>
+        <h2>Visit in Person</h2>
+        <p class="sr-loc-line">
+          <strong>SLG.art Private Fine Art Showroom</strong>
+          20715 N. Pima Road, Suite 108<br>Scottsdale, AZ 85255
+        </p>
+        <p class="sr-loc-line">
+          <a href="tel:+16029194444">602-919-4444</a><br>
+          <a href="mailto:Hello@SLG.art">Hello@SLG.art</a>
+        </p>
+        <p class="sr-loc-line" style="font-size:.9rem;color:var(--ink-muted);">By appointment only.</p>
       </div>
     </div>
 
-    <div class="artwork-info">
-      <span class="artwork-category">Wildlife · Mala Mala, South Africa</span>
-      <h2 class="artwork-title">First Descent</h2>
-      <p class="artwork-sub">Baby Leopard · Open Edition</p>
-      <p class="artwork-desc">A rare and fleeting moment — a leopard cub's very first descent from a tree, captured in extraordinary detail deep in the African bush. Hand-signed by Sarah L Glabman. Not available anywhere else.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes</h4>
-        <div class="size-pills">
-          <span class="size-pill">32 × 48"</span>
-          <span class="size-pill">40 × 60"</span>
-          <span class="size-pill">48 × 72"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$1,700</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/baby-leopard.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
+    <!-- Book an appointment (Calendly) -->
+    <div class="sr-book reveal">
+      <span class="section-label">Book a Visit</span>
+      <h2>Schedule Your Private Showroom Appointment</h2>
+      <p class="sr-book-sub">Choose a time below and Sarah will confirm your private viewing in Scottsdale.</p>
+
+      <!-- Calendly inline widget — REPLACE data-url with Sarah's real Calendly link -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/REPLACE-WITH-SARAH-CALENDLY/showroom-visit"
+           style="min-width:320px;height:680px;"></div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      <p class="sr-book-fallback">
+        Prefer to reach out directly? Call <a href="tel:+16029194444">602-919-4444</a>
+        or email <a href="mailto:Hello@SLG.art">Hello@SLG.art</a>.
+      </p>
     </div>
 
-  </article>
-
-
-  <div class="sr-divider"><span>02</span></div>
-
-
-
-  <!-- ══════════════════════════════════════════
-       02 — BENEATH THE PIER
-       ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="beneath-the-pier">
-
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Open Edition</span>
-        <div class="slide-dots" id="pier-dots"></div>
-        <img id="pier-img"
-             src="assets/images/Beneath the Pier/Pier Vertical 24x36 no frame.jpg"
-             alt="Beneath the Pier — Capitola" />
-      </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 NO FRAME.jpg">
-          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 BLACK FRAME.jpg">
-          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Beneath the Pier/PIER NEW 32X48 BROWN FRAME.jpg">
-          <img src="assets/images/Beneath the Pier/PIER NEW 32X48 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="artwork-info">
-      <span class="artwork-category">Water · Capitola, California</span>
-      <h2 class="artwork-title">Beneath the Pier</h2>
-      <p class="artwork-sub">Capitola Wharf · Open Edition</p>
-      <p class="artwork-desc">Looking up through the weathered pilings of Capitola Pier as the Pacific rolls in — a meditative study of light, structure, and time. Available in large-format sizes, signed and numbered by Sarah.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes</h4>
-        <div class="size-pills">
-          <span class="size-pill">24 × 36"</span>
-          <span class="size-pill">32 × 48"</span>
-          <span class="size-pill">40 × 60"</span>
-          <span class="size-pill">48 × 72"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$965</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/beneath-the-pier.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-
-  <div class="sr-divider"><span>03</span></div>
-
-
-
-  <!-- ══════════════════════════════════════════
-       03 — MOONRISE NAMIBIA
-       ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="moonrise-namibia">
-
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Open Edition</span>
-        <div class="slide-dots" id="moon-dots"></div>
-        <img id="moon-img"
-             src="assets/images/Moonrise Namibia/moon-full 24x36 framed.jpg"
-             alt="Moonrise Namibia" />
-      </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 NO FRAME.jpg">
-          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BLACK FRAME.jpg">
-          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BROWN FRAME.jpg">
-          <img src="assets/images/Moonrise Namibia/MOONRISE NEW 40X60 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="artwork-info">
-      <span class="artwork-category">Landscape · Namibia, Africa</span>
-      <h2 class="artwork-title">Moonrise Namibia</h2>
-      <p class="artwork-sub">Sossusvlei Desert · Open Edition</p>
-      <p class="artwork-desc">The moon cresting the ancient dunes of Namibia at dusk — a vast, silent landscape suspended between two worlds. Printed to gallery scale on archival paper, signed and numbered.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes</h4>
-        <div class="size-pills">
-          <span class="size-pill">24 × 36"</span>
-          <span class="size-pill">32 × 48"</span>
-          <span class="size-pill">40 × 60"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$965</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/moonrise-namibia.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-
-  <!-- ══════════════════════════════════════════
-       BROWSE ALL — mid-page collection prompt
-       ══════════════════════════════════════════ -->
-  <section class="sr-browse-band">
-    <div class="reveal">
-      <span class="section-label">The Full Collection</span>
-      <h2>More From <em>the Collection</em></h2>
-      <p>Wildlife, Landscape, and Water — each print signed and available as open editions.</p>
-      <a href="the-shop.html" class="btn-gold-outline">Browse All Prints &nbsp;→</a>
-    </div>
-  </section>
-
-
-
-
-  <div class="sr-divider"><span>04</span></div>
-
-
-  <!-- ══════════════════════════════════════════
-       04 — THE EDGE
-       ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="the-edge">
-
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Open Edition</span>
-        <div class="slide-dots" id="edge-dots"></div>
-        <img id="edge-img"
-             src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg"
-             alt="The Edge — Cape Town coastline, South Africa" />
-      </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg">
-          <img src="assets/images/The Edge/THE EDGE 32X48 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/The Edge/THE EDGE 32X48 BLACK FRAME.jpg">
-          <img src="assets/images/The Edge/THE EDGE 32X48 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/The Edge/THE EDGE 32X48 BROWN FRAME.jpg">
-          <img src="assets/images/The Edge/THE EDGE 32X48 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="artwork-info">
-      <span class="artwork-category">Landscape · Cape Town, South Africa</span>
-      <h2 class="artwork-title">The Edge</h2>
-      <p class="artwork-sub">Cape Point Coastline · Open Edition</p>
-      <p class="artwork-desc">Photographed in extreme winds along the rugged cliffs of Cape Town — where the Atlantic crashes against ancient rock and the sky dissolves into ocean. A landscape photograph that demands to be seen at scale.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes</h4>
-        <div class="size-pills">
-          <span class="size-pill">24 x 36"</span>
-          <span class="size-pill">32 x 48"</span>
-          <span class="size-pill">40 x 60"</span>
-          <span class="size-pill">48 x 72"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$965</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/the-edge.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-
-  <div class="sr-divider"><span>05</span></div>
-
-
-  <!-- ══════════════════════════════════════════
-       05 — SILENT SOVEREIGN
-       ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="silent-sovereign">
-
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Wildlife · Panorama</span>
-        <div class="slide-dots" id="sovereign-dots"></div>
-        <img id="sovereign-img"
-             src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg"
-             alt="Silent Sovereign — Female Leopard, Mala Mala, South Africa" />
-      </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg">
-          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg">
-          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg">
-          <img src="assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="artwork-info">
-      <span class="artwork-category">Wildlife · Mala Mala, South Africa</span>
-      <h2 class="artwork-title">Silent Sovereign</h2>
-      <p class="artwork-sub">Female Leopard · Panoramic Edition</p>
-      <p class="artwork-desc">A magnificent female leopard holds still for a single, breathless moment in Mala Mala Game Reserve. Rendered in timeless black and white, this panoramic image commands the wall in any space — quiet authority, no compromise.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes · Panoramic 1:2 Ratio</h4>
-        <div class="size-pills">
-          <span class="size-pill">20 x 40"</span>
-          <span class="size-pill">30 x 60"</span>
-          <span class="size-pill">40 x 80"</span>
-          <span class="size-pill">48 x 96"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$965</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/silent-sovereign.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-
-  <div class="sr-divider"><span>06</span></div>
-
-
-  <!-- ══════════════════════════════════════════
-       06 — THE PASSAGE
-       ══════════════════════════════════════════ -->
-  <article class="artwork-section reveal" id="the-passage">
-
-    <div class="artwork-viewer">
-      <div class="artwork-main">
-        <span class="edition-number">Open Edition</span>
-        <div class="slide-dots" id="passage-dots"></div>
-        <img id="passage-img"
-             src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg"
-             alt="The Passage — Antelope Canyon, Arizona" />
-      </div>
-            <div class="artwork-thumbs">
-        <button class="art-thumb active"
-                data-src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg">
-          <img src="assets/images/Faces/PASSAGE NEW 24X36 NO FRAME.jpg" alt="Acrylic Mount" />
-          <span>Acrylic Mount</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Faces/PASSAGE NEW 24X36 BLACK FRAME.jpg">
-          <img src="assets/images/Faces/PASSAGE NEW 24X36 BLACK FRAME.jpg" alt="Black Frame" />
-          <span>Black Frame</span>
-        </button>
-        <button class="art-thumb"
-                data-src="assets/images/Faces/PASSAGE NEW 24X36 BROWN FRAME.jpg">
-          <img src="assets/images/Faces/PASSAGE NEW 24X36 BROWN FRAME.jpg" alt="Brown Frame" />
-          <span>Brown Frame</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="artwork-info">
-      <span class="artwork-category">Landscape · Antelope Canyon, Arizona</span>
-      <h2 class="artwork-title">The Passage</h2>
-      <p class="artwork-sub">Antelope Canyon · Arizona Desert</p>
-      <p class="artwork-desc">Sculpted by wind and time over millions of years — the flowing sandstone walls of Antelope Canyon hold light unlike anywhere on earth. Photographed at the moment the canyon glows from within, this image belongs in the room it occupies.</p>
-      <div class="artwork-sizes">
-        <h4>Available Sizes</h4>
-        <div class="size-pills">
-          <span class="size-pill">24 x 36"</span>
-          <span class="size-pill">32 x 48"</span>
-          <span class="size-pill">40 x 60"</span>
-          <span class="size-pill">48 x 72"</span>
-        </div>
-      </div>
-      <div class="artwork-footer">
-        <div class="artwork-price">
-          <small>Starting From</small>
-          <strong>$965</strong>
-        </div>
-        <div class="artwork-actions">
-          <a href="collections/the-passage.html" class="btn-view-detail">View Full Details</a>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-
-  <!-- Appointment strip -->
-  <div class="sr-commission" style="border-bottom: 1px solid var(--line);">
-    <span class="section-label">Visit the Showroom</span>
-    <h2>See the Work in Person</h2>
-    <p>The showroom is open <strong>by appointment only</strong>. Send a message to arrange a private viewing in Scottsdale, Arizona — Sarah will confirm a time that works for you.</p>
-    <a href="contact.html" class="btn-gold-outline">Book an Appointment</a>
   </div>
+
 
   <!-- Commission strip -->
   <div class="sr-commission">
@@ -844,62 +537,6 @@
     <a href="contact.html" class="btn-gold-outline">Request a Commission</a>
   </div>
 
-  <!-- Slideshow JS — cinematic crossfade + zoom loop -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.artwork-section').forEach(function(section) {
-        const thumbs = Array.from(section.querySelectorAll('.art-thumb[data-src]'));
-        if (!thumbs.length) return;
-        const main   = section.querySelector('.artwork-main');
-        const dotsEl = section.querySelector('.slide-dots');
-        const baseImg = main.querySelector('img');
-        const altText = baseImg ? baseImg.alt : '';
-        if (baseImg) baseImg.remove();
-
-        /* layered slides */
-        const slides = thumbs.map(function(t, i) {
-          const im = document.createElement('img');
-          im.className = 'sr-slide' + (i === 0 ? ' is-on' : '');
-          im.src = t.dataset.src;
-          im.alt = altText;
-          im.loading = 'lazy';
-          main.insertBefore(im, main.firstChild);
-          return im;
-        });
-
-        let idx = 0, timer;
-
-        thumbs.forEach(function(_, i) {
-          const d = document.createElement('button');
-          d.className = 'slide-dot' + (i === 0 ? ' active' : '');
-          d.setAttribute('aria-label', 'View ' + (i + 1));
-          d.addEventListener('click', function() { goTo(i); resetTimer(); });
-          dotsEl.appendChild(d);
-        });
-
-        function goTo(i) {
-          if (i === idx) return;
-          slides[idx].classList.remove('is-on');
-          idx = i;
-          slides[idx].classList.add('is-on');
-          thumbs.forEach(function(t) { t.classList.remove('active'); });
-          thumbs[idx].classList.add('active');
-          dotsEl.querySelectorAll('.slide-dot').forEach(function(d, j) {
-            d.classList.toggle('active', j === idx);
-          });
-        }
-
-        function advance() { goTo((idx + 1) % slides.length); }
-        function start()   { timer = setInterval(advance, 5000); }
-        function stop()    { clearInterval(timer); }
-        function resetTimer() { stop(); start(); }
-
-        main.addEventListener('mouseenter', stop);
-        main.addEventListener('mouseleave', start);
-        start();
-      });
-    });
-  </script>
 
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>

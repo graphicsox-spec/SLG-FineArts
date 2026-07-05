@@ -143,29 +143,35 @@
     /* ---- Info cards ---- */
     .srv-cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: 1fr;        /* stacked — one box on top of another (per Sarah) */
+      gap: 1.25rem;
       margin-bottom: 2rem;
     }
     .srv-card {
       border: 1px solid var(--line);
       border-radius: 3px;
-      padding: 1.5rem 1.4rem;
+      padding: 2.1rem 2.3rem;            /* larger & easier to read */
+      display: flex;                     /* icon left, text right */
+      gap: 1.4rem;
+      align-items: flex-start;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
+    .srv-card-body { flex: 1; min-width: 0; }
+    .srv-card-body h4 { margin-top: 0; }
     .srv-card:hover {
       border-color: var(--gold);
       box-shadow: 0 4px 20px var(--gold-glow);
     }
     .srv-card-icon {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       background: var(--blue);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
+      flex-shrink: 0;
       color: var(--gold);
     }
     .srv-card h4 {
@@ -515,9 +521,11 @@
                 <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
               </svg>
             </div>
+            <div class="srv-card-body">
             <h4>Standard Shipping</h4>
             <p>Carefully packaged with the utmost security and care and shipped via UPS, FedEx, or DHL, fully insured. Delivered straight to your door.</p>
             <span class="tag">7–14 Business Days · Free</span>
+            </div>
           </div>
           <div class="srv-card">
             <div class="srv-card-icon">
@@ -525,9 +533,11 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
+            <div class="srv-card-body">
             <h4>Fully Insured</h4>
             <p>Every shipment is covered from the studio to your front door. In the rare event of transit damage, your art piece will be replaced at no charge.</p>
             <span class="tag">100% Protected</span>
+            </div>
           </div>
           <div class="srv-card">
             <div class="srv-card-icon">
@@ -535,9 +545,11 @@
                 <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
             </div>
+            <div class="srv-card-body">
             <h4>Production Time</h4>
             <p>Every image is custom crafted just for you. Please allow 14-21 business days for production before your shipping window begins.</p>
             <span class="tag">Made to Order</span>
+            </div>
           </div>
         </div>
 

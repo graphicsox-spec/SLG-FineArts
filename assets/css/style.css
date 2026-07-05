@@ -519,11 +519,28 @@ body.is-homepage .hero-slider { height: 100vh; }
   transition: opacity 1.4s var(--ease);
 }
 .hero-slide.active { opacity: 1; z-index: 1; }
+
+/* Blurred fill behind the contained image — fills the wide desktop space
+   with a soft, darkened copy of the same photo so there are no dead bars.
+   Premium gallery look; the sharp full image sits on top, never cropped. */
+.hero-slide::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(34px) brightness(.45) saturate(1.15);
+  transform: scale(1.18);
+  z-index: 0;
+}
+/* Sharp, FULL vertical image — shown complete, never cropped on any screen */
 .hero-slide img {
+  position: relative;
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  filter: brightness(.62) contrast(1.05);
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(.82) contrast(1.04);
+  z-index: 1;
 }
 
 /* Dark gradient — strong top band for nav visibility + bottom for text */

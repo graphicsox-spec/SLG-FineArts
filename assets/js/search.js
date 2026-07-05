@@ -449,8 +449,8 @@
         <button class="slg-filter-pill" data-filter="wildlife">Wildlife</button>
         <button class="slg-filter-pill" data-filter="landscape">Landscape</button>
         <button class="slg-filter-pill" data-filter="water">Water</button>
-        <button class="slg-filter-pill" data-filter="new">New Arrivals</button>
-        <button class="slg-filter-pill" data-filter="best">Best Sellers</button>
+        <button class="slg-filter-pill" data-filter="open">Open Editions</button>
+        <button class="slg-filter-pill" data-filter="collectors-reserve">Collector's Reserve</button>
       </div>
     </div>
 
@@ -531,6 +531,7 @@
     if (activeFilter !== 'all') {
       list = list.filter(p =>
         p.category === activeFilter ||
+        p.edition === activeFilter ||
         (p.tags || []).includes(activeFilter)
       );
     }
