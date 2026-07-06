@@ -691,119 +691,23 @@
       <div class="co-card">
         <p class="co-section-title">Payment</p>
 
-        <div class="pay-methods" id="payMethods">
-
-          <!-- Card -->
-          <!-- Card -->
-          <label class="pay-method-row" id="pay-card-row">
-            <input type="radio" name="payment" value="card" />
-            <span class="pay-method-icon">
-              <img src="assets/images/Payment icon/credit-card-icon.svg" alt="Card" />
-            </span>
-            <span class="pay-method-label">Card</span>
-            <span class="pay-logos">
-              <svg width="34" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#1A1F71"/><text x="7" y="16" font-family="Arial" font-size="10" font-weight="bold" fill="white" letter-spacing="1">VISA</text></svg>
-              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/></svg>
-              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
-              <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
-            </span>
-          </label>
-
-          <!-- Card Fields expand -->
-          <div class="card-fields" id="cardFields">
-            <div class="co-field">
-              <label class="co-label" for="cc-num">Card Number</label>
-              <input class="co-input" type="text" id="cc-num" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" inputmode="numeric" />
-            </div>
-            <div class="co-row-3">
-              <div class="co-field" style="grid-column: span 2;">
-                <label class="co-label" for="cc-name">Name on Card</label>
-                <input class="co-input" type="text" id="cc-name" placeholder="Sarah L Glabman" autocomplete="cc-name" />
-              </div>
-              <div class="co-field">
-                <label class="co-label" for="cc-exp">Expiry</label>
-                <input class="co-input" type="text" id="cc-exp" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" />
-              </div>
-            </div>
-            <div class="co-field">
-              <label class="co-label" for="cc-cvv">CVV / CVC</label>
-              <input class="co-input" type="text" id="cc-cvv" placeholder="123" maxlength="4" autocomplete="cc-csc" inputmode="numeric" style="max-width: 120px;" />
-            </div>
+        <div class="pay-redirect-notice" style="margin-bottom:1.15rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div>
+            <strong>Secure payment powered by Stripe.</strong>
+            When you place your order you'll be taken to our encrypted Stripe checkout to complete payment. Pay with Card, Apple Pay, Google Pay, Link, or Klarna &mdash; whichever suits you best. Your card details are never stored on this site.
           </div>
+        </div>
 
-          <!-- Save card -->
-          <label class="co-check-row" style="display:none;">
-            <input type="checkbox" id="saveCard" />
-            Store this card for future purchases
-          </label>
-
-          <!-- Apple Pay -->
-          <label class="pay-method-row">
-            <input type="radio" name="payment" value="applepay" />
-            <span class="pay-method-icon">
-              <img src="assets/images/Payment icon/apple-pay-icon.svg" alt="Apple Pay" />
-            </span>
-            <span class="pay-method-label">Apple Pay</span>
-          </label>
-
-          <!-- Apple Pay expand -->
-          <div class="pay-expand" id="applePayFields">
-            <div class="pay-redirect-notice">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg>
-              <div>
-                <strong>Apple Pay selected.</strong>
-                After clicking "Place Order", you will be prompted to authenticate using Face ID, Touch ID, or your device passcode to complete the payment securely.
-              </div>
-            </div>
-          </div>
-
-          <!-- Klarna -->
-          <label class="pay-method-row">
-            <input type="radio" name="payment" value="klarna" />
-            <span class="pay-method-icon">
-              <img src="assets/images/Payment icon/klarna-icon.svg" alt="Klarna" />
-            </span>
-            <span class="pay-method-label">Klarna <span style="font-size:0.75rem;color:var(--ink-muted);">— Buy now, pay later</span></span>
-          </label>
-
-          <!-- Klarna expand -->
-          <div class="pay-expand" id="klarnaFields">
-            <div class="klarna-grid" id="klarnaGrid">
-              <div class="klarna-step"><strong>Today</strong><span id="k0">—</span></div>
-              <div class="klarna-step"><strong>30 days</strong><span id="k1">—</span></div>
-              <div class="klarna-step"><strong>60 days</strong><span id="k2">—</span></div>
-              <div class="klarna-step"><strong>90 days</strong><span id="k3">—</span></div>
-            </div>
-            <div class="pay-redirect-notice">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              <div>
-                <strong>Pay in 4 interest-free installments.</strong>
-                You will be redirected to Klarna to review your payment schedule and complete the order. No hidden fees, no interest.
-              </div>
-            </div>
-          </div>
-
-          <!-- PayPal -->
-          <label class="pay-method-row">
-            <input type="radio" name="payment" value="paypal" />
-            <span class="pay-method-icon">
-              <img src="assets/images/Payment icon/paypal-icon.svg" alt="PayPal" />
-            </span>
-            <span class="pay-method-label">PayPal</span>
-          </label>
-
-          <!-- PayPal expand -->
-          <div class="pay-expand" id="paypalFields">
-            <div class="pay-redirect-notice">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
-              <div>
-                <strong>PayPal selected.</strong>
-                After submission, you will be redirected to PayPal to log in and complete your payment securely.
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /pay-methods -->
+        <p style="font-family:var(--display);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 .65rem;">Accepted payment methods</p>
+        <div class="pay-logos" style="flex-wrap:wrap;gap:.5rem;align-items:center;">
+          <svg width="34" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#1A1F71"/><text x="7" y="16" font-family="Arial" font-size="10" font-weight="bold" fill="white" letter-spacing="1">VISA</text></svg>
+          <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/></svg>
+          <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
+          <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
+          <span class="pay-method-icon" style="height:22px;"><img src="assets/images/Payment icon/apple-pay-icon.svg" alt="Apple Pay" style="height:100%;width:auto;" /></span>
+          <span class="pay-method-icon" style="height:20px;"><img src="assets/images/Payment icon/klarna-icon.svg" alt="Klarna" style="height:100%;width:auto;" /></span>
+        </div>
       </div><!-- /co-card payment -->
 
     </div><!-- /co-left -->
@@ -865,19 +769,6 @@
     </div><!-- /co-right -->
 
   </div><!-- /co-wrap -->
-
-  <!-- ==================== SUCCESS SCREEN ==================== -->
-  <div class="co-success" id="coSuccess">
-    <div class="co-success-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>
-    </div>
-    <h2>Thank You</h2>
-    <p>Your order has been received. Sarah will be in touch within 1–2 business days to confirm your print and shipping details.</p>
-    <p class="order-num" id="successOrderNum"></p>
-    <a href="index.html" class="back-btn">Continue Browsing</a>
-  </div>
 
   <!-- ============================================================
        SCRIPTS
@@ -979,71 +870,21 @@
       });
     });
 
-    /* ---- Payment toggle (show/hide expand panels) ---- */
-    const payPanels = {
-      card:     document.getElementById('cardFields'),
-      applepay: document.getElementById('applePayFields'),
-      klarna:   document.getElementById('klarnaFields'),
-      paypal:   document.getElementById('paypalFields'),
-    };
-    const saveRow = document.querySelector('.co-check-row');
-
-    document.querySelectorAll('input[name="payment"]').forEach(r => {
-      r.addEventListener('change', function () {
-        /* close all panels */
-        Object.values(payPanels).forEach(p => { if (p) p.classList.remove('open'); });
-        if (saveRow) saveRow.style.display = 'none';
-
-        /* open the selected panel */
-        const panel = payPanels[this.value];
-        if (panel) panel.classList.add('open');
-        if (this.value === 'card' && saveRow) saveRow.style.display = '';
-      });
-    });
-
-    /* ---- Card number formatting ---- */
-    const ccNum = document.getElementById('cc-num');
-    if (ccNum) {
-      ccNum.addEventListener('input', function () {
-        let v = this.value.replace(/\D/g, '').substring(0, 16);
-        this.value = v.replace(/(.{4})/g, '$1 ').trim();
-      });
-    }
-
-    /* ---- Expiry formatting ---- */
-    const ccExp = document.getElementById('cc-exp');
-    if (ccExp) {
-      ccExp.addEventListener('input', function () {
-        let v = this.value.replace(/\D/g, '').substring(0, 4);
-        if (v.length >= 3) v = v.substring(0,2) + ' / ' + v.substring(2);
-        this.value = v;
-      });
-    }
-
-    /* ---- Country → State/Province label ---- */
+    /* ---- Country -> State/Province label ---- */
     const countryEl = document.getElementById('co-country');
-    const stateWrap = document.getElementById('state-wrap');
     const stateEl   = document.getElementById('co-state');
     const zipLabel  = document.getElementById('zip-label');
-
     const caProvinces = ['AB','BC','MB','NB','NL','NS','NT','NU','ON','PE','QC','SK','YT'];
-
+    const usStates = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'];
     if (countryEl) {
       countryEl.addEventListener('change', function () {
-        if (this.value === 'CA') {
-          stateEl.innerHTML = '<option value="">—</option>' +
-            caProvinces.map(p => `<option>${p}</option>`).join('');
-          stateEl.previousElementSibling.textContent = 'Province';
-          zipLabel.textContent = 'Postal Code';
-          document.getElementById('co-zip').placeholder = 'A1A 1A1';
-        } else {
-          const states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'];
-          stateEl.innerHTML = '<option value="">—</option>' +
-            states.map(s => `<option>${s}</option>`).join('');
-          stateEl.previousElementSibling.textContent = 'State';
-          zipLabel.textContent = 'ZIP Code';
-          document.getElementById('co-zip').placeholder = '85251';
-        }
+        const isCA = this.value === 'CA';
+        stateEl.innerHTML = '<option value="">—</option>' +
+          (isCA ? caProvinces : usStates).map(x => `<option>${x}</option>`).join('');
+        stateEl.previousElementSibling.textContent = isCA ? 'Province' : 'State';
+        if (zipLabel) zipLabel.textContent = isCA ? 'Postal Code' : 'ZIP Code';
+        const zip = document.getElementById('co-zip');
+        if (zip) zip.placeholder = isCA ? 'A1A 1A1' : '85251';
       });
     }
 
@@ -1074,43 +915,74 @@
       payBtn.disabled = !this.checked;
     });
 
-    /* ---- Place Order ---- */
+    const val = id => ((document.getElementById(id) || {}).value || '');
+
+    /* ---- Place Order -> create Stripe Checkout Session -> redirect ---- */
     payBtn.addEventListener('click', function () {
-      /* Basic validation */
+      /* Validate contact + shipping */
       const required = ['co-email','co-fname','co-lname','co-address','co-city','co-zip'];
-      const missing = required.filter(id => !(document.getElementById(id) || {}).value);
+      const missing = required.filter(id => !val(id).trim());
       if (missing.length) {
-        missing.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) { el.style.borderColor = 'crimson'; el.focus(); }
-        });
+        missing.forEach(id => { const el = document.getElementById(id); if (el) el.style.borderColor = 'crimson'; });
+        const first = document.getElementById(missing[0]); if (first) first.focus();
         return;
       }
 
-      /* Payment method must be selected */
-      const selectedPayment = document.querySelector('input[name="payment"]:checked');
-      if (!selectedPayment) { alert('Please select a payment method.'); return; }
-      const paymentMethod = selectedPayment.value;
-      if (paymentMethod === 'card') {
-        const num = (document.getElementById('cc-num').value || '').replace(/\s/g,'');
-        const exp = document.getElementById('cc-exp').value;
-        const cvv = document.getElementById('cc-cvv').value;
-        if (num.length < 15 || !exp || cvv.length < 3) {
-          alert('Please complete all card details.');
-          return;
-        }
-      }
+      const items = read();
+      if (!items.length) { alert('Your cart is empty.'); return; }
 
-      /* Clear cart + show success */
-      const orderNum = 'SLG-' + Date.now().toString(36).toUpperCase();
-      localStorage.removeItem(KEY);
-      if (window.SLGCart) window.SLGCart.clear();
+      /* Match the totals shown on-screen. If a coupon discount is applied,
+         fold it into each line proportionally so Stripe charges the exact
+         displayed amount (Stripe Checkout has no negative line items). */
+      const subtotal   = items.reduce((s, it) => s + (it.price || 0) * (it.qty || 1), 0);
+      const discounted = Math.max(0, subtotal - discount);
+      const factor     = subtotal > 0 ? discounted / subtotal : 1;
+      const tax        = +( discounted * 0.08875 ).toFixed(2);
 
-      document.getElementById('coWrap').style.display = 'none';
-      const successEl = document.getElementById('coSuccess');
-      successEl.classList.add('show');
-      document.getElementById('successOrderNum').textContent = 'Order ' + orderNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const lineItems = items.map(it => ({
+        name: it.title,
+        price: +(((it.price || 0) * factor).toFixed(2)),
+        qty: it.qty || 1
+      }));
+
+      const payload = {
+        email:    val('co-email').trim(),
+        tax:      tax,
+        shipping: shippingCost,
+        coupon:   (val('couponInput') || '').trim() || null,
+        customer: {
+          first:   val('co-fname').trim(),
+          last:    val('co-lname').trim(),
+          phone:   val('co-phone').trim(),
+          address: val('co-address').trim(),
+          address2:val('co-address2').trim(),
+          city:    val('co-city').trim(),
+          state:   val('co-state').trim(),
+          zip:     val('co-zip').trim(),
+          country: val('co-country').trim() || 'US'
+        },
+        items: lineItems
+      };
+
+      const origLabel = payBtn.textContent;
+      payBtn.disabled = true;
+      payBtn.textContent = 'Redirecting to secure payment\u2026';
+
+      fetch('stripe/create-checkout-session.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(r => r.json())
+      .then(d => {
+        if (d && d.url) { window.location.href = d.url; }
+        else { throw new Error(d && d.error ? d.error : 'Could not start payment'); }
+      })
+      .catch(err => {
+        payBtn.disabled = false;
+        payBtn.textContent = origLabel;
+        alert('Sorry \u2014 we couldn\u2019t start the secure payment.\n\n' + err.message + '\n\nPlease try again, or email Hello@SLG.art and we\u2019ll help right away.');
+      });
     });
 
     /* ---- Init ---- */
