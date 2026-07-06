@@ -487,9 +487,21 @@
       margin-top: 0.9rem;
       font-size: 0.72rem;
       color: var(--ink-muted);
-      opacity: 0.75;
     }
-    .co-secure svg { flex-shrink: 0; }
+    .co-secure svg { flex-shrink: 0; color: var(--gold); }
+    .co-trust {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 0.5rem 0.9rem;
+      font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-muted);
+    }
+    .co-trust-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .co-trust-item svg { flex-shrink: 0; color: var(--gold); }
+    .co-trust-cards { display: inline-flex; align-items: center; gap: 0.28rem; }
+    .co-trust-cards svg { height: 17px; width: auto; border-radius: 2px; }
 
     /* ---- Success Screen ---- */
     .co-success {
@@ -828,10 +840,24 @@
           </label>
           <button class="co-pay-btn" id="coPayBtn" disabled>Place Order</button>
           <div class="co-secure">
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.5 0L0 2.167V6.5c0 3.013 2.34 5.827 5.5 6.5C8.66 12.327 11 9.513 11 6.5V2.167L5.5 0z" fill="currentColor" opacity="0.45"/>
-            </svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             Transactions are secure and encrypted
+          </div>
+          <div class="co-trust">
+            <span class="co-trust-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              Secure Checkout
+            </span>
+            <span class="co-trust-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              SSL Protected
+            </span>
+            <span class="co-trust-cards" aria-label="Accepted payment methods">
+              <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#1A1F71"/><text x="7" y="16" font-family="Arial" font-size="10" font-weight="bold" fill="white" letter-spacing="1">VISA</text></svg>
+              <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/></svg>
+              <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
+              <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
+            </span>
           </div>
         </div>
 
@@ -901,7 +927,7 @@
             <div class="co-item-right">
               <div class="co-item-details">
                 <span class="co-item-title">${it.title}</span>
-                <span class="co-item-meta">Collector's Reserve · Signed &amp; Numbered${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
+                <span class="co-item-meta">Collector's Reserve Edition · Signed &amp; Numbered${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
               </div>
               <span class="co-item-price">${money(linePrice)}</span>
             </div>

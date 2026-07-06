@@ -450,7 +450,7 @@
         <button class="slg-filter-pill" data-filter="landscape">Landscape</button>
         <button class="slg-filter-pill" data-filter="water">Water</button>
         <button class="slg-filter-pill" data-filter="open">Open Editions</button>
-        <button class="slg-filter-pill" data-filter="collectors-reserve">Collector's Reserve</button>
+        <button class="slg-filter-pill" data-filter="collectors-reserve">Collector's Reserve Edition</button>
       </div>
     </div>
 

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Framing — SLG.art · Sarah L Glabman</title>
+  <meta name="description" content="Custom framing at SLG.art — Signature, Designer, and Collector's Reserve frame collections. Museum-quality handcrafted frames for fine art photography." />
+  <meta name="theme-color" content="#0D1B35" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    body { background: #fff; }
+
+    /* Page-header band */
+    .cf-hero {
+      position: relative; background: var(--navy-bg, #0D1B35); overflow: hidden;
+      padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) calc(var(--nav-h, 72px) + 1.5rem);
+      min-height: clamp(320px, 28vw, 420px);
+      display: flex; flex-direction: column; justify-content: center; text-align: center;
+    }
+    .cf-hero::after { content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,.08) 0%, transparent 65%); pointer-events: none; }
+    .cf-hero-label { display: block; font-family: var(--display); font-size: .68rem;
+      letter-spacing: .28em; text-transform: uppercase; color: var(--gold, #C9A84C); margin-bottom: 1.2rem; }
+    .cf-hero h1 { font-family: var(--title); font-size: clamp(2.6rem, 6vw, 4.6rem);
+      font-weight: 300; color: #fff; letter-spacing: -.025em; line-height: 1; margin: 0 0 1.1rem; }
+    .cf-hero p { font-size: .98rem; font-weight: 300; color: rgba(255,255,255,.5);
+      max-width: 62ch; margin: 0 auto; line-height: 1.75; font-style: italic; font-family: var(--title); }
+
+    .cf-wrap { max-width: 1100px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) clamp(2rem, 4vw, 3rem); }
+    .cf-intro p { font-family: var(--sans); color: var(--ink); line-height: 1.7; font-size: 1rem; margin: 0 0 0.9rem; max-width: none; }
+    .cf-eyebrow { display: block; font-family: var(--display); font-size: .66rem; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--gold-deep, #A8892A); margin: 0 0 1rem; }
+    .cf-section-title { font-family: var(--title); font-weight: 300; font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin: 0 0 1.5rem; }
+    .cf-consult { border: 1px solid var(--line); border-radius: 3px; padding: 1.6rem 1.8rem; margin: 2rem 0 0; background: var(--bg-2); }
+    .cf-consult p { margin: 0; font-family: var(--sans); color: var(--ink); }
+    .cf-consult a { color: var(--gold-deep); font-weight: 600; text-decoration: none; }
+
+    /* Frame collections (3 tiers) */
+    .cf-collections { max-width: 1100px; margin: 0 auto; padding: 0 var(--gutter) clamp(2rem, 5vw, 3.5rem); }
+    .cf-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    @media (max-width: 820px){ .cf-tiers { grid-template-columns: 1fr; } }
+    .cf-tier { border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 3px; padding: 1.7rem 1.6rem; }
+    .cf-tier h3 { font-family: var(--title); font-weight: 500; font-size: 1.15rem; margin: 0 0 .3rem; }
+    .cf-tier .cf-tier-tag { font-family: var(--display); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold-deep); display: block; margin-bottom: .9rem; }
+    .cf-tier p { font-family: var(--sans); color: var(--ink-muted); line-height: 1.7; font-size: .92rem; margin: 0; }
+
+    /* Frame gallery grid */
+    .cf-gallery { max-width: 1100px; margin: 0 auto; padding: 0 var(--gutter) clamp(3rem, 7vw, 5rem); }
+    .cf-note { border-left: 3px solid var(--gold); background: var(--bg-2); padding: .9rem 1.1rem; margin: 0 0 2rem;
+      font-family: var(--sans); font-size: .86rem; color: var(--ink-muted); border-radius: 2px; }
+    .cf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.4rem; }
+    .cf-card { border: 1px solid var(--line); border-radius: 3px; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+    .cf-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px var(--gold-glow, rgba(201,168,76,.15)); }
+    .cf-swatch { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; background: #f4f2ee; position: relative; }
+    /* placeholder "frame corner" — border tone hints the finish until real photos arrive */
+    .cf-swatch span { width: 62%; height: 62%; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+    .cf-swatch::after { content: "Photo coming soon"; position: absolute; bottom: 8px; right: 10px;
+      font-family: var(--display); font-size: .52rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); opacity: .7; }
+    .cf-card-body { padding: 1rem 1.1rem 1.2rem; }
+    .cf-card-body h4 { font-family: var(--title); font-weight: 500; font-size: 1.02rem; margin: 0 0 .35rem; }
+    .cf-card-body p { font-family: var(--sans); color: var(--ink-muted); font-size: .85rem; line-height: 1.55; margin: 0 0 .8rem; }
+    .cf-badge { display: inline-block; font-family: var(--display); font-size: .56rem; letter-spacing: .14em;
+      text-transform: uppercase; padding: .3rem .6rem; border-radius: 2px; }
+    .cf-badge.included { background: rgba(0,0,0,.05); color: #666; border: 1px solid rgba(0,0,0,.1); }
+    .cf-badge.designer { background: var(--gold-glow, rgba(201,168,76,.16)); color: var(--gold-deep); border: 1px solid rgba(201,168,76,.35); }
+    .cf-badge.bespoke  { background: #0D1B35; color: var(--gold); }
+    .cf-close { max-width: 74ch; margin: 2.5rem auto 0; text-align: center; font-family: var(--title); font-style: italic;
+      font-weight: 300; font-size: 1.05rem; color: var(--ink); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <section class="cf-hero">
+    <span class="cf-hero-label">SLG.art</span>
+    <h1>Custom Framing</h1>
+    <p>Helping you create a finished piece that looks as though it was commissioned specifically for your space.</p>
+  </section>
+
+  <!-- Intro verbiage (from Sarah's Framing Page PDF) -->
+  <div class="cf-wrap cf-intro">
+    <p>Every artwork at SLG.art is available with our carefully selected Signature Collection frames, chosen for their clean, timeless design and ability to complement virtually any interior. These museum-quality frames are featured throughout our gallery and offer a refined presentation that allows the artwork to remain the focal point.</p>
+    <p>For collectors seeking a more personalized presentation, we are pleased to offer an extensive collection of handcrafted custom frames. From contemporary gallery profiles and natural hardwood finishes to heirloom-quality artisan mouldings, each frame is individually selected to enhance both the artwork and the space it will call home.</p>
+    <p>Our Designer Collection includes premium handcrafted frames created with exceptional materials, specialty finishes, and museum-quality craftsmanship. These luxury framing options are ideal for collectors, interior designers, hospitality spaces, and those looking to create a truly one-of-a-kind statement piece.</p>
+    <p>Because every custom frame is built specifically for your artwork, pricing varies based on size, materials, and design. Certain artisan and museum-quality frames represent a significant investment in craftsmanship and are quoted individually.</p>
+    <p>If you are searching for something truly distinctive, we would be honored to help you design a custom presentation that reflects your personal style and complements your home or collection.</p>
+    <div class="cf-consult">
+      <p>Please contact us at <a href="mailto:Hello@SLG.art">Hello@SLG.art</a> for a complimentary custom framing consultation.</p>
+    </div>
+  </div>
+
+  <!-- Frame Collections (3 tiers — from PDF) -->
+  <section class="cf-collections">
+    <span class="cf-eyebrow">Frame Collections</span>
+    <h2 class="cf-section-title">Three Levels of Presentation</h2>
+    <div class="cf-tiers">
+      <div class="cf-tier">
+        <h3>Signature Collection</h3>
+        <span class="cf-tier-tag">Included framing options</span>
+        <p>Our curated Signature Collection is included with every framed artwork and features elegant, contemporary designs that beautifully complement the artwork while blending effortlessly into a wide range of interiors.</p>
+      </div>
+      <div class="cf-tier">
+        <h3>Designer Collection</h3>
+        <span class="cf-tier-tag">Premium handcrafted upgrades</span>
+        <p>For those seeking an elevated presentation, our Designer Collection offers handcrafted premium frames featuring luxury hardwoods, floating museum profiles, metallic finishes, and artisan detailing. These frames are available as custom upgrades and are individually quoted.</p>
+      </div>
+      <div class="cf-tier">
+        <h3>Collector's Reserve</h3>
+        <span class="cf-tier-tag">Bespoke artisan frames — by quotation</span>
+        <p>For extraordinary spaces, we offer a limited selection of bespoke museum-quality framing options created by some of the industry's finest artisans. These heirloom presentations are designed for discerning collectors who desire an exceptional, gallery-level finish. Pricing is available upon request.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frame Gallery — sample frames -->
+  <section class="cf-gallery">
+    <span class="cf-eyebrow">Frame Gallery</span>
+    <h2 class="cf-section-title">A Selection of Our Frames</h2>
+    <div class="cf-note">
+      <strong>Note for Raj/Sarah (remove before launch):</strong> Frame close-up photos, pricing, and final category for each frame are still being collected. Placeholder swatches shown; category badges below are tentative and will be confirmed once pricing is finalized.
+    </div>
+    <div class="cf-grid">
+
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Classic Black Gallery Frame</h4><p>A clean, contemporary black profile that frames the work without distraction.</p><span class="cf-badge included">Signature · Included</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Natural Oak Gallery Frame</h4><p>Warm natural oak with a soft grain that brings organic warmth to any space.</p><span class="cf-badge included">Signature · Included</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Walnut Museum Frame</h4><p>Rich walnut hardwood with a deep, museum-grade finish.</p><span class="cf-badge designer">Designer · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Italian Gold Leaf Frame</h4><p>Hand-applied Italian gold leaf for a luminous, heirloom presentation.</p><span class="cf-badge bespoke">Collector's Reserve · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Bronzed Floating Frame</h4><p>A floating profile with a warm bronzed finish that adds quiet dimension.</p><span class="cf-badge designer">Designer · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Distressed Silver Heritage Frame</h4><p>Antiqued silver leaf with a heritage patina for timeless character.</p><span class="cf-badge bespoke">Collector's Reserve · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Hand-Carved European Frame</h4><p>Individually hand-carved in the European tradition by master artisans.</p><span class="cf-badge bespoke">Collector's Reserve · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Contemporary Shadow Float Frame</h4><p>A modern shadow-float that suspends the print with a subtle reveal.</p><span class="cf-badge designer">Designer · Quote</span></div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-swatch"><span></span></div>
+        <div class="cf-card-body"><h4>Museum Collection Frame</h4><p>Museum-standard moulding engineered for archival presentation.</p><span class="cf-badge designer">Designer · Quote</span></div>
+      </div>
+
+    </div>
+
+    <p class="cf-close">Our goal is not simply to sell artwork, but to help you create a finished piece that looks as though it was commissioned specifically for your space.</p>
+  </section>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
