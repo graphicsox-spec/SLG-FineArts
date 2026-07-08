@@ -65,6 +65,10 @@
       <div class="selector-group">
         <span class="selector-label">Select Size</span>
         <div class="size-options" id="size-options">
+          <button class="size-btn" data-size="20x40" type="button">
+            <span class="size-dim">20 × 40" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(51 × 102 cm)</span></span>
+            <span class="size-label">Standard</span>
+          </button>
           <button class="size-btn" data-size="30x60" type="button">
             <span class="size-dim">30 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(76 × 152 cm)</span></span>
             <span class="size-label">Large / Statement</span>
@@ -215,6 +219,9 @@
       images: {
         hero: '../assets/images/Silent Sovereign/Silent Sovereign Web.jpg',
         /* 1:2 ratio panorama mockups - Silent Sovereign */
+        '20x40_unframed':     '../assets/images/Silent Sovereign/SILENT SOVEREIGN 20X40 NO FRAME.jpg',
+        '20x40_framed_black': '../assets/images/Silent Sovereign/SILENT SOVEREIGN 20X40 BLACK FRAME.jpg',
+        '20x40_framed_brown': '../assets/images/Silent Sovereign/SILENT SOVEREIGN 20X40 BROWN FRAME.jpg',
         '30x60_unframed':     '../assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg',
         '30x60_framed_black': '../assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg',
         '30x60_framed_brown': '../assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg',
@@ -232,6 +239,7 @@
       },
       /* 1:2 Ratio Panorama Collector's Reserve Edition pricing - from pricing.pdf */
       pricing: {
+        '20x40': { unframed: 1690,  framed: 2440 },
         '30x60': { unframed: 3350,  framed: 4520 },
         '40x80': { unframed: 6980,  framed: 8550 },
         '48x96': { unframed: 10600, framed: 12510 },
@@ -260,6 +268,9 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',               label: 'Web Preview' },
+      { key: '20x40_unframed',     label: '20×40 Acrylic Mount' },
+      { key: '20x40_framed_black', label: '20×40 Black Frame' },
+      { key: '20x40_framed_brown', label: '20×40 Brown Frame' },
       { key: '30x60_unframed',     label: '30×60 Acrylic Mount' },
       { key: '30x60_framed_black', label: '30×60 Black Frame' },
       { key: '30x60_framed_brown', label: '30×60 Brown Frame' },
@@ -367,6 +378,7 @@
     }
 
     function sizeLabel() {
+      if (currentSize === '20x40') return '20 × 40" (51 × 102 cm)';
       if (currentSize === '30x60') return '30 × 60" (76 × 152 cm)';
       if (currentSize === '40x80') return '40 × 80" (102 × 203 cm)';
       return '48 × 96" (122 × 244 cm)';
