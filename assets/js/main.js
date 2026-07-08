@@ -1,5 +1,5 @@
 /* =================================================================
-   SLG Masterworks — Page Interactions
+   SLG Masterworks - Page Interactions
    components.js handles nav injection + nav interactions.
    This file handles: hero slider · gallery filter · newsletter ·
    contact form · canvas preview modal.
@@ -49,7 +49,7 @@
   }
 
   /* ================================================================
-     FEATURED CAROUSEL — seamless clone loop
+     FEATURED CAROUSEL - seamless clone loop
      ================================================================ */
   document.querySelectorAll('[data-featured-carousel]').forEach(carousel => {
     const track = carousel.querySelector('.featured-track');
@@ -87,7 +87,7 @@
       e.preventDefault();
       const status = cf.querySelector('[data-status]');
       if (status) {
-        status.textContent = 'Thank you — your note has been received. Sarah will reply within 1–2 days.';
+        status.textContent = 'Thank you - your note has been received. Sarah will reply within 1-2 days.';
         status.style.color = 'var(--blue)';
       }
       cf.reset();
@@ -278,7 +278,7 @@
 })();
 
 /* ================================================================
-   PRINT CAROUSEL — auto-scroll with pause on hover (rAF-driven)
+   PRINT CAROUSEL - auto-scroll with pause on hover (rAF-driven)
    ================================================================ */
 window.addEventListener('load', function () {
   document.querySelectorAll('.print-carousel').forEach(function (carousel) {

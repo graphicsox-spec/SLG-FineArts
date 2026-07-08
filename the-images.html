@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Images — SLG Masterworks · Sarah L Glabman</title>
+  <title>The Images - SLG Masterworks · Sarah L Glabman</title>
   <meta name="description" content="Wildlife, Landscape, and Water fine art photography collections by Sarah L Glabman. Collector's Reserve Edition signed prints." />
   <meta name="theme-color" content="#0A0A0A" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
 
   <style>
     /* ================================================================
-       THE IMAGES — Master Collections Page
+       THE IMAGES - Master Collections Page
        3 full-height panels stacked vertically.
        Each panel: full-bleed image + dark overlay + Oswald heading.
        Clicking the panel goes to the filtered collection page.
@@ -23,7 +23,7 @@
     .ti-page-head {
       background: #0D1B35;
       text-align: center;
-      /* uniform page-header band — same on every page */
+      /* uniform page-header band - same on every page */
       padding: calc(var(--nav-h, 72px) + 1.5rem) var(--gutter) calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
@@ -198,7 +198,7 @@
     }
 
     /* ================================================================
-       ALL WORKS — lik-style filterable gallery (light section)
+       ALL WORKS - lik-style filterable gallery (light section)
        ================================================================ */
     .ti-gallery {
       background: var(--bg, #fff);
@@ -271,7 +271,7 @@
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: clamp(1.5rem, 3vw, 2.5rem);
     }
-    /* whole card is one gray box — image + caption inside (lik-style) */
+    /* whole card is one gray box - image + caption inside (lik-style) */
     .ti-work {
       display: flex;
       flex-direction: column;
@@ -346,11 +346,11 @@
   <div class="ti-page-head">
     <span class="section-label">Collections</span>
     <h1>The Images</h1>
-    <p>Browse every print across Sarah's wildlife, landscape, and water collections — each one a museum-grade acrylic work, signed and ready to hang in your space.</p>
+    <p>Browse every print across Sarah's wildlife, landscape, and water collections - each one a museum-grade acrylic work, signed and ready to hang in your space.</p>
   </div>
 
   <!-- ============================================================
-       ALL WORKS — filterable gallery (lik-style)
+       ALL WORKS - filterable gallery (lik-style)
        ============================================================ -->
   <section class="ti-gallery">
     <div class="ti-gallery-layout">
@@ -391,7 +391,7 @@
   <script src="assets/js/products.js"></script>
 
   <script>
-    /* All Works — collection × highlight × orientation filter */
+    /* All Works - collection × highlight × orientation filter */
     (function () {
       const grid    = document.getElementById('tiGrid');
       if (!grid) return;
@@ -455,7 +455,7 @@
         apply();
       }));
 
-      /* Apply collection from URL (?collection=wildlife) — used by footer links */
+      /* Apply collection from URL (?collection=wildlife) - used by footer links */
       const urlCollection = new URLSearchParams(window.location.search).get('collection');
       if (urlCollection) setFilter('collection', urlCollection.toLowerCase());
 

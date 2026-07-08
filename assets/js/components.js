@@ -1,5 +1,5 @@
 /* =================================================================
-   SLG Masterworks — Shared Components
+   SLG Masterworks - Shared Components
    Injects the site header and footer into every page automatically.
    Path-aware: reads data-sub="true" on <body> for collection pages.
    ================================================================= */
@@ -16,7 +16,7 @@
   const on = (seg) => p.includes(seg);
   const active = (seg) => on(seg) ? ' class="is-active"' : '';
   /* came from the shop? (collection pages are shared by The Images + The Shop)
-     referrer check only applies on sub-pages (collections/) — not on top-level pages */
+     referrer check only applies on sub-pages (collections/) - not on top-level pages */
   const fromShop = (new URLSearchParams(window.location.search).get('from') === 'shop')
                    || (inSub && /\/the-shop\.html/i.test(document.referrer));
 
@@ -30,7 +30,7 @@
   <div class="nav-inner">
 
     <!-- Logo -->
-    <a href="${r}index.html" class="brand" aria-label="SLG Masterworks home">
+    <a href="/" class="brand" aria-label="SLG Masterworks home">
       <img src="${r}assets/images/SLG-Art-Logo-Header.svg" alt="SLG Masterworks" class="brand-logo" />
     </a>
 
@@ -38,7 +38,7 @@
     <nav class="nav-center" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
 
-        <!-- THE IMAGES — direct link to master page -->
+        <!-- THE IMAGES - direct link to master page -->
         <li class="nav-item-images" id="navImages">
           <a href="${r}the-images.html" class="nav-link-main${(on('the-images') || on('collections/')) && !fromShop ? ' is-active' : ''}">
             The Images
@@ -289,7 +289,7 @@
           </nav>
           <div class="menu-news">
             <h3>Subscribe to our Newsletter</h3>
-            <p>New releases, Collector's Reserve editions &amp; studio notes — straight to your inbox.</p>
+            <p>New releases, Collector's Reserve editions &amp; studio notes - straight to your inbox.</p>
             <form class="menu-news-form" id="menuNewsForm" novalidate>
               <input type="email" id="menuNewsEmail" placeholder="Your email address" required />
               <button type="submit">Subscribe</button>
@@ -326,7 +326,7 @@
         msg.className = 'menu-news-msg error';
         return;
       }
-      msg.textContent = "Thank you — you're on the list.";
+      msg.textContent = "Thank you - you're on the list.";
       msg.className = 'menu-news-msg success';
       email.value = '';
     });
@@ -556,7 +556,7 @@
       '<svg class="rotate-prompt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<rect x="7" y="3" width="10" height="18" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/>' +
       '</svg>' +
-      '<span><strong>Rotate your phone</strong> for the best view — Sarah’s artworks look stunning in landscape.</span>' +
+      '<span><strong>Rotate your phone</strong> for the best view - Sarah’s artworks look stunning in landscape.</span>' +
       '<button class="rotate-prompt-close" aria-label="Dismiss">×</button>';
     document.body.appendChild(el);
     requestAnimationFrame(function () { el.classList.add('show'); });
@@ -639,7 +639,7 @@
 })();
 
 /* ================================================================
-   LOAD SEARCH  — injected after components so nav exists
+   LOAD SEARCH  - injected after components so nav exists
    ================================================================ */
 (function () {
   const s = document.createElement('script');

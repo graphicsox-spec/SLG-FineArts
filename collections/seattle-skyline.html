@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home — Seattle Skyline Panorama | SLG Masterworks</title>
-  <meta name="description" content="Home — a 1:3 ultra-wide panorama of the Seattle skyline, Space Needle, Elliott Bay and Mount Rainier at sunset. Museum-grade acrylic fine art print by Sarah L Glabman." />
+  <title>Home - Seattle Skyline Panorama | SLG Masterworks</title>
+  <meta name="description" content="Home - a 1:3 ultra-wide panorama of the Seattle skyline, Space Needle, Elliott Bay and Mount Rainier at sunset. Museum-grade acrylic fine art print by Sarah L Glabman." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/Seattle/seattle-web.jpg"
-          alt="Home — Seattle skyline panorama with the Space Needle and Mount Rainier at sunset, fine art acrylic print by Sarah L Glabman"
+          alt="Home - Seattle skyline panorama with the Space Needle and Mount Rainier at sunset, fine art acrylic print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -58,7 +58,7 @@
         <br><br>
         What makes this image especially meaningful is that my mother, who still lives in Seattle today, stood beside me while I created it. Together, we watched the evening light transform the city I grew up in. My grandmother was one of the first women on record to summit Mount Rainier, and standing there beside my mother while creating this image felt like a rare moment where three generations of family history quietly came together in a single frame.
         <br><br>
-        This museum-quality fine art panorama is ideal for collectors of Seattle photography, Mount Rainier artwork, Pacific Northwest wall décor, and large-format cityscape prints — celebrating one of America’s most recognizable skylines while honoring the place where my own journey began.
+        This museum-quality fine art panorama is ideal for collectors of Seattle photography, Mount Rainier artwork, Pacific Northwest wall décor, and large-format cityscape prints - celebrating one of America’s most recognizable skylines while honoring the place where my own journey began.
       </p>
 
       <hr class="product-divider" />
@@ -95,9 +95,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -106,7 +106,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -139,7 +139,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size & presentation to see pricing
@@ -166,7 +166,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">15×45" · 20×60" · 25×75" · 33×96" — 1:3 Ratio</span>
+          <span class="spec-value">15×45" · 20×60" · 25×75" · 33×96" - 1:3 Ratio</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -220,7 +220,7 @@
     const PRODUCT = {
       images: {
         hero: '../assets/images/Seattle/seattle-web.jpg',
-        /* 1:3 ratio panorama mockups — "Home" / Seattle (Sarah, 12 Jun) */
+        /* 1:3 ratio panorama mockups - "Home" / Seattle (Sarah, 12 Jun) */
         '15x45_unframed':     '../assets/images/Seattle/seattle-15x45.jpg',
         '15x45_framed_black': '../assets/images/Seattle/seattle-15x45 black frame.jpg',
         '15x45_framed_brown': '../assets/images/Seattle/seattle-15x45 brown frame.jpg',
@@ -238,7 +238,7 @@
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
-      /* 1:3 Ratio Panorama pricing — SLG.Art master price list (Sarah, 12 Jun) */
+      /* 1:3 Ratio Panorama pricing - SLG.Art master price list (Sarah, 12 Jun) */
       pricing: {
         '15x45': { unframed: 845,  framed: 1450 },
         '20x60': { unframed: 1355, framed: 2130 },
@@ -351,13 +351,13 @@
     /* ─── Update all prices ─── */
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp && sp.unframed != null ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp && sp.framed   != null ? '$' + fmtPrice(sp.framed)   : '—';
+      priceUnframed.textContent = sp && sp.unframed != null ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp && sp.framed   != null ? '$' + fmtPrice(sp.framed)   : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        priceDisplay.textContent = '—';
+        priceDisplay.textContent = '-';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -366,8 +366,8 @@
       const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
       if (price == null) {
         /* 1:2 ratio pricing abhi pending */
-        priceDisplay.textContent = '—';
-        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel() + ' — pricing coming soon';
+        priceDisplay.textContent = '-';
+        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel() + ' - pricing coming soon';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
       } else {
@@ -452,7 +452,7 @@
         if (!sp0 || (currentPresentation === 'framed' ? sp0.framed : sp0.unframed) == null) return;  /* pricing pending */
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title: title, price: price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';

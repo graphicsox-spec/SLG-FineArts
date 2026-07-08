@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order Confirmed — SLG.art · Sarah L Glabman</title>
+  <title>Order Confirmed - SLG.art · Sarah L Glabman</title>
   <meta name="description" content="Thank you for your order at SLG.art." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -93,17 +93,17 @@
       .then(d => {
         if (d && d.paid) {
           clearCart();
-          setState('ok', 'Thank you', 'Your order has been received and your payment confirmed. Sarah will personally be in touch within 1–2 business days to confirm your print and shipping details.');
+          setState('ok', 'Thank you', 'Your order has been received and your payment confirmed. Sarah will personally be in touch within 1-2 business days to confirm your print and shipping details.');
           if (d.amount != null) {
             metaEl.style.display = '';
             metaEl.textContent = 'Total Paid · $' + Number(d.amount).toLocaleString('en-US');
           }
         } else {
-          setState('pending', 'Payment not completed', 'It looks like your payment wasn’t completed. Your cart is still saved — you can return to checkout to try again.');
+          setState('pending', 'Payment not completed', 'It looks like your payment wasn’t completed. Your cart is still saved - you can return to checkout to try again.');
         }
       })
       .catch(() => {
-        setState('pending', 'Couldn’t confirm just yet', 'We couldn’t confirm your payment automatically. If you completed payment, don’t worry — please contact us and we’ll verify your order.');
+        setState('pending', 'Couldn’t confirm just yet', 'We couldn’t confirm your payment automatically. If you completed payment, don’t worry - please contact us and we’ll verify your order.');
       });
   })();
   </script>

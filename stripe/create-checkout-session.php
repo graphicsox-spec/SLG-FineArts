@@ -24,6 +24,7 @@ $post = [
   'cancel_url'  => SITE_URL . '/checkout.html',
 ];
 if ($email) { $post['customer_email'] = $email; }
+$post['allow_promotion_codes'] = 'true';   // customers can enter a Stripe promo code at checkout
 
 /* ---- Line items: each artwork, priced dynamically ---- */
 $i = 0;

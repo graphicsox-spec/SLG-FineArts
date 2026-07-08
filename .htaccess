@@ -1,0 +1,6 @@
+# SLG.art — clean home URL
+RewriteEngine On
+
+# Redirect /index.html to / (professional clean URL)
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]

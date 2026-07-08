@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Through His Eyes — Collector's Reserve Edition | SLG Masterworks</title>
-  <meta name="description" content="Through His Eyes — a mature male lion in Botswana, presented in black and white with the subtle color of his eyes preserved. A Collector's Reserve Edition museum-grade acrylic fine art wildlife print by Sarah L Glabman." />
+  <title>Through His Eyes - Collector's Reserve Edition | SLG Masterworks</title>
+  <meta name="description" content="Through His Eyes - a mature male lion in Botswana, presented in black and white with the subtle color of his eyes preserved. A Collector's Reserve Edition museum-grade acrylic fine art wildlife print by Sarah L Glabman." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/Through His Eyes/through-his-eyes-web.jpg"
-          alt="Through His Eyes — a mature male lion in Botswana in black and white, Collector's Reserve Edition fine art wildlife print by Sarah L Glabman"
+          alt="Through His Eyes - a mature male lion in Botswana in black and white, Collector's Reserve Edition fine art wildlife print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -81,6 +81,10 @@
             <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
             <span class="size-label">Extra Large</span>
           </button>
+          <button class="size-btn" data-size="48x72" type="button">
+            <span class="size-dim">48 × 72" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(122 × 183 cm)</span></span>
+            <span class="size-label">Grand</span>
+          </button>
         </div>
       </div>
 
@@ -93,9 +97,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -104,7 +108,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -137,7 +141,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size &amp; presentation to see pricing
@@ -164,7 +168,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">24×36" · 32×48" · 40×60"</span>
+          <span class="spec-value">24×36" · 32×48" · 40×60" · 48×72"</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -227,6 +231,9 @@
         '40x60_unframed':     '../assets/images/Through His Eyes/PERFECT LION 40X60 NO FRAME.jpg',
         '40x60_framed_black': '../assets/images/Through His Eyes/PERFECT LION 40X60 BLACK FRAME.jpg',
         '40x60_framed_brown': '../assets/images/Through His Eyes/PERFECT LION 40X60 BROWN FRAME.jpg',
+        '48x72_unframed':     '../assets/images/Through His Eyes/LION 48X72 NO FRAME.jpg',
+        '48x72_framed_black': '../assets/images/Through His Eyes/LION 48X72 BLACK FRAME.jpg',
+        '48x72_framed_brown': '../assets/images/Through His Eyes/LION 48X72 BROWN FRAME.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
@@ -236,6 +243,7 @@
         '24x36': { unframed: 1700, framed: 2550 },
         '32x48': { unframed: 2920, framed: 3945 },
         '40x60': { unframed: 5000, framed: 6300 },
+        '48x72': { unframed: 7400, framed: 8975 },
       }
     };
 
@@ -270,6 +278,9 @@
       { key: '40x60_unframed',     label: '40×60 Acrylic Mount' },
       { key: '40x60_framed_black', label: '40×60 Black Frame' },
       { key: '40x60_framed_brown', label: '40×60 Brown Frame' },
+      { key: '48x72_unframed',     label: '48×72 Acrylic Mount' },
+      { key: '48x72_framed_black', label: '48×72 Black Frame' },
+      { key: '48x72_framed_brown', label: '48×72 Brown Frame' },
     ];
 
     function buildThumbs() {
@@ -339,13 +350,13 @@
     /* ─── Update all prices ─── */
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '—';
+      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        priceDisplay.textContent = '—';
+        priceDisplay.textContent = '-';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -430,7 +441,7 @@
         if (!currentSize || !currentPresentation) return;
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title: title, price: price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';
@@ -440,27 +451,4 @@
 
     /* ─── Reset to default ─── */
     window.SLGResetToDefault = function () {
-      currentSize = null;
-      currentPresentation = null;
-      currentFrame = 'black';
-      sizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-      presOptions.querySelectorAll('.presentation-btn').forEach(b => b.classList.remove('active'));
-      frameColors.querySelectorAll('.frame-color-btn').forEach(b => b.classList.toggle('active', b.dataset.frame === 'black'));
-      syncPrices();
-      syncFrameUI();
-      setHeroImage('hero');
-      thumbsWrap.querySelectorAll('.product-thumb').forEach(b => b.classList.toggle('active', b.dataset.imgKey === 'hero'));
-    };
-
-    /* ─── Init ─── */
-    buildThumbs();
-    syncPrices();
-    syncFrameUI();
-
-  })();
-  </script>
-
-  <script src="../assets/js/components.js"></script>
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+      currentSize

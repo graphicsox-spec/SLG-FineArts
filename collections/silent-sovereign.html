@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silent Sovereign — Wildlife Collection | SLG Masterworks</title>
-  <meta name="description" content="Silent Sovereign — a museum-grade acrylic fine art photograph capturing a magnificent female leopard in South Africa's legendary Mala Mala Game Reserve. Timeless black and white wildlife art by Sarah L Glabman." />
+  <title>Silent Sovereign - Wildlife Collection | SLG Masterworks</title>
+  <meta name="description" content="Silent Sovereign - a museum-grade acrylic fine art photograph capturing a magnificent female leopard in South Africa's legendary Mala Mala Game Reserve. Timeless black and white wildlife art by Sarah L Glabman." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/Silent Sovereign/Silent Sovereign Web.jpg"
-          alt="Silent Sovereign — magnificent female leopard in Mala Mala Game Reserve, black and white fine art wildlife print by Sarah L Glabman"
+          alt="Silent Sovereign - magnificent female leopard in Mala Mala Game Reserve, black and white fine art wildlife print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -54,7 +54,7 @@
       </div>
 
       <p class="product-desc">
-        Some of the most meaningful photographs of my life have come when I simply listened. I created this image near Page, Arizona, while traveling north for a photography adventure in the canyons. As sunset approached, I felt a gentle pull to step outside — no plan, no expectation, just a feeling that I needed to look one more time.
+        Some of the most meaningful photographs of my life have come when I simply listened. I created this image near Page, Arizona, while traveling north for a photography adventure in the canyons. As sunset approached, I felt a gentle pull to step outside - no plan, no expectation, just a feeling that I needed to look one more time.
         <br><br>
         
       </p>
@@ -89,9 +89,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -100,7 +100,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -133,7 +133,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size & presentation to see pricing
@@ -160,7 +160,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">30×60" · 40×80" · 48×96" — 1:2 Ratio</span>
+          <span class="spec-value">30×60" · 40×80" · 48×96" - 1:2 Ratio</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -214,14 +214,14 @@
     const PRODUCT = {
       images: {
         hero: '../assets/images/Silent Sovereign/Silent Sovereign Web.jpg',
-        /* 1:2 ratio panorama mockups — Silent Sovereign */
+        /* 1:2 ratio panorama mockups - Silent Sovereign */
         '30x60_unframed':     '../assets/images/Silent Sovereign/LEOPARD 30X60 NO FRAME.jpg',
         '30x60_framed_black': '../assets/images/Silent Sovereign/LEOPARD 30X60 BLACK FRAME.jpg',
         '30x60_framed_brown': '../assets/images/Silent Sovereign/LEOPARD 30X60 BROWN FRAME.jpg',
         '40x80_unframed':     '../assets/images/Silent Sovereign/LEOPARD 40X80 NO FRAME.jpg',
         '40x80_framed_black': '../assets/images/Silent Sovereign/LEOPARD 40X80 BLACK FRAME.jpg',
         '40x80_framed_brown': '../assets/images/Silent Sovereign/LEOPARD 40X80 BROWN FRAME.jpg',
-        /* 48x96 XL — 1:2 ratio */
+        /* 48x96 XL - 1:2 ratio */
         '48x96_unframed':     '../assets/images/Silent Sovereign/LEOPARD 48X96 NO FRAME.jpg',
         '48x96_framed_black': '../assets/images/Silent Sovereign/LEOPARD 48X96 BLACK FRAME.jpg',
         '48x96_framed_brown': '../assets/images/Silent Sovereign/LEOPARD 48X96 BROWN FRAME.jpg',
@@ -230,7 +230,7 @@
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
-      /* 1:2 Ratio Panorama Collector's Reserve Edition pricing — from pricing.pdf */
+      /* 1:2 Ratio Panorama Collector's Reserve Edition pricing - from pricing.pdf */
       pricing: {
         '30x60': { unframed: 3350,  framed: 4520 },
         '40x80': { unframed: 6980,  framed: 8550 },
@@ -339,13 +339,13 @@
     /* ─── Update all prices ─── */
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp && sp.unframed != null ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp && sp.framed   != null ? '$' + fmtPrice(sp.framed)   : '—';
+      priceUnframed.textContent = sp && sp.unframed != null ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp && sp.framed   != null ? '$' + fmtPrice(sp.framed)   : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        priceDisplay.textContent = '—';
+        priceDisplay.textContent = '-';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -354,8 +354,8 @@
       const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
       if (price == null) {
         /* 1:2 ratio pricing abhi pending */
-        priceDisplay.textContent = '—';
-        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel() + ' — pricing coming soon';
+        priceDisplay.textContent = '-';
+        priceConfig.textContent  = sizeLabel() + ' · ' + presentationLabel() + ' - pricing coming soon';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
       } else {
@@ -439,7 +439,7 @@
         if (!sp0 || (currentPresentation === 'framed' ? sp0.framed : sp0.unframed) == null) return;  /* pricing pending */
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title: title, price: price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';

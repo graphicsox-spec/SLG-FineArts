@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evening Benediction | SLG Masterworks</title>
-  <meta name="description" content="Evening Benediction — a breathtaking fine art water print by Sarah L Glabman. Museum-grade acrylic print, available in four sizes." />
+  <meta name="description" content="Evening Benediction - a breathtaking fine art water print by Sarah L Glabman. Museum-grade acrylic print, available in four sizes." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/Evening Benediction/Evening Benediction.jpg"
-          alt="Evening Benediction — fine art water print by Sarah L Glabman"
+          alt="Evening Benediction - fine art water print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -99,9 +99,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -110,7 +110,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -143,7 +143,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size &amp; presentation to see pricing
@@ -347,13 +347,13 @@
 
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '—';
+      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        priceDisplay.textContent = '—';
+        priceDisplay.textContent = '-';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -433,7 +433,7 @@
         if (!currentSize || !currentPresentation) return;
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title, price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';

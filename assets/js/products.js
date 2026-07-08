@@ -1,5 +1,5 @@
 /* ============================================================
-   SLG.Art — SINGLE SOURCE OF TRUTH for all products.
+   SLG.Art - SINGLE SOURCE OF TRUTH for all products.
    Drives: Home page sliders (Open Editions / Collector's Reserve Edition),
            The Shop grid, and The Images gallery.
 

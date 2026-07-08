@@ -1,5 +1,5 @@
 /* =========================================================
-   SLG Masterworks — Sarah L Glabman Fine Art Photography
+   SLG Masterworks - Sarah L Glabman Fine Art Photography
    Brand Refresh 2026: Montserrat Light titles, Oswald labels,
    Open Sans body, navy blue accents. Peter Lik-inspired restraint.
    ========================================================= */
@@ -20,9 +20,9 @@
   --line-soft:    rgba(13, 27, 53, 0.12);
 
   /* Navy Blue Accent (primary brand colour) */
-  --blue:         #0D1B35;      /* deep navy — single brand blue */
+  --blue:         #0D1B35;      /* deep navy - single brand blue */
   --blue-bright:  #0D1B35;      /* kept for legacy refs */
-  --blue-deep:    #0D1B35;      /* darkest navy — replaces black */
+  --blue-deep:    #0D1B35;      /* darkest navy - replaces black */
   --blue-glow:    rgba(13, 27, 53, 0.12);
 
   /* Gold accent */
@@ -40,7 +40,7 @@
 
   /* Typography */
   --display: "Oswald", "Arial Narrow", sans-serif;     /* labels, nav, eyebrows */
-  --title:   "Montserrat", sans-serif;                  /* h1, h2, h3 — use weight 300 */
+  --title:   "Montserrat", sans-serif;                  /* h1, h2, h3 - use weight 300 */
   --sans:    "Open Sans", -apple-system, sans-serif;    /* body copy */
   --script:  "Pinyon Script", "Allura", cursive;        /* signature only */
 
@@ -54,7 +54,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-padding-top: calc(var(--nav-h, 72px) + 8px); }
 body {
   margin: 0;
-  overflow-x: clip; /* 'hidden' breaks position:sticky (nav) — clip doesn't create a scroll container */
+  overflow-x: clip; /* 'hidden' breaks position:sticky (nav) - clip doesn't create a scroll container */
   width: 100%;
   max-width: 100%;
   font-family: var(--sans);
@@ -77,7 +77,7 @@ button { font: inherit; cursor: pointer; color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--title);
   font-weight: 300;
-  color: var(--blue-deep);  /* navy headings — brand consistency */
+  color: var(--blue-deep);  /* navy headings - brand consistency */
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin: 0 0 .5em;
@@ -87,7 +87,7 @@ h2 { font-size: clamp(2.25rem, 4.5vw, 4rem); }
 h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 400; }
 h4 { font-size: 1.25rem; font-weight: 500; }
 
-/* Section label — Oswald, all caps, wide tracking */
+/* Section label - Oswald, all caps, wide tracking */
 .eyebrow,
 .section-label {
   font-family: var(--display);
@@ -141,7 +141,7 @@ h4 { font-size: 1.25rem; font-weight: 500; }
   -webkit-backdrop-filter: saturate(180%) blur(18px);
   border-bottom: 1px solid var(--line);
 }
-/* Fixed nav leaves the document flow — push page content down by nav height.
+/* Fixed nav leaves the document flow - push page content down by nav height.
    Homepage is excluded: its hero sits behind the transparent fixed nav. */
 body:not(.is-homepage) { padding-top: var(--nav-h, 72px); }
 .nav-inner {
@@ -162,9 +162,10 @@ body:not(.is-homepage) { padding-top: var(--nav-h, 72px); }
   align-items: center;
 }
 .brand-logo {
-  height: 38px;
+  height: 32px;          /* Sarah: a little smaller (was 38px) */
   width: auto;
   display: block;
+  opacity: 0.7;          /* Sarah: reduce ~30% (softer logo) */
 }
 
 
@@ -202,7 +203,7 @@ body:not(.is-homepage) { padding-top: var(--nav-h, 72px); }
 .nav-links a:hover, .nav-trigger:hover { color: var(--gold); }
 
 /* ================================================================
-   THE IMAGES — DROPDOWN PANEL
+   THE IMAGES - DROPDOWN PANEL
    Full-width dark typographic panel, 3 options, slides from nav
    ================================================================ */
 
@@ -335,7 +336,7 @@ body:not(.is-homepage) { padding-top: var(--nav-h, 72px); }
 .images-panel-close:hover { color: #fff; }
 .images-panel-close svg { width: 18px; height: 18px; }
 
-/* body.panel-open — prevent scroll behind panel */
+/* body.panel-open - prevent scroll behind panel */
 body.panel-open { overflow: hidden; }
 
 /* ================================================================
@@ -459,7 +460,7 @@ body.panel-open { overflow: hidden; }
 .images-panel { top: var(--nav-h); }
 
 /* ================================================================
-   TRANSPARENT NAV — homepage hero overlay
+   TRANSPARENT NAV - homepage hero overlay
    On homepage: nav is fixed + transparent, turns solid on scroll
    ================================================================ */
 body.is-homepage .nav {
@@ -500,7 +501,7 @@ body.is-homepage .nav.nav-scrolled #navLinks a::after { background: var(--gold);
 body.is-homepage { padding-top: 0; }
 
 /* ================================================================
-   HERO SLIDER (homepage) — full viewport, Lik-style
+   HERO SLIDER (homepage) - full viewport, Lik-style
    ================================================================ */
 .hero-slider {
   position: relative;
@@ -520,7 +521,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 }
 .hero-slide.active { opacity: 1; z-index: 1; }
 
-/* Blurred fill behind the contained image — fills the wide desktop space
+/* Blurred fill behind the contained image - fills the wide desktop space
    with a soft, darkened copy of the same photo so there are no dead bars.
    Premium gallery look; the sharp full image sits on top, never cropped. */
 .hero-slide::before {
@@ -533,7 +534,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   transform: scale(1.18);
   z-index: 0;
 }
-/* Sharp, FULL vertical image — shown complete, never cropped on any screen */
+/* Sharp, FULL vertical image - shown complete, never cropped on any screen */
 .hero-slide img {
   position: relative;
   width: 100%; height: 100%;
@@ -543,12 +544,12 @@ body.is-homepage .hero-slider { height: 100vh; }
   z-index: 1;
 }
 
-/* Dark gradient — strong top band for nav visibility + bottom for text */
+/* Dark gradient - strong top band for nav visibility + bottom for text */
 .hero-slider::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
   background:
     linear-gradient(to bottom,
-      rgba(0,0,0,.62) 0%,      /* nav band — dark regardless of image */
+      rgba(0,0,0,.62) 0%,      /* nav band - dark regardless of image */
       rgba(0,0,0,.35) 10%,
       rgba(0,0,0,.05) 28%,     /* clear in the middle */
       rgba(0,0,0,.15) 60%,
@@ -609,7 +610,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   flex-wrap: wrap;
 }
 
-/* Both hero buttons — identical outlined style, equal size */
+/* Both hero buttons - identical outlined style, equal size */
 .hero-btn-primary,
 .hero-btn-secondary {
   font-family: var(--display);
@@ -698,7 +699,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .hero-dot:hover::after  { background: rgba(255,255,255,.4); }
 
 /* ================================================================
-   HOME SECTIONS — New Arrivals & Best Sellers
+   HOME SECTIONS - New Arrivals & Best Sellers
    ================================================================ */
 .home-section {
   padding: clamp(4rem, 7vw, 7rem) 0;
@@ -718,7 +719,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   font-weight: 300;
   letter-spacing: -0.025em;
   margin: 0;
-  color: var(--blue-deep);  /* navy headings — brand consistency */
+  color: var(--blue-deep);  /* navy headings - brand consistency */
 }
 .home-section-head .section-label {
   margin-bottom: .5rem;
@@ -741,14 +742,14 @@ body.is-homepage .hero-slider { height: 100vh; }
 }
 
 /* ================================================================
-   ARTIST STORY — full-width image fade
+   ARTIST STORY - full-width image fade
    ================================================================ */
 .artist-story {
   position: relative;
   margin: 0;
   padding: 0;
 }
-/* Full-bleed band — image fills edge to edge, touches the section above */
+/* Full-bleed band - image fills edge to edge, touches the section above */
 .artist-story-band {
   position: relative;
   width: 100%;
@@ -1062,7 +1063,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .newsletter-form button:hover { color: var(--gold); }
 
 /* ================================================================
-   FOOTER — dark, full-width, with artist photo background
+   FOOTER - dark, full-width, with artist photo background
    ================================================================ */
 .footer {
   position: relative;
@@ -1072,7 +1073,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   min-height: 520px;
 }
 
-/* Photo background — full footer fill */
+/* Photo background - full footer fill */
 .footer-photo-bg {
   position: absolute;
   inset: 0;
@@ -1084,7 +1085,7 @@ body.is-homepage .hero-slider { height: 100vh; }
      aur left/right edges mask se navy me fade. */
   position: absolute;
   height: 100%;
-  width: auto;                 /* natural ratio — box exactly image jitna */
+  width: auto;                 /* natural ratio - box exactly image jitna */
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
@@ -1173,7 +1174,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 }
 .footer-tag { font-size: 0.9rem; max-width: 30ch; color: var(--footer-text); line-height: 1.65; }
 
-/* Footer bottom strip — grid: copyright | dev credit (center) | socials (right) */
+/* Footer bottom strip - grid: copyright | dev credit (center) | socials (right) */
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr;
@@ -1194,7 +1195,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .footer-bottom .dev-credit  { justify-self: center; white-space: nowrap; text-align: center; }
 .footer-bottom .dev-credit a { color: var(--gold); }
 .footer-bottom .dev-credit a:hover { color: var(--gold-light); }
-/* Socials — brand column me, logo + tagline ke neeche */
+/* Socials - brand column me, logo + tagline ke neeche */
 .footer .socials {
   margin-top: 1.4rem;
   display: flex;
@@ -1222,14 +1223,14 @@ body.is-homepage .hero-slider { height: 100vh; }
 }
 
 /* ================================================================
-   NEW ARRIVALS — split: text left, one large image right
+   NEW ARRIVALS - split: text left, one large image right
    ================================================================ */
 .new-arrivals-split {
   display: grid;
   grid-template-columns: 380px 1fr;
   max-width: calc(var(--max) - (var(--gutter) * 2));
   margin: clamp(4rem, 7vw, 6rem) auto;
-  height: auto;             /* text lamba ho to section badhe — image hamesha center */
+  height: auto;             /* text lamba ho to section badhe - image hamesha center */
   min-height: 420px;
   overflow: hidden;
   padding: 0 var(--gutter);
@@ -1275,7 +1276,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   background: var(--bg-2);
   border: 1px solid var(--line);
 }
-/* Images keep their original ratio inside the box — never cropped,
+/* Images keep their original ratio inside the box - never cropped,
    never touching the box edges (inner padding all around) */
 .na-right img {
   width: 100%; height: 100%;
@@ -1284,7 +1285,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   display: block;
 }
 
-/* ── Cinematic slideshow (crossfade only — no zoom, so nothing crops) ── */
+/* ── Cinematic slideshow (crossfade only - no zoom, so nothing crops) ── */
 .na-slide {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -1343,7 +1344,7 @@ body.is-homepage .hero-slider { height: 100vh; }
     object-fit: cover;
     object-position: 20% bottom;      /* Sarah shifted left, clear of the text */
     opacity: 0.55;
-    /* fade the image top seamlessly into the navy — no hard edge/line */
+    /* fade the image top seamlessly into the navy - no hard edge/line */
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
             mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
   }
@@ -1353,7 +1354,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   .footer-bottom { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 0.75rem; }
   .footer-bottom .footer-copy, .footer-bottom .dev-credit { justify-self: center; }
   .mega-grid { grid-template-columns: 1fr; }
-  /* Mobile: slider 30% chhota — neeche ka content pehli jhalak me dikhe */
+  /* Mobile: slider 30% chhota - neeche ka content pehli jhalak me dikhe */
   body.is-homepage .hero-slider,
   .hero-slider { height: 66vh; min-height: 460px; }
   .hero-controls { bottom: 1.5rem; }
@@ -1363,7 +1364,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 }
 
 /* ============================================================
-   PRINT MODAL — Baby Leopard room mockup viewer
+   PRINT MODAL - Baby Leopard room mockup viewer
    ============================================================ */
 .print-modal-overlay {
   display: none;
@@ -1481,7 +1482,7 @@ body.is-homepage .hero-slider { height: 100vh; }
 .modal-title {
   font-family: var(--serif);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  color: var(--blue-deep);  /* navy headings — brand consistency */
+  color: var(--blue-deep);  /* navy headings - brand consistency */
   margin: 0.4rem 0 0.3rem;
   font-weight: 400;
   line-height: 1.15;
@@ -1713,7 +1714,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   cursor: pointer;
   position: relative;
   user-select: none;
-  padding-right: 1.5rem; /* reserve space for the +/– toggle icon */
+  padding-right: 1.5rem; /* reserve space for the +/- toggle icon */
 }
 .ti-filter-group > h3::after,
 .shop-filter-group > h3::after {

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Artist — Sarah L Glabman · SLG Masterworks</title>
-  <meta name="description" content="The story behind SLG Masterworks — fine art landscape and wildlife photographer Sarah L Glabman, based in Scottsdale, Arizona." />
+  <title>The Artist - Sarah L Glabman · SLG Masterworks</title>
+  <meta name="description" content="The story behind SLG Masterworks - fine art landscape and wildlife photographer Sarah L Glabman, based in Scottsdale, Arizona." />
   <meta name="theme-color" content="#0D1B35" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,13 +15,13 @@
     body { background: #fff; }
 
     /* ══════════════════════════════════════
-       HERO — fullscreen with Sarah's image
+       HERO - fullscreen with Sarah's image
     ══════════════════════════════════════ */
     .ab-hero {
       position: relative;
       overflow: hidden;
       background: var(--navy-bg, #0D1B35);
-      /* uniform page-header band — same on every page */
+      /* uniform page-header band - same on every page */
       padding: calc(var(--nav-h, 72px) + 1.5rem) 0 calc(var(--nav-h, 72px) + 1.5rem);
       min-height: clamp(380px, 32vw, 437px);
       display: flex; flex-direction: column; justify-content: center;
@@ -84,11 +84,11 @@
       text-align: center;
     }
     @media (max-width: 640px) {
-      /* mobile: Sarah image ke right side me hai — frame use dikhaye */
+      /* mobile: Sarah image ke right side me hai - frame use dikhaye */
       .ab-hero-img { object-position: 65% 30%; }
       .ab-hero-sub { font-size: .9rem; max-width: none; }
     }
-    /* scroll hint — hidden now that the hero is a compact band */
+    /* scroll hint - hidden now that the hero is a compact band */
     .ab-scroll-hint {
       display: none;
       position: absolute;
@@ -413,6 +413,7 @@
       .ab-bio,
       .ab-process,
       .ab-philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .ab-bio-left { position: static; top: auto; }   /* mobile: heading scrolls with text (no sticky overlap) */
       .ab-stats-inner { grid-template-columns: repeat(2, 1fr); }
       .ab-stat { border-bottom: 1px solid rgba(255,255,255,.07); }
       .ab-cta { grid-template-columns: 1fr; }
@@ -453,7 +454,7 @@
   <section class="ab-hero">
     <img class="ab-hero-img"
          src="assets/images/artist-hero-web.jpg"
-         alt="Sarah L Glabman — fine art photographer on location" />
+         alt="Sarah L Glabman - fine art photographer on location" />
     <div class="ab-hero-overlay"></div>
     <div class="ab-hero-content">
       <span class="ab-hero-label">The Artist</span>
@@ -530,7 +531,7 @@
     <div class="ab-process-text">
       <span class="ab-section-label">/ The Process</span>
       <h2>Captured,<br>then crafted.</h2>
-      <p>Each photograph is captured in the field on professional equipment, then carefully refined in the studio with a light touch — preserving the truth of the moment, not invented from it.</p>
+      <p>Each photograph is captured in the field on professional equipment, then carefully refined in the studio with a light touch - preserving the truth of the moment, not invented from it.</p>
       <p>Prints are produced on archival cotton-rag paper or gallery-wrapped canvas, color-tested for longevity, then signed and packaged by hand from the studio in Scottsdale, Arizona.</p>
     </div>
   </section>
@@ -541,7 +542,7 @@
       <div class="ab-philosophy-text">
         <span class="ab-section-label">/ The Philosophy</span>
         <h2>Quiet attention.<br>Honest light.</h2>
-        <p>I'm drawn to scenes that reward the looker who slows down. A canyon doesn't ask to be seen — but if you sit with it long enough, it will tell you something. The same is true of the wildlife I photograph: I work to remain a guest, never a director.</p>
+        <p>I'm drawn to scenes that reward the looker who slows down. A canyon doesn't ask to be seen - but if you sit with it long enough, it will tell you something. The same is true of the wildlife I photograph: I work to remain a guest, never a director.</p>
         <p>My hope is that each print invites that same quiet attention into the room it lives in.</p>
       </div>
       <div class="ab-philosophy-img">
@@ -553,7 +554,7 @@
   <!-- ── Quote ── -->
   <section class="ab-quote reveal">
     <blockquote>"There is a kind of looking that is, finally, also a kind of listening."</blockquote>
-    <cite>— Studio Notes · Sarah L. Glabman</cite>
+    <cite>- Studio Notes · Sarah L. Glabman</cite>
   </section>
 
   <!-- ── CTA ── -->
@@ -561,13 +562,13 @@
     <a class="ab-cta-card reveal" href="showroom.html">
       <span class="ab-cta-card-label">Showroom</span>
       <h3>View the Collection</h3>
-      <p>Limited editions, room mockups, and the full body of work — explore every piece.</p>
+      <p>Limited editions, room mockups, and the full body of work - explore every piece.</p>
       <span class="ab-cta-arrow">Browse Showroom →</span>
     </a>
     <a class="ab-cta-card reveal" href="contact.html">
       <span class="ab-cta-card-label">Commission</span>
       <h3>Work With Sarah</h3>
-      <p>Custom sizing, private commissions, and gallery inquiries — Sarah replies personally.</p>
+      <p>Custom sizing, private commissions, and gallery inquiries - Sarah replies personally.</p>
       <span class="ab-cta-arrow">Get in Touch →</span>
     </a>
   </div>

@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Checkout — SLG Masterworks</title>
+  <title>Checkout - SLG Masterworks</title>
   <meta name="description" content="Secure checkout for SLG Masterworks fine art prints." />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
     /* ================================================================
-       CHECKOUT PAGE — SLG Masterworks
+       CHECKOUT PAGE - SLG Masterworks
        ================================================================ */
 
     body { background: var(--bg-2); }
@@ -178,7 +178,7 @@
 
     .pay-method-row input[type="radio"] { accent-color: var(--blue); width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* plain icon — no box, no border */
+    /* plain icon - no box, no border */
     .pay-method-icon {
       display: flex;
       align-items: center;
@@ -251,7 +251,7 @@
     .klarna-step strong { display: block; color: var(--ink); font-size: 0.82rem; font-weight: 500; margin-bottom: 0.1rem; }
     .klarna-step span { font-size: 0.68rem; }
 
-    /* alias — card fields use same .pay-expand */
+    /* alias - card fields use same .pay-expand */
     .card-fields {
       padding: 1.25rem 1rem 1rem;
       background: var(--bg-2);
@@ -308,7 +308,7 @@
     }
     .co-item:last-child { border-bottom: none; }
 
-    /* image container — fixed box, image inside fits fully uncropped */
+    /* image container - fixed box, image inside fits fully uncropped */
     .co-item-img-wrap {
       width: 72px;
       height: 72px;
@@ -647,7 +647,7 @@
           <div class="co-field" id="state-wrap">
             <label class="co-label" for="co-state">State</label>
             <select class="co-select" id="co-state" autocomplete="address-level1">
-              <option value="">—</option>
+              <option value="">-</option>
               <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
               <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
               <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
@@ -679,7 +679,7 @@
             <input type="radio" name="shipping" value="standard" checked />
             <div class="shipping-opt-info">
               <span class="shipping-opt-name">Standard Shipping</span>
-              <span class="shipping-opt-note">Carefully packaged · 7–14 business days</span>
+              <span class="shipping-opt-note">Carefully packaged · 7-14 business days</span>
             </div>
             <span class="shipping-opt-price" id="ship-std-price">Free</span>
           </label>
@@ -695,7 +695,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <div>
             <strong>Secure payment powered by Stripe.</strong>
-            When you place your order you'll be taken to our encrypted Stripe checkout to complete payment. Pay with Card, Apple Pay, Google Pay, Link, or Klarna &mdash; whichever suits you best. Your card details are never stored on this site.
+            When you place your order you'll be taken to our encrypted Stripe checkout to complete payment. Pay with Card, Apple Pay, Google Pay, Link, or Klarna - whichever suits you best. Your card details are never stored on this site.
           </div>
         </div>
 
@@ -706,6 +706,7 @@
           <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
           <svg width="32" height="22" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
           <span class="pay-method-icon" style="height:22px;"><img src="assets/images/Payment icon/apple-pay-icon.svg" alt="Apple Pay" style="height:100%;width:auto;" /></span>
+          <span class="pay-method-icon" style="height:22px;"><img src="assets/images/Payment icon/google-pay-icon.svg" alt="Google Pay" style="height:100%;width:auto;" /></span>
           <span class="pay-method-icon" style="height:20px;"><img src="assets/images/Payment icon/klarna-icon.svg" alt="Klarna" style="height:100%;width:auto;" /></span>
         </div>
       </div><!-- /co-card payment -->
@@ -726,7 +727,7 @@
         </div>
 
         <!-- Coupon code -->
-        <div class="co-coupon">
+        <div class="co-coupon" style="display:none;">
           <input type="text" id="couponInput" placeholder="Discount or coupon code" />
           <button class="co-coupon-btn" id="couponApply">Apply</button>
         </div>
@@ -761,6 +762,9 @@
               <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/></svg>
               <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial" font-size="7" font-weight="bold" fill="white">AMEX</text></svg>
               <svg width="27" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="3" fill="#F76F20"/><text x="4" y="15" font-family="Arial" font-size="6" font-weight="bold" fill="white">DISC</text><circle cx="28" cy="12" r="7" fill="#FFD000" opacity="0.9"/></svg>
+              <img src="assets/images/Payment icon/apple-pay-icon.svg" alt="Apple Pay" style="height:17px;width:auto;" />
+              <img src="assets/images/Payment icon/google-pay-icon.svg" alt="Google Pay" style="height:15px;width:auto;" />
+              <img src="assets/images/Payment icon/klarna-icon.svg" alt="Klarna" style="height:15px;width:auto;" />
             </span>
           </div>
         </div>
@@ -786,14 +790,20 @@
     const money = (n) => '$' + Number(n).toLocaleString('en-US');
 
     /* ---- Product lookup for thumbnail (fuzzy: cart title may include size/frame details) ---- */
-    const getImg = (title) => {
+    const getProduct = (title) => {
       const products = window.SLG_PRODUCTS || [];
       const t = title.toLowerCase();
-      /* exact match first, then "starts with" partial match */
-      const match = products.find(p => t === p.title.toLowerCase()) ||
-                    products.find(p => t.startsWith(p.title.toLowerCase())) ||
-                    products.find(p => t.includes(p.title.toLowerCase()));
-      return match ? match.img : null;
+      /* exact match first, then "starts with", then "includes" */
+      return products.find(p => t === p.title.toLowerCase()) ||
+             products.find(p => t.startsWith(p.title.toLowerCase())) ||
+             products.find(p => t.includes(p.title.toLowerCase())) || null;
+    };
+    const getImg = (title) => { const p = getProduct(title); return p ? p.img : null; };
+    const editionLabel = (title) => {
+      const p = getProduct(title);
+      return (p && p.edition === 'open')
+        ? 'Open Edition'
+        : "Collector's Reserve Edition &middot; Signed &amp; Numbered";
     };
 
     /* ---- Render items ---- */
@@ -818,7 +828,7 @@
             <div class="co-item-right">
               <div class="co-item-details">
                 <span class="co-item-title">${it.title}</span>
-                <span class="co-item-meta">Collector's Reserve Edition · Signed &amp; Numbered${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
+                <span class="co-item-meta">${editionLabel(it.title)}${it.qty > 1 ? ' &nbsp;×&nbsp;' + it.qty : ''}</span>
               </div>
               <span class="co-item-price">${money(linePrice)}</span>
             </div>
@@ -879,7 +889,7 @@
     if (countryEl) {
       countryEl.addEventListener('change', function () {
         const isCA = this.value === 'CA';
-        stateEl.innerHTML = '<option value="">—</option>' +
+        stateEl.innerHTML = '<option value="">-</option>' +
           (isCA ? caProvinces : usStates).map(x => `<option>${x}</option>`).join('');
         stateEl.previousElementSibling.textContent = isCA ? 'Province' : 'State';
         if (zipLabel) zipLabel.textContent = isCA ? 'Postal Code' : 'ZIP Code';

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Echoes of Another World — Landscape Collection | SLG Masterworks</title>
-  <meta name="description" content="Photographed at sunrise in the heart of Namibia — a Collector's Reserve Edition museum-grade acrylic fine art print by Sarah L Glabman capturing the extraordinary light of the Namib Desert." />
+  <title>Echoes of Another World - Landscape Collection | SLG Masterworks</title>
+  <meta name="description" content="Photographed at sunrise in the heart of Namibia - a Collector's Reserve Edition museum-grade acrylic fine art print by Sarah L Glabman capturing the extraordinary light of the Namib Desert." />
   <meta name="theme-color" content="#FAF7F2" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -32,7 +32,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/Echoes of Another World/Namibia 2294.jpg"
-          alt="Echoes of Another World — sunrise over red sand dunes and ancient camel thorn trees in the Namib Desert, fine art landscape print by Sarah L Glabman"
+          alt="Echoes of Another World - sunrise over red sand dunes and ancient camel thorn trees in the Namib Desert, fine art landscape print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -94,9 +94,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -105,7 +105,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -138,7 +138,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size &amp; presentation to see pricing
@@ -340,8 +340,8 @@
 
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '—';
+      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp ? '$' + fmtPrice(sp.framed)   : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
@@ -349,7 +349,7 @@
       const priceConfig = document.getElementById('price-config');
 
       if (!currentSize || !currentPresentation) {
-        if (priceAmount) priceAmount.textContent = '—';
+        if (priceAmount) priceAmount.textContent = '-';
         if (priceConfig) priceConfig.textContent = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -428,7 +428,7 @@
         if (!currentSize || !currentPresentation) return;
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title: title, price: price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';

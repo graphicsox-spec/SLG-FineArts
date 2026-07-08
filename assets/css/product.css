@@ -1,12 +1,12 @@
 /* =========================================================
-   SLG Masterworks — Product Detail Page
+   SLG Masterworks - Product Detail Page
    Navy-accent gallery experience inspired by Peter Lik,
    built on the existing SLG warm-bone foundation.
    ========================================================= */
 
 /* ---- Product-page accent tokens ---- */
 :root {
-  --navy:         #0D1B35;      /* deep navy — single brand blue */
+  --navy:         #0D1B35;      /* deep navy - single brand blue */
   --navy-light:   #0D1B35;
   --navy-muted:   rgba(13, 27, 53, 0.55);
   --navy-subtle:  rgba(13, 27, 53, 0.08);
@@ -68,7 +68,7 @@
 .product-hero-img {
   width: 100%;
   height: auto;
-  max-height: 62vh;   /* 78vh se 20% kam — thumbnails visible */
+  max-height: 62vh;   /* 78vh se 20% kam - thumbnails visible */
   object-fit: contain;
   opacity: 1;
   transition: opacity 0.5s var(--ease);
@@ -77,7 +77,7 @@
   opacity: 0.3;
 }
 
-/* Thumbnails — default me sirf original (Web Preview) thumb dikhe;
+/* Thumbnails - default me sirf original (Web Preview) thumb dikhe;
    expand/selection par baaki mockup thumbs bhi */
 .product-thumbs {
   display: flex;
@@ -90,7 +90,7 @@
 .product-thumbs .product-thumb[data-img-key="hero"] { display: block; }
 .product-thumbs.expanded .product-thumb { display: block; }
 
-/* Add to Cart disabled — jab tak size + presentation select na ho */
+/* Add to Cart disabled - jab tak size + presentation select na ho */
 .btn-navy.disabled {
   opacity: 0.45;
   cursor: not-allowed;
@@ -358,7 +358,7 @@
   border-color: var(--navy);
   box-shadow: 0 0 0 1px var(--navy);
 }
-/* Active outline frame ke apne color me — black frame = black, brown frame = brown */
+/* Active outline frame ke apne color me - black frame = black, brown frame = brown */
 .frame-color-btn[data-frame="black"].active {
   border-color: #1a1a1a;
   box-shadow: 0 0 0 1px #1a1a1a;
@@ -468,7 +468,7 @@
   text-decoration: none;
 }
 .btn-navy:hover {
-  background: var(--gold-deep, #A8892A);   /* hover: gold — navy+gold brand combo */
+  background: var(--gold-deep, #A8892A);   /* hover: gold - navy+gold brand combo */
   color: #fff;
 }
 .btn-navy-outline {
@@ -537,7 +537,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold-deep, #A8892A);
-  font-weight: 700;                 /* Collector's Reserve — bold gold, more prominent (per Sarah) */
+  font-weight: 700;                 /* Collector's Reserve - bold gold, more prominent (per Sarah) */
   margin-bottom: 1.5rem;
 }
 .edition-badge .dot {
@@ -643,7 +643,7 @@
 }
 
 /* ════════════════════════════════════════
-   SIZE DROPDOWN (Select Size — list style)
+   SIZE DROPDOWN (Select Size - list style)
    ════════════════════════════════════════ */
 .size-dropdown { position: relative; }
 .size-dd-trigger {
@@ -720,7 +720,7 @@
 }
 
 /* ================================================================
-   OPEN EDITION BADGE — plain/neutral (no gold band)
+   OPEN EDITION BADGE - plain/neutral (no gold band)
    Collector's Reserve keeps the default gold styling above
    ================================================================ */
 .edition-badge.open-edition {

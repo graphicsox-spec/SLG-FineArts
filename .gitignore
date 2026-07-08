@@ -31,3 +31,7 @@ build/
 # Misc
 *.bak
 .tmp/
+
+# Stripe secret config (server-only, NEVER commit)
+stripe/config.php
+config.php

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Giant Within — Collector's Reserve Edition | SLG Masterworks</title>
-  <meta name="description" content="The Giant Within — a breathtaking Collector's Reserve Edition fine art landscape print by Sarah L Glabman. Big Daddy Dune, Namib Desert. Museum-grade acrylic print, individually signed and numbered. Edition of 70." />
+  <title>The Giant Within - Collector's Reserve Edition | SLG Masterworks</title>
+  <meta name="description" content="The Giant Within - a breathtaking Collector's Reserve Edition fine art landscape print by Sarah L Glabman. Big Daddy Dune, Namib Desert. Museum-grade acrylic print, individually signed and numbered. Edition of 70." />
   <meta name="theme-color" content="#FAF7F2" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
           id="product-hero"
           class="product-hero-img"
           src="../assets/images/The Giant Within/the-giant-within-web.jpg"
-          alt="The Giant Within — Collector's Reserve Edition fine art landscape print by Sarah L Glabman"
+          alt="The Giant Within - Collector's Reserve Edition fine art landscape print by Sarah L Glabman"
         />
       </div>
       <div class="product-thumbs" id="product-thumbs">
@@ -56,7 +56,7 @@
       <p class="product-desc">
         There are places in the world that humble you before you ever lift your camera. Big Daddy, the tallest sand dune in the Namib Desert, is one of them.
         <br><br>
-        As dawn painted the ancient dunes with warm golden light, I stood alone in complete silence, surrounded by one of the oldest landscapes on Earth. The shifting curves, endless textures, and sweeping shadows transformed the desert into a living sculpture created by nothing more than wind, time, and light. In that moment, I wasn't simply photographing Namibia — I was witnessing millions of years of history written across the sand.
+        As dawn painted the ancient dunes with warm golden light, I stood alone in complete silence, surrounded by one of the oldest landscapes on Earth. The shifting curves, endless textures, and sweeping shadows transformed the desert into a living sculpture created by nothing more than wind, time, and light. In that moment, I wasn't simply photographing Namibia - I was witnessing millions of years of history written across the sand.
         <br><br>
         This panoramic 2:1 composition was carefully crafted to celebrate the immense scale and timeless beauty of Big Daddy, allowing the eye to travel naturally through the graceful lines of the dune toward the distant horizon. Printed as a museum-grade acrylic, every detail is preserved with extraordinary clarity, depth, and brilliance, creating a striking statement piece for luxury homes, contemporary interiors, executive offices, and distinguished fine art collections.
         <br><br>
@@ -95,9 +95,9 @@
             <span class="presentation-radio"></span>
             <span class="presentation-text">
               <span class="presentation-name">Acrylic Mount</span>
-              <span class="presentation-note">Face-mounted to crystal-clear acrylic — no frame</span>
+              <span class="presentation-note">Face-mounted to crystal-clear acrylic - no frame</span>
             </span>
-            <span class="presentation-price-tag" id="price-unframed">—</span>
+            <span class="presentation-price-tag" id="price-unframed">-</span>
           </button>
 
           <button class="presentation-btn" data-presentation="framed" type="button">
@@ -106,7 +106,7 @@
               <span class="presentation-name">Framed Acrylic Mount</span>
               <span class="presentation-note">Premium floating frame, ready to hang</span>
             </span>
-            <span class="presentation-price-tag" id="price-framed">—</span>
+            <span class="presentation-price-tag" id="price-framed">-</span>
           </button>
 
         </div>
@@ -139,7 +139,7 @@
       <!-- Price Display -->
       <div class="product-price-display">
         <div class="price-current" id="price-display">
-          <span class="currency" style="display:none;">$</span><span id="price-amount">—</span>
+          <span class="currency" style="display:none;">$</span><span id="price-amount">-</span>
         </div>
         <div class="price-config" id="price-config">
           Select size &amp; presentation to see pricing
@@ -345,13 +345,13 @@
 
     function syncPrices() {
       const sp = currentSize ? PRODUCT.pricing[currentSize] : null;
-      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '—';
-      priceFramed.textContent   = sp && sp.framed ? '$' + fmtPrice(sp.framed) : '—';
+      priceUnframed.textContent = sp ? '$' + fmtPrice(sp.unframed) : '-';
+      priceFramed.textContent   = sp && sp.framed ? '$' + fmtPrice(sp.framed) : '-';
 
       const cta = document.getElementById('cta-purchase');
       const cur = document.querySelector('.price-current .currency');
       if (!currentSize || !currentPresentation) {
-        priceDisplay.textContent = '—';
+        priceDisplay.textContent = '-';
         priceConfig.textContent  = 'Select size & presentation to see pricing';
         if (cur) cur.style.display = 'none';
         if (cta) cta.classList.add('disabled');
@@ -431,7 +431,7 @@
         if (!currentSize || !currentPresentation) return;
         const sp = PRODUCT.pricing[currentSize];
         const price = currentPresentation === 'framed' ? sp.framed : sp.unframed;
-        const title = name + ' — ' + sizeLabel() + ' · ' + presentationLabel();
+        const title = name + ' - ' + sizeLabel() + ' · ' + presentationLabel();
         if (window.SLGCart) { window.SLGCart.add({ title: title, price: price }); window.SLGCart.open(); }
         const orig = cta.textContent;
         cta.textContent = 'Added ✓';

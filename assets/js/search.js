@@ -1,5 +1,5 @@
 /* =================================================================
-   SLG Masterworks — Cinematic Search
+   SLG Masterworks - Cinematic Search
    Full-screen overlay · Live product results · Keyboard navigation
    Recent searches · Category filters · Animated transitions
    ================================================================= */
@@ -777,7 +777,7 @@
      WIRE THE NAV SEARCH BUTTON
      ================================================================ */
   function wireButton() {
-    /* The button is injected by components.js — wait for it */
+    /* The button is injected by components.js - wait for it */
     const btn = document.querySelector('.nav-icon[aria-label="Search"]');
     if (btn) {
       btn.addEventListener('click', open);
