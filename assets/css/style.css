@@ -51,7 +51,7 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-padding-top: calc(var(--nav-h, 72px) + 8px); }
+html { font-size: 106.25%; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-padding-top: calc(var(--nav-h, 72px) + 8px); } /* base 16px -> 17px: enlarge all text ~6% for readability (Sarah) */
 body {
   margin: 0;
   overflow-x: clip; /* 'hidden' breaks position:sticky (nav) - clip doesn't create a scroll container */
@@ -60,7 +60,7 @@ body {
   font-family: var(--sans);
   color: var(--ink);
   background: var(--bg);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   font-weight: 300;
   letter-spacing: 0.01em;
@@ -775,7 +775,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 700px;
+  max-width: 1000px;   /* wider paragraph -> fewer lines -> shorter section (Sarah) */
   margin: 0 auto;
 }
 .story-text .section-label { margin-bottom: .6rem; }
@@ -788,8 +788,8 @@ body.is-homepage .hero-slider { height: 100vh; }
   font-weight: 300;
   font-size: 1.08rem;
   color: var(--ink-muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  line-height: 1.75;
+  margin-bottom: 1.4rem;
 }
 
 /* ================================================================
@@ -1037,7 +1037,7 @@ body.is-homepage .hero-slider { height: 100vh; }
    NEWSLETTER
    ================================================================ */
 .newsletter {
-  background: var(--surface-2);
+  background: var(--bg);
   padding: clamp(3.5rem, 6vw, 6rem) var(--gutter);
   text-align: center;
   border-top: 1px solid var(--line);
@@ -1935,3 +1935,30 @@ body.is-homepage .hero-slider { height: 100vh; }
 @media (min-width: 768px), (orientation: landscape) {
   .rotate-prompt { display: none !important; }
 }
+
+/* ============================================================
+   FOOTER TEXT — pinned to original px sizes so the global
+   readability font-bump does NOT enlarge the footer (was
+   overlapping Sarah's background photo). Keep footer as before.
+   ============================================================ */
+.footer-brand      { font-size: 27.2px; }
+.footer-brand-sig  { font-size: 25.6px; }
+.footer-tag        { font-size: 14.4px; }
+.footer h4         { font-size: 10.4px; }
+.footer li         { font-size: 14.72px; }
+.footer-bottom     { font-size: 13.12px; }
+
+/* ============================================================
+   Exclusive Limited Editions - image LEFT, text RIGHT (desktop only)
+   ============================================================ */
+@media (min-width: 769px) {
+  #collectors-reserve-works .new-arrivals-split { grid-template-columns: 1fr 380px; }
+  #collectors-reserve-works .na-left  { order: 2; }
+  #collectors-reserve-works .na-right { order: 1; }
+}
+
+/* ============================================================
+   Reduce the big gap between "A Promise" section and the quote
+   ============================================================ */
+#collectors-reserve { margin-bottom: clamp(1rem, 2vw, 2rem); }
+.quote { padding-top: clamp(0.5rem, 1.5vw, 1.5rem); }

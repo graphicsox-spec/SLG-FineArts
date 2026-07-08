@@ -106,7 +106,12 @@
     color: #fff;
     letter-spacing: -0.02em;
     caret-color: var(--gold);
+    -webkit-appearance: none;
+    appearance: none;
   }
+  /* hide browser's native search clear (the blue x) - keep only our custom one */
+  .slg-search-input::-webkit-search-cancel-button,
+  .slg-search-input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; display: none; }
   .slg-search-input::placeholder {
     color: rgba(255,255,255,0.22);
   }
@@ -114,7 +119,7 @@
   .slg-search-clear {
     background: transparent;
     border: none;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.55);
     cursor: pointer;
     padding: 4px;
     display: none;
@@ -437,7 +442,7 @@
           aria-label="Search artworks"
         />
         <button class="slg-search-clear" id="slgSearchClear" aria-label="Clear search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
             <circle cx="12" cy="12" r="9"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
           </svg>
         </button>

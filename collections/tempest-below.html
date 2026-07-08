@@ -49,7 +49,7 @@
 
       <div class="edition-badge">
         <span class="dot"></span>
-        Collector's Reserve Edition · Signed &amp; Numbered
+        Collector's Reserve Edition · Limited to 70 · Signed &amp; Numbered
       </div>
 
       <p class="product-desc">
@@ -66,6 +66,10 @@
       <div class="selector-group">
         <span class="selector-label">Select Size</span>
         <div class="size-options" id="size-options">
+          <button class="size-btn" data-size="24x36" type="button">
+            <span class="size-dim">24 × 36" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(61 × 91 cm)</span></span>
+            <span class="size-label">Small</span>
+          </button>
           <button class="size-btn" data-size="32x48" type="button">
             <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
             <span class="size-label">Medium</span>
@@ -221,6 +225,9 @@
     const PRODUCT = {
       images: {
         hero:                '../assets/images/Tempest Below/1-Peace.jpg',
+        '24x36_unframed':     '../assets/images/Tempest Below/TEMPEST BELOW 24X36 NO FRAME.jpg',
+        '24x36_framed_black': '../assets/images/Tempest Below/TEMPEST BELOW 24X36 BLACK FRAME.jpg',
+        '24x36_framed_brown': '../assets/images/Tempest Below/TEMPEST BELOW 24X36 BROWN FRAME.jpg',
         '32x48_unframed':     '../assets/images/Tempest Below/PEACE 32X48 NO FRAME.jpg',
         '32x48_framed_black': '../assets/images/Tempest Below/PEACE 32X48 BLACK FRAME.jpg',
         '32x48_framed_brown': '../assets/images/Tempest Below/PEACE 32X48 BROWN FRAME.jpg',
@@ -239,6 +246,7 @@
         brown: '../assets/images/Wildlife/Brown wood float frame.jpg',
       },
       pricing: {
+        '24x36': { unframed: 1700, framed: 2550 },
         '32x48': { unframed: 2920, framed: 3945 },
         '40x60': { unframed: 5000, framed: 6300 },
         '48x72': { unframed: 7400, framed: 8975 },
@@ -266,6 +274,9 @@
     /* ─── Thumbnails ─── */
     const thumbOrder = [
       { key: 'hero',               label: 'Web Preview' },
+      { key: '24x36_unframed',     label: '24×36 Acrylic Mount' },
+      { key: '24x36_framed_black', label: '24×36 Black Frame' },
+      { key: '24x36_framed_brown', label: '24×36 Brown Frame' },
       { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
       { key: '32x48_framed_black', label: '32×48 Black Frame' },
       { key: '32x48_framed_brown', label: '32×48 Brown Frame' },
@@ -363,6 +374,7 @@
     }
 
     function sizeLabel() {
+      if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
       if (currentSize === '32x48') return '32 × 48" (81 × 122 cm)';
       if (currentSize === '40x60') return '40 × 60" (102 × 152 cm)';
       if (currentSize === '48x72') return '48 × 72" (122 × 183 cm)';
