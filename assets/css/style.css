@@ -165,7 +165,7 @@ body:not(.is-homepage) { padding-top: var(--nav-h, 72px); }
   height: 32px;          /* Sarah: a little smaller (was 38px) */
   width: auto;
   display: block;
-  opacity: 0.7;          /* Sarah: reduce ~30% (softer logo) */
+  opacity: 1;            /* Full opacity — logo prominent (older look, per Sarah Jul 2026) */
 }
 
 
@@ -1219,7 +1219,7 @@ body.is-homepage .hero-slider { height: 100vh; }
   height: 43px;   /* 48px se 10% kam */
   width: auto;
   display: block;
-  opacity: 0.95;
+  opacity: 1;
 }
 
 /* ================================================================

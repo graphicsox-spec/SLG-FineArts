@@ -30,7 +30,7 @@
   <div class="nav-inner">
 
     <!-- Logo -->
-    <a href="/" class="brand" aria-label="SLG Masterworks home">
+    <a href="${r}index.html" class="brand" aria-label="SLG Masterworks home">
       <img src="${r}assets/images/SLG-Art-Logo-Header.svg" alt="SLG Masterworks" class="brand-logo" />
     </a>
 
@@ -462,12 +462,14 @@
       const target   = parseFloat(el.getAttribute('data-count')) || 0;
       const suffix   = el.getAttribute('data-suffix') || '';
       const prefix   = el.getAttribute('data-prefix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals'), 10) || 0;
       const duration = 1600;
       const start    = performance.now();
       const easeOut  = t => 1 - Math.pow(1 - t, 3);
       const step = now => {
         const p = Math.min((now - start) / duration, 1);
-        const val = Math.round(easeOut(p) * target);
+        const raw = easeOut(p) * target;
+        const val = decimals ? raw.toFixed(decimals) : Math.round(raw);
         el.textContent = prefix + val + suffix;
         if (p < 1) requestAnimationFrame(step);
       };
@@ -647,4 +649,24 @@
   s.src = (inSub ? '../' : '') + 'assets/js/search.js';
   s.defer = true;
   document.head.appendChild(s);
+})();
+
+
+/* ================================================================
+   IMAGE THEFT DETERRENT  - disable right-click / drag / long-press
+   save on artwork images. (Deterrent only; not foolproof.)
+   ================================================================ */
+(function () {
+  var st = document.createElement('style');
+  st.textContent =
+    'img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;' +
+    'user-drag:none;-webkit-user-select:none;-moz-user-select:none;' +
+    '-ms-user-select:none;user-select:none;-webkit-touch-callout:none;}';
+  document.head.appendChild(st);
+  function block(e){
+    var t = e.target;
+    if (t && t.tagName === 'IMG') { e.preventDefault(); return false; }
+  }
+  document.addEventListener('contextmenu', block, {capture:true});
+  document.addEventListener('dragstart', block, {capture:true});
 })();

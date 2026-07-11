@@ -1,0 +1,258 @@
+======================================================================
+SLG.art — UPLOAD GUIDE (kaunsi file KAHAN)
+======================================================================
+GoDaddy cPanel > File Manager > public_html/  (ye site ka root hai)
+
+Neeche har GROUP ka heading = GoDaddy pe destination folder.
+Us folder me neeche listed files upload/replace kar do.
+
+┌─ UPLOAD TO:  public_html/
+│    .htaccess
+│    showroom.html
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/css/
+│    style.css
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/
+│    Botswana 0988 NEW 3-web.jpg
+│    Botswana 0988 NEW 3-web.webp
+│    ChatGPT Image.jpg
+│    Peace.jpg
+│    Peace.webp
+│    SLG Art Showroom.jpeg
+│    Sarah Footer Image.jpg
+│    artist-hero-web.jpg
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Above the Noise/
+│    above-the-noise-web.jpg
+│    above-the-noise-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Bell Rock/
+│    bellrock-32x48.jpg
+│    bellrock-40x60.jpg
+│    bellrock-48x72.jpg
+│    bellrock-web.jpg
+│    bellrock-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Beneath the Pier/
+│    Pier MAIN web.jpg
+│    Pier MAIN web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Cathedral of Light/
+│    Ripples-Web-Version.jpg
+│    Ripples-Web-Version.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Echoes of Another World/
+│    Namibia 2294.jpg
+│    Namibia 2294.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Echoes of the Namib/
+│    LIMBS Web Version.jpg
+│    LIMBS Web Version.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Endurance/
+│    endurance-web.jpg
+│    endurance-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Evening Benediction/
+│    Evening Benediction.jpg
+│    Evening Benediction.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Eye of the Hunt/
+│    Eye of the Hunt.jpg
+│    Eye of the Hunt.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Faces/
+│    Page-6253-MAIN-website.jpg
+│    Page-6253-MAIN-website.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Golden Gate/
+│    Golden-Gate-8751-website 1 2 ratio.jpg
+│    Golden-Gate-8751-website 1 2 ratio.webp
+│    the gate-40x80.jpg
+│    the gate-48x96.jpg
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Golden Gate Sunrise/
+│    Golden Gate Sunrise.jpg
+│    Golden Gate Sunrise.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Into the Light/
+│    into-the-light-web.jpg
+│    into-the-light-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Lake Powell/
+│    lakepowell-20x40.jpg
+│    lakepowell-30x60.jpg
+│    lakepowell-40x80.jpg
+│    lakepowell-48x96.jpg
+│    lakepowell-web.jpg
+│    lakepowell-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/MAMA Blue/
+│    mama-blue-web.jpg
+│    mama-blue-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Majesty/
+│    Majesty.jpg
+│    Majesty.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Monument Valley/
+│    monument-32x48.jpg
+│    monument-40x60.jpg
+│    monument-48x72.jpg
+│    monument-web.jpg
+│    monument-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Moonrise Namibia/
+│    Namibia-2140-copy-web.jpg
+│    Namibia-2140-copy-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Morning Gold/
+│    morning-gold-web.jpg
+│    morning-gold-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Once Upon an Autumn/
+│    once-upon-an-autumn-web.jpg
+│    once-upon-an-autumn-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Palace of Light/
+│    Palace 8722 copy.jpg
+│    Palace 8722 copy.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Resurrection/
+│    Monument Valley.jpg
+│    Monument Valley.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Sanctuary of Light/
+│    sanctuary-of-light-web.jpg
+│    sanctuary-of-light-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Seattle/
+│    seattle-15x45.jpg
+│    seattle-20x60.jpg
+│    seattle-25x75.jpg
+│    seattle-33x96.jpg
+│    seattle-web.jpg
+│    seattle-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Silent Focus/
+│    ZEBRA EYE 24X36 BLACK FRAME.jpg
+│    ZEBRA EYE 24X36 BROWN FRAME.jpg
+│    ZEBRA EYE 24X36 NO FRAME.jpg
+│    ZEBRA EYE 32X48 BLACK FRAME.jpg
+│    ZEBRA EYE 32X48 BROWN FRAME.jpg
+│    ZEBRA EYE 32X48 NO FRAME.jpg
+│    ZEBRA EYE WEB.jpg
+│    ZEBRA EYE WEB.webp
+│    Zebra 8602 FLARE.jpg
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Silent Sovereign/
+│    Silent Sovereign Web.jpg
+│    Silent Sovereign Web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Tempest Below/
+│    1-Peace.jpg
+│    1-Peace.webp
+│    PEACE 48X72.jpg
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The Edge/
+│    Cape Town The Edge web.jpg
+│    Cape Town The Edge web.webp
+│    THE EDGE 40X60 BLACK FRAME.jpg
+│    THE EDGE 40X60 BROWN FRAME.jpg
+│    THE EDGE 40X60 NO FRAME.jpg
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The Edge of Eden/
+│    the-edge-of-eden-web.jpg
+│    the-edge-of-eden-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The Giant Within/
+│    the-giant-within-web.jpg
+│    the-giant-within-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The Grand Dame/
+│    the-grand-dame-web.jpg
+│    the-grand-dame-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The One/
+│    The One Web Version.jpg
+│    The One Web Version.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/The Window of Light/
+│    Window-of-Light-Web.jpg
+│    Window-of-Light-Web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Through His Eyes/
+│    LION 48X72 BLACK FRAME.jpg
+│    LION 48X72 BROWN FRAME.jpg
+│    LION 48X72 NO FRAME.jpg
+│    PERFECT LION 40X60 BLACK FRAME.jpg
+│    PERFECT LION 40X60 BROWN FRAME.jpg
+│    PERFECT LION 40X60 NO FRAME.jpg
+│    through-his-eyes-web.jpg
+│    through-his-eyes-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Together/
+│    Botswana 0988 NEW 3 copy.jpg
+│    Botswana 0988 NEW 3 copy.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Where the Ocean Meets Light/
+│    Hawaii 0202 copy website.jpg
+│    Hawaii 0202 copy website.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/images/Wildlife/
+│    Black Float Frame.jpg
+│    Brown wood float frame.jpg
+│    Leopard-9265-no-blood-web.jpg
+│    Leopard-9265-no-blood-web.webp
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/assets/js/
+│    components.js
+│    products.js
+└────────────────────────────────────────
+
+┌─ UPLOAD TO:  public_html/collections/
+│    palace-of-light.html
+│    silent-focus.html
+└────────────────────────────────────────
+

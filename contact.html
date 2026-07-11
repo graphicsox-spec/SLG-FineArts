@@ -428,6 +428,14 @@
       <h3 class="ct-form-title">Send a message</h3>
       <form class="ct-form" data-contact-form novalidate>
 
+        <!-- honeypot (spam trap) - hidden from real users -->
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"
+               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
+        <!-- Web3Forms: paste your free access key below (get it at web3forms.com) -->
+        <input type="hidden" name="access_key" value="PASTE-YOUR-WEB3FORMS-ACCESS-KEY-HERE" />
+        <input type="hidden" name="from_name" value="SLG.art Contact Form" />
+
         <div class="ct-row">
           <div class="ct-field">
             <label for="ct-name">Name</label>

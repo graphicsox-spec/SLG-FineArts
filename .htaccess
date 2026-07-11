@@ -1,6 +1,46 @@
-# SLG.art — clean home URL
+# ============================================================
+#  SLG.art — .htaccess
+#  clean URLs · force HTTPS · security headers · WebP · file locks
+# ============================================================
 RewriteEngine On
 
-# Redirect /index.html to / (professional clean URL)
+# ── 1. Force HTTPS (http → https). Loop-safe behind GoDaddy proxy. ──
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── 2. Clean home URL: /index.html → / ──
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^ / [R=301,L]
+
+# ── 3. Serve WebP when browser supports it and a sibling .webp exists ──
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
+
+# ── 4. No directory listing ──
+Options -Indexes
+
+# ── 5. Lock down secrets & sensitive files (still usable by PHP internally) ──
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "config.example.php">
+  Require all denied
+</Files>
+<FilesMatch "(\.(git|gitignore|env|md|log|sql|bak|ini)|~)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 (?i)/\.git
+
+# ── 6. Security headers ──
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(self)"
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+AddType image/webp .webp

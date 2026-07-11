@@ -1,0 +1,174 @@
+SLG.art — UPLOAD MANIFEST (regenerated)
+GoDaddy: har file usi SAME path/folder me replace/upload. Base = public_html/
+
+A) CODE / CONFIG (7) — zaroor upload:
+   .htaccess
+   assets/css/style.css
+   assets/js/components.js
+   assets/js/products.js
+   collections/palace-of-light.html
+   collections/silent-focus.html
+   showroom.html
+
+B) MAIN IMAGES re-resized @2000px (78 .jpg) — replace:
+   assets/images/Above the Noise/above-the-noise-web.jpg
+   assets/images/Bell Rock/bellrock-32x48.jpg
+   assets/images/Bell Rock/bellrock-40x60.jpg
+   assets/images/Bell Rock/bellrock-48x72.jpg
+   assets/images/Bell Rock/bellrock-web.jpg
+   assets/images/Beneath the Pier/Pier MAIN web.jpg
+   assets/images/Botswana 0988 NEW 3-web.jpg
+   assets/images/Cathedral of Light/Ripples-Web-Version.jpg
+   assets/images/ChatGPT Image.jpg
+   assets/images/Echoes of Another World/Namibia 2294.jpg
+   assets/images/Echoes of the Namib/LIMBS Web Version.jpg
+   assets/images/Endurance/endurance-web.jpg
+   assets/images/Evening Benediction/Evening Benediction.jpg
+   assets/images/Eye of the Hunt/Eye of the Hunt.jpg
+   assets/images/Faces/Page-6253-MAIN-website.jpg
+   assets/images/Golden Gate Sunrise/Golden Gate Sunrise.jpg
+   assets/images/Golden Gate/Golden-Gate-8751-website 1 2 ratio.jpg
+   assets/images/Golden Gate/the gate-40x80.jpg
+   assets/images/Golden Gate/the gate-48x96.jpg
+   assets/images/Into the Light/into-the-light-web.jpg
+   assets/images/Lake Powell/lakepowell-20x40.jpg
+   assets/images/Lake Powell/lakepowell-30x60.jpg
+   assets/images/Lake Powell/lakepowell-40x80.jpg
+   assets/images/Lake Powell/lakepowell-48x96.jpg
+   assets/images/Lake Powell/lakepowell-web.jpg
+   assets/images/MAMA Blue/mama-blue-web.jpg
+   assets/images/Majesty/Majesty.jpg
+   assets/images/Monument Valley/monument-32x48.jpg
+   assets/images/Monument Valley/monument-40x60.jpg
+   assets/images/Monument Valley/monument-48x72.jpg
+   assets/images/Monument Valley/monument-web.jpg
+   assets/images/Moonrise Namibia/Namibia-2140-copy-web.jpg
+   assets/images/Morning Gold/morning-gold-web.jpg
+   assets/images/Once Upon an Autumn/once-upon-an-autumn-web.jpg
+   assets/images/Palace of Light/Palace 8722 copy.jpg
+   assets/images/Peace.jpg
+   assets/images/Resurrection/Monument Valley.jpg
+   assets/images/SLG Art Showroom.jpeg
+   assets/images/Sanctuary of Light/sanctuary-of-light-web.jpg
+   assets/images/Sarah Footer Image.jpg
+   assets/images/Seattle/seattle-15x45.jpg
+   assets/images/Seattle/seattle-20x60.jpg
+   assets/images/Seattle/seattle-25x75.jpg
+   assets/images/Seattle/seattle-33x96.jpg
+   assets/images/Seattle/seattle-web.jpg
+   assets/images/Silent Focus/ZEBRA EYE 24X36 BLACK FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE 24X36 BROWN FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE 24X36 NO FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE 32X48 BLACK FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE 32X48 BROWN FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE 32X48 NO FRAME.jpg
+   assets/images/Silent Focus/ZEBRA EYE WEB.jpg
+   assets/images/Silent Focus/Zebra 8602 FLARE.jpg
+   assets/images/Silent Sovereign/Silent Sovereign Web.jpg
+   assets/images/Tempest Below/1-Peace.jpg
+   assets/images/Tempest Below/PEACE 48X72.jpg
+   assets/images/The Edge of Eden/the-edge-of-eden-web.jpg
+   assets/images/The Edge/Cape Town The Edge web.jpg
+   assets/images/The Edge/THE EDGE 40X60 BLACK FRAME.jpg
+   assets/images/The Edge/THE EDGE 40X60 BROWN FRAME.jpg
+   assets/images/The Edge/THE EDGE 40X60 NO FRAME.jpg
+   assets/images/The Giant Within/the-giant-within-web.jpg
+   assets/images/The Grand Dame/the-grand-dame-web.jpg
+   assets/images/The One/The One Web Version.jpg
+   assets/images/The Window of Light/Window-of-Light-Web.jpg
+   assets/images/Through His Eyes/LION 48X72 BLACK FRAME.jpg
+   assets/images/Through His Eyes/LION 48X72 BROWN FRAME.jpg
+   assets/images/Through His Eyes/LION 48X72 NO FRAME.jpg
+   assets/images/Through His Eyes/PERFECT LION 40X60 BLACK FRAME.jpg
+   assets/images/Through His Eyes/PERFECT LION 40X60 BROWN FRAME.jpg
+   assets/images/Through His Eyes/PERFECT LION 40X60 NO FRAME.jpg
+   assets/images/Through His Eyes/through-his-eyes-web.jpg
+   assets/images/Together/Botswana 0988 NEW 3 copy.jpg
+   assets/images/Where the Ocean Meets Light/Hawaii 0202 copy website.jpg
+   assets/images/Wildlife/Black Float Frame.jpg
+   assets/images/Wildlife/Brown wood float frame.jpg
+   assets/images/Wildlife/Leopard-9265-no-blood-web.jpg
+   assets/images/artist-hero-web.jpg
+
+C) NEW WebP versions (39 .webp) — upload alongside the .jpg (same folders):
+   assets/images/Above the Noise/above-the-noise-web.webp
+   assets/images/Bell Rock/bellrock-web.webp
+   assets/images/Beneath the Pier/Pier MAIN web.webp
+   assets/images/Botswana 0988 NEW 3-web.webp
+   assets/images/Cathedral of Light/Ripples-Web-Version.webp
+   assets/images/Echoes of Another World/Namibia 2294.webp
+   assets/images/Echoes of the Namib/LIMBS Web Version.webp
+   assets/images/Endurance/endurance-web.webp
+   assets/images/Evening Benediction/Evening Benediction.webp
+   assets/images/Eye of the Hunt/Eye of the Hunt.webp
+   assets/images/Faces/Page-6253-MAIN-website.webp
+   assets/images/Golden Gate Sunrise/Golden Gate Sunrise.webp
+   assets/images/Golden Gate/Golden-Gate-8751-website 1 2 ratio.webp
+   assets/images/Into the Light/into-the-light-web.webp
+   assets/images/Lake Powell/lakepowell-web.webp
+   assets/images/MAMA Blue/mama-blue-web.webp
+   assets/images/Majesty/Majesty.webp
+   assets/images/Monument Valley/monument-web.webp
+   assets/images/Moonrise Namibia/Namibia-2140-copy-web.webp
+   assets/images/Morning Gold/morning-gold-web.webp
+   assets/images/Once Upon an Autumn/once-upon-an-autumn-web.webp
+   assets/images/Palace of Light/Palace 8722 copy.webp
+   assets/images/Peace.webp
+   assets/images/Resurrection/Monument Valley.webp
+   assets/images/Sanctuary of Light/sanctuary-of-light-web.webp
+   assets/images/Seattle/seattle-web.webp
+   assets/images/Silent Focus/ZEBRA EYE WEB.webp
+   assets/images/Silent Sovereign/Silent Sovereign Web.webp
+   assets/images/Tempest Below/1-Peace.webp
+   assets/images/The Edge of Eden/the-edge-of-eden-web.webp
+   assets/images/The Edge/Cape Town The Edge web.webp
+   assets/images/The Giant Within/the-giant-within-web.webp
+   assets/images/The Grand Dame/the-grand-dame-web.webp
+   assets/images/The One/The One Web Version.webp
+   assets/images/The Window of Light/Window-of-Light-Web.webp
+   assets/images/Through His Eyes/through-his-eyes-web.webp
+   assets/images/Together/Botswana 0988 NEW 3 copy.webp
+   assets/images/Where the Ocean Meets Light/Hawaii 0202 copy website.webp
+   assets/images/Wildlife/Leopard-9265-no-blood-web.webp
+
+D) OTHER:
+   _UPLOAD-MANIFEST.txt
+   assets/images/Above the Noise/above-the-noise-web.webp
+   assets/images/Bell Rock/bellrock-web.webp
+   assets/images/Beneath the Pier/Pier MAIN web.webp
+   assets/images/Botswana 0988 NEW 3-web.webp
+   assets/images/Cathedral of Light/Ripples-Web-Version.webp
+   assets/images/Echoes of Another World/Namibia 2294.webp
+   assets/images/Echoes of the Namib/LIMBS Web Version.webp
+   assets/images/Endurance/endurance-web.webp
+   assets/images/Evening Benediction/Evening Benediction.webp
+   assets/images/Eye of the Hunt/Eye of the Hunt.webp
+   assets/images/Faces/Page-6253-MAIN-website.webp
+   assets/images/Golden Gate Sunrise/Golden Gate Sunrise.webp
+   assets/images/Golden Gate/Golden-Gate-8751-website 1 2 ratio.webp
+   assets/images/Into the Light/into-the-light-web.webp
+   assets/images/Lake Powell/lakepowell-web.webp
+   assets/images/MAMA Blue/mama-blue-web.webp
+   assets/images/Majesty/Majesty.webp
+   assets/images/Monument Valley/monument-web.webp
+   assets/images/Moonrise Namibia/Namibia-2140-copy-web.webp
+   assets/images/Morning Gold/morning-gold-web.webp
+   assets/images/Once Upon an Autumn/once-upon-an-autumn-web.webp
+   assets/images/Palace of Light/Palace 8722 copy.webp
+   assets/images/Peace.webp
+   assets/images/Resurrection/Monument Valley.webp
+   assets/images/Sanctuary of Light/sanctuary-of-light-web.webp
+   assets/images/Seattle/seattle-web.webp
+   assets/images/Silent Focus/ZEBRA EYE WEB.webp
+   assets/images/Silent Sovereign/Silent Sovereign Web.webp
+   assets/images/Tempest Below/1-Peace.webp
+   assets/images/The Edge of Eden/the-edge-of-eden-web.webp
+   assets/images/The Edge/Cape Town The Edge web.webp
+   assets/images/The Giant Within/the-giant-within-web.webp
+   assets/images/The Grand Dame/the-grand-dame-web.webp
+   assets/images/The One/The One Web Version.webp
+   assets/images/The Window of Light/Window-of-Light-Web.webp
+   assets/images/Through His Eyes/through-his-eyes-web.webp
+   assets/images/Together/Botswana 0988 NEW 3 copy.webp
+   assets/images/Where the Ocean Meets Light/Hawaii 0202 copy website.webp
+   assets/images/Wildlife/Leopard-9265-no-blood-web.webp

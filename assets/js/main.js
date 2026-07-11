@@ -86,11 +86,22 @@
     cf.addEventListener('submit', e => {
       e.preventDefault();
       const status = cf.querySelector('[data-status]');
-      if (status) {
-        status.textContent = 'Thank you - your note has been received. Sarah will reply within 1-2 days.';
-        status.style.color = 'var(--blue)';
-      }
-      cf.reset();
+      const btn    = cf.querySelector('.ct-submit');
+      const say = (msg, color) => { if (status) { status.textContent = msg; status.style.color = color; } };
+      if (btn) btn.disabled = true;
+      say('Sending…', 'var(--ink-muted, #888)');
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cf) })
+        .then(r => r.json())
+        .then(d => {
+          if (d && d.success) {
+            say('Thank you - your note has been received. Sarah will reply within 1-2 days.', 'var(--blue)');
+            cf.reset();
+          } else {
+            say((d && d.error) || 'Something went wrong. Please email hello@slg.art directly.', '#b02a37');
+          }
+        })
+        .catch(() => say('Network error. Please email hello@slg.art directly.', '#b02a37'))
+        .finally(() => { if (btn) btn.disabled = false; });
     });
   }
 

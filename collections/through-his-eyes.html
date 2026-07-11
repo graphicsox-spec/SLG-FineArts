@@ -451,4 +451,27 @@
 
     /* ─── Reset to default ─── */
     window.SLGResetToDefault = function () {
-      currentSize
+      currentSize = null;
+      currentPresentation = null;
+      currentFrame = 'black';
+      sizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      presOptions.querySelectorAll('.presentation-btn').forEach(b => b.classList.remove('active'));
+      frameColors.querySelectorAll('.frame-color-btn').forEach(b => b.classList.toggle('active', b.dataset.frame === 'black'));
+      syncPrices();
+      syncFrameUI();
+      setHeroImage('hero');
+      thumbsWrap.querySelectorAll('.product-thumb').forEach(b => b.classList.toggle('active', b.dataset.imgKey === 'hero'));
+    };
+
+    /* ─── Init ─── */
+    buildThumbs();
+    syncPrices();
+    syncFrameUI();
+
+  })();
+  </script>
+
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

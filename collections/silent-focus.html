@@ -31,7 +31,7 @@
         <img
           id="product-hero"
           class="product-hero-img"
-          src="../assets/images/Silent Focus/Zebra 8602 FLARE.jpg"
+          src="../assets/images/Silent Focus/ZEBRA EYE WEB.jpg"
           alt="Silent Focus - close-up portrait of a zebra with unwavering gaze, Collector's Reserve Edition fine art wildlife print by Sarah L Glabman"
         />
       </div>
@@ -71,10 +71,6 @@
           <button class="size-btn" data-size="32x48" type="button">
             <span class="size-dim">32 × 48" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(81 × 122 cm)</span></span>
             <span class="size-label">Large</span>
-          </button>
-          <button class="size-btn" data-size="40x60" type="button">
-            <span class="size-dim">40 × 60" <span style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0;">(102 × 152 cm)</span></span>
-            <span class="size-label">X-Large</span>
           </button>
         </div>
       </div>
@@ -163,7 +159,7 @@
         </li>
         <li>
           <span class="spec-label">Available Sizes</span>
-          <span class="spec-value">24×36" · 32×48" · 40×60"</span>
+          <span class="spec-value">24×36" · 32×48"</span>
         </li>
         <li>
           <span class="spec-label">Frame Options</span>
@@ -201,7 +197,7 @@
         <p>A warm, natural wood float frame with rich grain and dark espresso tones. The floating mount brings dimension and an organic elegance to the piece.</p>
       </div>
       <div class="framing-card">
-        <img class="framing-card-img" src="../assets/images/Silent Focus/Zebra 8602 FLARE.jpg" alt="Acrylic Mount preview" />
+        <img class="framing-card-img" src="../assets/images/Silent Focus/ZEBRA EYE 24X36 NO FRAME.jpg" alt="Acrylic Mount preview" />
         <h4>Acrylic Mount</h4>
         <p>The photograph is face-mounted behind optically-clear acrylic, creating extraordinary depth, luminosity, and a contemporary floating effect on the wall.</p>
       </div>
@@ -214,16 +210,13 @@
     /* ─── Data ─── */
     const PRODUCT = {
       images: {
-        hero:                '../assets/images/Silent Focus/Zebra 8602 FLARE.jpg',
-        '24x36_unframed':     '../assets/images/Silent Focus/ZEBRA HEADSHOT 24X36 NO FRAME.jpg',
-        '24x36_framed_black': '../assets/images/Silent Focus/ZEBRA HEADSHOT 24X36 BLACK FRAME.jpg',
-        '24x36_framed_brown': '../assets/images/Silent Focus/ZEBRA HEADSHOT 24X36 BROWN FRAME.jpg',
-        '32x48_unframed':     '../assets/images/Silent Focus/ZEBRA HEADSHOT 32X48 NO FRAME.jpg',
-        '32x48_framed_black': '../assets/images/Silent Focus/ZEBRA HEADSHOT 32X48 BLACK FRAME.jpg',
-        '32x48_framed_brown': '../assets/images/Silent Focus/ZEBRA HEADSHOT 32X48 BROWN FRAME.jpg',
-        '40x60_unframed':     '../assets/images/Silent Focus/ZEBRA HEADSHOT 40X60 NO FRAME.jpg',
-        '40x60_framed_black': '../assets/images/Silent Focus/ZEBRA HEADSHOT 40X60 BLACK FRAME.jpg',
-        '40x60_framed_brown': '../assets/images/Silent Focus/ZEBRA HEADSHOT 40X60 BROWN FRAME.jpg',
+        hero:                '../assets/images/Silent Focus/ZEBRA EYE WEB.jpg',
+        '24x36_unframed':     '../assets/images/Silent Focus/ZEBRA EYE 24X36 NO FRAME.jpg',
+        '24x36_framed_black': '../assets/images/Silent Focus/ZEBRA EYE 24X36 BLACK FRAME.jpg',
+        '24x36_framed_brown': '../assets/images/Silent Focus/ZEBRA EYE 24X36 BROWN FRAME.jpg',
+        '32x48_unframed':     '../assets/images/Silent Focus/ZEBRA EYE 32X48 NO FRAME.jpg',
+        '32x48_framed_black': '../assets/images/Silent Focus/ZEBRA EYE 32X48 BLACK FRAME.jpg',
+        '32x48_framed_brown': '../assets/images/Silent Focus/ZEBRA EYE 32X48 BROWN FRAME.jpg',
       },
       frames: {
         black: '../assets/images/Wildlife/Black Float Frame.jpg',
@@ -232,7 +225,6 @@
       pricing: {
         '24x36': { unframed: 1700, framed: 2550 },
         '32x48': { unframed: 2920, framed: 3945 },
-        '40x60': { unframed: 5000, framed: 6300 },
       }
     };
 
@@ -262,9 +254,6 @@
       { key: '32x48_unframed',     label: '32×48 Acrylic Mount' },
       { key: '32x48_framed_black', label: '32×48 Black Frame' },
       { key: '32x48_framed_brown', label: '32×48 Brown Frame' },
-      { key: '40x60_unframed',     label: '40×60 Acrylic Mount' },
-      { key: '40x60_framed_black', label: '40×60 Black Frame' },
-      { key: '40x60_framed_brown', label: '40×60 Brown Frame' },
     ];
 
     function buildThumbs() {
@@ -351,7 +340,6 @@
 
     function sizeLabel() {
       if (currentSize === '24x36') return '24 × 36" (61 × 91 cm)';
-      if (currentSize === '40x60') return '40 × 60" (102 × 152 cm)';
       return '32 × 48" (81 × 122 cm)';
     }
 

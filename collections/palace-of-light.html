@@ -281,7 +281,8 @@
 
     function buildThumbs() {
       thumbsWrap.innerHTML = '';
-      thumbOrder.forEach((t, i) => {
+      /* Skip thumbs whose image file isn't available yet (e.g. 48x72 acrylic / brown frame) */
+      thumbOrder.filter(t => PRODUCT.images[t.key]).forEach((t, i) => {
         const btn = document.createElement('button');
         btn.className = 'product-thumb' + (i === 0 ? ' active' : '');
         btn.type = 'button';
